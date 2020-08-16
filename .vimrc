@@ -3,6 +3,7 @@
 " ============ "
 syntax on
 set noerrorbells 
+set belloff=all
 set expandtab 
 set nu
 set nowrap
@@ -49,5 +50,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'ggreer/the_silver_searcher'
     Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
+    Plug 'preservim/nerdcommenter'
+
+    " Language specific plugins
+    Plug 'fatih/vim-go'
 call plug#end()
 
