@@ -83,5 +83,5 @@ key_bindings:
     - { key: N,        mods: Alt,     chars: "\x1bn"                       }
     - { key: D,        mods: Alt,     chars: "\x1bd"                       }
     - { key: E,        mods: Alt,     chars: "\x1be"                       }
-    - { key: Q,        mods: Alt,     chars: "\x1bq"                       }
+    - { key: X,        mods: Alt,     chars: "\x1bx"                       }
 
