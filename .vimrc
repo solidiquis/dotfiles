@@ -12,7 +12,6 @@ set noswapfile
 set nobackup
 set incsearch
 set autoindent
-set clipboard+=unnamedplus
 
 set sw=4 ts=4 sts=4 " Default
 autocmd FileType html :setlocal sw=2 ts=2 sts=2

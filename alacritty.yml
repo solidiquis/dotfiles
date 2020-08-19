@@ -1,0 +1,87 @@
+window:
+  dynamic_title: true
+  dimensions:
+    columns: 0
+    lines: 0
+
+  padding:
+    x: 0
+    y: 0
+
+  dynamic_padding: false
+  decorations: "none"
+
+  startup_mode: Maximized
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: Iosevka Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: Iosevka Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: Iosevka Nerd Font Mono
+    style: Bold Italic
+
+  size: 14.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  # Default colors
+  primary:
+    background: '#272822'
+    foreground: '#F8F8F2'
+
+  # Normal colors
+  normal:
+   black:   '#272822'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F8F8F2'
+
+  # Bright colors
+  bright:
+   black:   '#75715E'
+   red:     '#F92672'
+   green:   '#A6E22E'
+   yellow:  '#F4BF75'
+   blue:    '#66D9EF'
+   magenta: '#AE81FF'
+   cyan:    '#A1EFE4'
+   white:   '#F9F8F5'
+
+key_bindings:
+    - { key: J,        mods: Alt,     chars: "\x1bj"                       }
+    - { key: K,        mods: Alt,     chars: "\x1bk"                       }
+    - { key: H,        mods: Alt,     chars: "\x1bh"                       }
+    - { key: L,        mods: Alt,     chars: "\x1bl"                       }
+    - { key: T,        mods: Alt,     chars: "\x1bt"                       }
+    - { key: W,        mods: Alt,     chars: "\x1bw"                       }
+    - { key: P,        mods: Alt,     chars: "\x1bp"                       }
+    - { key: N,        mods: Alt,     chars: "\x1bn"                       }
+    - { key: D,        mods: Alt,     chars: "\x1bd"                       }
+    - { key: E,        mods: Alt,     chars: "\x1be"                       }
+    - { key: Q,        mods: Alt,     chars: "\x1bq"                       }
+
