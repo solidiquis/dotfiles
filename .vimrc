@@ -33,10 +33,13 @@ noremap <leader>e :NERDTreeToggle<cr>
 noremap <leader>b :Buffers<cr>
 
 " Pane navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>
+
+" Copy to clipboard
+noremap <leader>c "*yy<cr>
 
 " ============="
 " ===Plugins==="

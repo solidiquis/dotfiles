@@ -11,8 +11,6 @@ window:
   dynamic_padding: false
   decorations: "none"
 
-  startup_mode: Maximized
-
 scrolling:
   history: 10000
   multiplier: 3
@@ -33,8 +31,8 @@ font:
   size: 14.0
 
   offset:
-    x: 0
-    y: 0
+    x: 2
+    y: 4
 
   glyph_offset:
     x: 0
