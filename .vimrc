@@ -41,6 +41,9 @@ noremap <C-H> <C-W><C-H>
 " Copy to clipboard
 noremap <leader>c "*yy<cr>
 
+" Status-line styles
+hi StatusLine ctermbg=000000 ctermfg=000000
+
 " ============="
 " ===Plugins==="
 " ============="
