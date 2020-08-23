@@ -56,6 +56,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " Language specific plugins
     Plug 'fatih/vim-go'
