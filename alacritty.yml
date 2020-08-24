@@ -17,18 +17,18 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka Nerd Font Mono
+    family: Source Code Pro for Powerline
     style: Regular
 
   bold:
-    family: Iosevka Nerd Font Mono
+    family: Source Code Pro for Powerline
     style: Bold
 
   italic:
-    family: Iosevka Nerd Font Mono
+    family: Source Code Pro for Powerline
     style: Bold Italic
 
-  size: 22.0
+  size: 21.0
 
   offset:
     x: 2
@@ -45,32 +45,42 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#272822'
-    foreground: '#F8F8F2'
+    background: '0x1d1f21'
+    foreground: '0xeaeaea'
 
   # Normal colors
   normal:
-   black:   '#272822'
-   red:     '#F92672'
-   green:   '#A6E22E'
-   yellow:  '#F4BF75'
-   blue:    '#66D9EF'
-   magenta: '#AE81FF'
-   cyan:    '#A1EFE4'
-   white:   '#F8F8F2'
+    black:   '0x000000'
+    red:     '0xd54e53'
+    green:   '0xb9ca4a'
+    yellow:  '0xe6c547'
+    blue:    '0x7aa6da'
+    magenta: '0xc397d8'
+    cyan:    '0x70c0ba'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
-   black:   '#75715E'
-   red:     '#F92672'
-   green:   '#A6E22E'
-   yellow:  '#F4BF75'
-   blue:    '#66D9EF'
-   magenta: '#AE81FF'
-   cyan:    '#A1EFE4'
-   white:   '#F9F8F5'
+    black:   '0x666666'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xe7c547'
+    blue:    '0x7aa6da'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0xffffff'
 
-background_opacity: 0.7
+  dim:
+    black:   '0x333333'
+    red:     '0xf2777a'
+    green:   '0x99cc99'
+    yellow:  '0xffcc66'
+    blue:    '0x6699cc'
+    magenta: '0xcc99cc'
+    cyan:    '0x66cccc'
+    white:   '0xdddddd'
+
+background_opacity: 1.0
 
 key_bindings:
     - { key: J,        mods: Alt,     chars: "\x1bj"                       }

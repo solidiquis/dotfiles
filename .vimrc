@@ -13,10 +13,9 @@ set nobackup
 set incsearch
 set autoindent
 
-
 set sw=4 ts=4 sts=4 " Default
-autocmd BufEnter *.tsx :setlocal filetype=typescript
-autocmd FileType typescript :setlocal sw=2 ts=2 sts=2
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd FileType typescript.tsx :setlocal sw=2 ts=2 sts=2
 autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
@@ -63,7 +62,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
-    " Language specific plugins
+    " Go
     Plug 'fatih/vim-go'
 call plug#end()
 
