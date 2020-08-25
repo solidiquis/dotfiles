@@ -62,6 +62,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
 
+    " CoffeeScript
+    Plug 'kchmck/vim-coffee-script'
+
     " Go
     Plug 'fatih/vim-go'
 call plug#end()
