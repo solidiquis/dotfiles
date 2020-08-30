@@ -4,15 +4,19 @@ window:
     columns: 0
     lines: 0
 
+  position:
+    x: 50
+    y: 50
+
   padding:
-    x: 0
+    x: 5
     y: 0
 
   dynamic_padding: false
-  decorations: "none"
+  decorations: none
 
 scrolling:
-  history: 10000
+  history: 50000
   multiplier: 3
 
 font:
@@ -28,7 +32,7 @@ font:
     family: Source Code Pro for Powerline
     style: Bold Italic
 
-  size: 21.0
+  size: 16.0
 
   offset:
     x: 2
