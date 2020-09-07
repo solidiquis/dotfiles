@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 export GOPATH=$HOME/go
 
 # Aliases
-alias wefunder="cd /Users/benjamin/Desktop/Things/Projects/wefunder"
+alias wefunder="cd /Users/benjamin/Desktop/Code/Ruby/wefunder"
 alias helpful_stuff="cd ~/Desktop/Things/'Helpful Stuff'"
 alias python="python3"
 alias ipaddr="ipconfig getifaddr en0"
