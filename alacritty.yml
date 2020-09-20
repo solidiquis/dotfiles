@@ -73,7 +73,7 @@ colors:
     cyan: '#95E6CB'
     white: '#FFFFFF'
 
-background_opacity: 0.9
+background_opacity: 0.8
 
 key_bindings:
     - { key: J,        mods: Alt,     chars: "\x1bj"                       }
