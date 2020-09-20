@@ -22,15 +22,15 @@ scrolling:
 
 font:
   normal:
-    family: Source Code Pro for Powerline
+    family: Menlo
     style: Regular
 
   bold:
-    family: Source Code Pro for Powerline
+    family: Menlo
     style: Bold
 
   italic:
-    family: Source Code Pro for Powerline
+    family: Menlo
     style: Bold Italic
 
   size: 18.0
