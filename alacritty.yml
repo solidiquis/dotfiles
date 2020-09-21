@@ -22,18 +22,18 @@ scrolling:
 
 font:
   normal:
-    family: Menlo
+    family: Fira Code
     style: Regular
 
   bold:
-    family: Menlo
+    family: Fira Code
     style: Bold
 
   italic:
-    family: Menlo
+    family: Fira Code
     style: Bold Italic
 
-  size: 18.0
+  size: 16.0
 
   offset:
     x: 2
