@@ -27,6 +27,9 @@ set fillchars+=vert:\▏
 " Line number styling
 highlight LineNr ctermfg=darkgrey
 
+" Not necessary
+highlight clear SpellBad
+
 " ============== "
 " ===Mappings=== "
 " ============== "
