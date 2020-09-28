@@ -27,7 +27,7 @@ set fillchars+=vert:\▏
 " Line number styling
 highlight LineNr ctermfg=darkgrey
 
-" Not necessary
+" Get rid of unnecessary highlight for spelling
 highlight clear SpellBad
 
 " ============== "
