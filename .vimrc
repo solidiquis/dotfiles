@@ -47,8 +47,11 @@ noremap <C-K> <C-W><C-K>
 noremap <C-L> <C-W><C-L>
 noremap <C-H> <C-W><C-H>
 
-" Copy to clipboard
+" Copy to system clipboard
 noremap <leader>c "*yy<cr>
+
+" Paste without indent
+noremap<leader>v "+p<cr>
 
 " Status-line styles
 hi StatusLine ctermbg=000000 ctermfg=000000
