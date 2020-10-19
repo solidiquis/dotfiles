@@ -27,6 +27,11 @@ export PATH="/Users/benjamin/go/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:$PATH"
 export PATH="/Users/benjamin/benji_bins:$PATH"
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && \
+    [ -n "$PS1" ] && \
+    [[ ! "$TERM" =~ screen ]] && \
+    [[ ! "$TERM" =~ tmux ]] && \
+    [ -z "$TMUX" ]
+then
   exec tmux
 fi
