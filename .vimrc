@@ -25,7 +25,7 @@ highlight VertSplit cterm=NONE
 set fillchars+=vert:\▏
 
 " Line number styling
-highlight LineNr ctermfg=darkgrey
+" highlight LineNr ctermfg=000000
 
 " Get rid of unnecessary highlight for spelling
 highlight clear SpellBad
