@@ -89,3 +89,9 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
+
+function! Cwf()
+    let @+=expand('%:p')
+endfunction
+
+command! Cwf call Cwf()

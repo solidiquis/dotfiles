@@ -4,14 +4,14 @@ window:
     columns: 0
     lines: 0
 
-  #position:
-    #x: 50
-    #y: 50
-
-  startup_mode: SimpleFullscreen
   position:
-    x: 0
-    y: 0
+    x: 50
+    y: 50
+
+  #startup_mode: SimpleFullscreen
+  #position:
+    #x: 0
+    #y: 0
 
   padding:
     x: 30
@@ -37,7 +37,7 @@ font:
     family: FiraCode-Bold
     style: Bold Italic
 
-  size: 22.0
+  size: 20.0
 
   offset:
     x: 0
@@ -87,7 +87,7 @@ colors:
     cyan:    '0x66cccc'
     white:   '0xdddddd'
 
-background_opacity: 0.7
+background_opacity: 0.8
 
 key_bindings:
     - { key: J,        mods: Alt,     chars: "\x1bj"                       }
