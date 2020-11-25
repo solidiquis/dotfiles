@@ -14,8 +14,8 @@ window:
     #y: 0
 
   padding:
-    x: 30
-    y: 30 
+    x: 35
+    y: 35 
 
   dynamic_padding: false
   decorations: none
@@ -37,7 +37,7 @@ font:
     family: FiraCode-Bold
     style: Bold Italic
 
-  size: 20.0
+  size: 14.0
 
   offset:
     x: 0
@@ -87,7 +87,7 @@ colors:
     cyan:    '0x66cccc'
     white:   '0xdddddd'
 
-background_opacity: 0.8
+background_opacity: 0.6
 
 key_bindings:
     - { key: J,        mods: Alt,     chars: "\x1bj"                       }

@@ -74,8 +74,12 @@ call plug#begin('~/.vim/plugged')
     " CoffeeScript
     Plug 'kchmck/vim-coffee-script'
 
+    " JavaScript
+    Plug 'pangloss/vim-javascript'
+
     " Go
     Plug 'fatih/vim-go'
+
 call plug#end()
 
 " Go goodness
