@@ -6,17 +6,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias wefunder="cd /Users/benjamin/Desktop/Code/Ruby/wefunder"
-alias helpful_stuff="cd ~/Desktop/Things/'Helpful Stuff'"
 alias python="python3"
-alias ipaddr="ipconfig getifaddr en0"
-alias go-pb="protoc -I=. --go_out=."
-alias wf="./wf.sh"
-alias go-pry="$GOPATH/bin/go-pry"
-alias postgres_dir="cd /usr/local/var/postgres/"
-alias mmi="cd /Users/benjamin/Desktop/Code/Projects/mmi"
 alias vi ="vim"
 alias dotfiles="cd ~/dotfiles"
 alias gr="go run"
+alias rustdir="cd /Users/benjamin/Desktop/Code/Rust"
+alias godir="cd /Users/benjamin/Desktop/Code/Go"
+alias rubydir="cd /Users/benjamin/Desktop/Code/Ruby"
+alias pythondir="cd /Users/benjamin/Desktop/Code/Python"
+alias javascriptdir="cd /Users/benjamin/Desktop/Code/Javascript"
 
 # Go
 export GOPATH=$HOME/go

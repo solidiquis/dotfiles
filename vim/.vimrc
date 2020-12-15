@@ -12,6 +12,7 @@ set noswapfile
 set nobackup
 set incsearch
 set autoindent
+set laststatus=2
 
 set sw=4 ts=4 sts=4 " Default
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
@@ -23,9 +24,6 @@ autocmd FileType xml :setlocal sw=2 ts=2 sts=2
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
 set fillchars+=vert:\▏
-
-" Line number styling
-" highlight LineNr ctermfg=000000
 
 " Get rid of unnecessary highlight for spelling
 highlight clear SpellBad
@@ -53,9 +51,6 @@ noremap <leader>c "*yy<cr>
 " Paste without indent
 noremap<leader>v "+p<cr>
 
-" Status-line styles
-hi StatusLine ctermbg=000000 ctermfg=000000
-
 " ============="
 " ===Plugins==="
 " ============="
@@ -80,7 +75,13 @@ call plug#begin('~/.vim/plugged')
     " Go
     Plug 'fatih/vim-go'
 
+    " Rust
+    Plug 'rust-lang/rust.vim'
+
 call plug#end()
+
+" config
+set laststatus=2
 
 " Go goodness
 let g:go_highlight_structs = 1 
