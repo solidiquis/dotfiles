@@ -19,6 +19,7 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd FileType typescript.tsx :setlocal sw=2 ts=2 sts=2
 autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
 
 " Make vertical separator pretty
@@ -71,6 +72,10 @@ call plug#begin('~/.vim/plugged')
 
     " JavaScript
     Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
+
+    " Styled-components
+    Plug 'styled-components/vim-styled-components' 
 
     " Go
     Plug 'fatih/vim-go'

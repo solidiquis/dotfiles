@@ -4,8 +4,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
+# Aliases - Work
 alias wefunder="cd /Users/benjamin/Desktop/Code/Ruby/wefunder"
+alias _2021="cd /Users/benjamin/Desktop/Code/Ruby/wefunder/app/assets/javascripts/_2021"
+
+# Aliases
 alias python="python3"
 alias vi ="vim"
 alias dotfiles="cd ~/dotfiles"
