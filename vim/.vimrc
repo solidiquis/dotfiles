@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
 
     " JavaScript
     Plug 'pangloss/vim-javascript'
-    Plug 'mxw/vim-jsx'
+    Plug 'maxmellon/vim-jsx-pretty'
 
     " Styled-components
     Plug 'styled-components/vim-styled-components' 
@@ -85,10 +85,19 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-" config
-set laststatus=2
+" ============="
+" PluginConfigs"
+" ============="
 
-" Go goodness
+" vim-jsx-pretty
+hi jsxAttrib ctermfg=3*
+hi jsxComponentName ctermfg=4*
+hi jsxTagName ctermfg=4*
+hi jsxPunct ctermfg=3*
+hi jsObjectProp ctermfg=3*
+hi jsxCloseString ctermfg=3*
+
+" vim-go
 let g:go_highlight_structs = 1 
 let g:go_highlight_methods = 1
 let g:go_highlight_functions = 1
