@@ -14,6 +14,7 @@ set incsearch
 set autoindent
 set laststatus=2
 
+" Tabs
 set sw=4 ts=4 sts=4 " Default
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd FileType typescript.tsx :setlocal sw=2 ts=2 sts=2
@@ -82,7 +83,6 @@ call plug#begin('~/.vim/plugged')
 
     " Rust
     Plug 'rust-lang/rust.vim'
-
 call plug#end()
 
 " ============="
@@ -109,8 +109,16 @@ let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
 
+" ============="
+" ==CustomCmds="
+" ============="
 function! Cwf()
     let @+=expand('%:p')
 endfunction
-
 command! Cwf call Cwf()
+
+function! Cwfr()
+    let @+=expand('%')
+endfunction
+command! Cwfr call Cwfr()
+
