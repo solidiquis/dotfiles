@@ -83,6 +83,12 @@ call plug#begin('~/.vim/plugged')
 
     " Rust
     Plug 'rust-lang/rust.vim'
+
+    " Prettifier (sigh..)
+    Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript'] }
+
 call plug#end()
 
 " ============="
@@ -108,6 +114,10 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
+
+" vim-prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " ============="
 " ==CustomCmds="
