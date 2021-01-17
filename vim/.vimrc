@@ -84,7 +84,7 @@ call plug#begin('~/.vim/plugged')
     " Rust
     Plug 'rust-lang/rust.vim'
 
-    " Prettifier (sigh..)
+    " Prettifier
     Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
       \ 'for': ['javascript', 'typescript'] }
@@ -122,13 +122,32 @@ let g:prettier#autoformat_require_pragma = 0
 " ============="
 " ==CustomCmds="
 " ============="
+
+" Absolute path of open file to clipboard
 function! Cwf()
     let @+=expand('%:p')
 endfunction
 command! Cwf call Cwf()
 
+" Relative path of open file to clipboard
 function! Cwfr()
     let @+=expand('%')
 endfunction
 command! Cwfr call Cwfr()
+
+" ex) :Tag h1
+function! Tag(name)
+    let @"="<" . a:name . "></" . a:name . ">"
+    normal! pbbl
+    startinsert
+endfunction
+command! -nargs=1 Tag call Tag(<f-args>)
+
+" ex) :Jtag HelloWorld
+function! Jtag(name)
+    let @"="<" . a:name . " />"
+    normal! pb
+    startinsert
+endfunction
+command! -nargs=1 Jtag call Jtag(<f-args>)
 
