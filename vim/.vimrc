@@ -51,7 +51,8 @@ noremap <leader>c "*yy<cr>
 noremap<leader>v "+p<cr>
 
 " fzf.vim
-noremap <leader>p :GFiles<cr>
+noremap <leader>p :Files<cr>
+noremap <leader>g :GFiles<cr>
 noremap <leader>b :Buffers<cr>
 noremap <leader>f :Ag<cr>
 
