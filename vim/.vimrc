@@ -64,7 +64,6 @@ noremap <leader>e :NERDTreeToggle<cr>
 call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'jremmen/vim-ripgrep'
     Plug 'ggreer/the_silver_searcher'
     Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
