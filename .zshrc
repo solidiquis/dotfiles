@@ -4,6 +4,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# FZF - Include dotfiles in search
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # Aliases - Work
 alias wefunder="cd /Users/benjamin/Desktop/Code/Ruby/wefunder"
 alias _2021="cd /Users/benjamin/Desktop/Code/Ruby/wefunder/app/assets/javascripts/_2021"
