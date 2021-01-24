@@ -112,6 +112,7 @@ hi jsObjectProp ctermfg=3*
 hi jsxCloseString ctermfg=3*
 
 " typescript-vim
+let g:typescript_indent_disable = 1
 hi javaScriptLineComment ctermfg=4*
 
 " vim-go
