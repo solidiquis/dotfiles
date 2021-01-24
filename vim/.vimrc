@@ -14,14 +14,17 @@ set incsearch
 set autoindent
 set laststatus=2
 
+" File-types
+autocmd BufNewFile,BufRead *.go set filetype=go
+
 " Tabs
 set sw=2 ts=2 sts=2 " Default
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-autocmd FileType typescript.tsx :setlocal sw=2 ts=2 sts=2
 autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
+autocmd FileType python :set local sw=2 ts=2 sts=2
+autocmd FileType go :setlocal sw=4 ts=4 sts=4
 
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
@@ -35,12 +38,6 @@ highlight clear SpellBad
 " ============== "
 let mapleader = " "
 
-" Things I miss from VSCode
-noremap <leader>p :Files<cr>
-noremap <leader>f :Ag<cr>
-noremap <leader>e :NERDTreeToggle<cr>
-noremap <leader>b :Buffers<cr>
-
 " Pane navigation
 noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
@@ -53,24 +50,33 @@ noremap <leader>c "*yy<cr>
 " Paste without indent
 noremap<leader>v "+p<cr>
 
+" fzf.vim
+noremap <leader>p :Files<cr>
+noremap <leader>b :Buffers<cr>
+noremap <leader>f :Ag<cr>
+
+" nerdtree
+noremap <leader>e :NERDTreeToggle<cr>
+
 " ============="
 " ===Plugins==="
 " ============="
 call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
     Plug 'jremmen/vim-ripgrep'
     Plug 'ggreer/the_silver_searcher'
     Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+
+    " TypeScript
+    Plug 'leafgarland/typescript-vim'
 
     " CoffeeScript
     Plug 'kchmck/vim-coffee-script'
-
+    
     " JavaScript
     Plug 'pangloss/vim-javascript'
     Plug 'maxmellon/vim-jsx-pretty'
@@ -95,6 +101,11 @@ call plug#end()
 " PluginConfigs"
 " ============="
 
+" fzf.vim
+let g:fzf_colors= {
+      \  'border': ['fg', 'Type' ],
+      \  'gutter': ['fg', 'Type' ] }
+
 " vim-jsx-pretty
 hi jsxAttrib ctermfg=3*
 hi jsxComponentName ctermfg=4*
@@ -102,6 +113,9 @@ hi jsxTagName ctermfg=4*
 hi jsxPunct ctermfg=3*
 hi jsObjectProp ctermfg=3*
 hi jsxCloseString ctermfg=3*
+
+" typescript-vim
+hi javaScriptLineComment ctermfg=4*
 
 " vim-go
 let g:go_highlight_structs = 1 
@@ -118,6 +132,9 @@ let g:go_highlight_function_calls = 1
 " vim-prettier
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+" Note: Can't get autosave to work on .ts and .tsx
+" files so doing a :Prettier before save hook.
+autocmd BufWritePre *.tsx,*.ts Prettier 
 
 " ============="
 " ==CustomCmds="
