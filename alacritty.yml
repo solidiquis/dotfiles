@@ -75,10 +75,10 @@ key_bindings:
     - { key: H,        mods: Alt,           chars: "\x1bh"                       }
     - { key: L,        mods: Alt,           chars: "\x1bl"                       }
     - { key: T,        mods: Alt,           chars: "\x1bt"                       }
-    - { key: W,        mods: Alt|Shift,     chars: "\x1bw"                       }
+    - { key: W,        mods: Alt|Shift,     chars: "\x1bW"                       }
     - { key: P,        mods: Alt,           chars: "\x1bp"                       }
     - { key: N,        mods: Alt,           chars: "\x1bn"                       }
     - { key: D,        mods: Alt,           chars: "\x1bd"                       }
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
-    - { key: X,        mods: Alt|Shift,     chars: "\x1bx"                       }
+    - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
