@@ -14,6 +14,7 @@ def main():
 
     if len(matches) == 0:
         print("No matches with given regex pattern.")
+        return
     
     for match in matches:
         print(match)
