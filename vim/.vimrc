@@ -23,7 +23,7 @@ autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby :setlocal sw=2 ts=2 sts=2
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType xml :setlocal sw=2 ts=2 sts=2
-autocmd FileType python :set local sw=4 ts=4 sts=4
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType go :setlocal sw=4 ts=4 sts=4
 
 " Make vertical separator pretty
@@ -99,6 +99,9 @@ call plug#end()
 " PluginConfigs"
 " ============="
 
+" prettier
+"let g:prettier#config#print_width = 500
+
 " fzf.vim
 let g:fzf_colors= {
       \  'border': ['fg', 'Type' ],
@@ -133,7 +136,7 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 " Note: Can't get autosave to work on .ts and .tsx
 " files so doing a :Prettier before save hook.
-autocmd BufWritePre *.tsx,*.ts Prettier 
+"autocmd BufWritePre *.tsx,*.ts Prettier 
 
 " ============="
 " ==CustomCmds="
@@ -144,6 +147,12 @@ function! Cwf()
     let @+=expand('%:p')
 endfunction
 command! Cwf call Cwf()
+
+" Print working file_path
+function! Pfp()
+    echo expand('%')
+endfunction
+command! Pfp call Pfp()
 
 " Relative path of open file to clipboard
 function! Cwfr()
