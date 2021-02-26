@@ -134,6 +134,7 @@ let g:go_highlight_function_calls = 1
 " vim-prettier
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#print_width = '100'
 " Note: Can't get autosave to work on .ts and .tsx
 " files so doing a :Prettier before save hook.
 "autocmd BufWritePre *.tsx,*.ts Prettier 
