@@ -1,8 +1,0 @@
-#!/bin/bash
-
-interpreter=$(which "$1")
-
-echo '#!'"$interpreter" > $2
-
-chmod u+x $2
-
