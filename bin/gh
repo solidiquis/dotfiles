@@ -22,6 +22,7 @@ if __name__ == "__main__":
     parser.add_argument("-clb", help='git branch | grep -v "master" | xargs git branch -D', action="store_true")
     parser.add_argument("-cm", help="git commit -m [arg]", type=str, metavar="")
     parser.add_argument("-f", help="git fetch", action="store_true")
+    parser.add_argument("-l", help="git log", action="store_true")
     parser.add_argument("-nb", help="git checkout -b [arg]", type=str, metavar="")
     parser.add_argument("-p", help="git pull", action="store_true")
     parser.add_argument("-pup", help="git push -u origin <current_branch>", action="store_true")
@@ -109,4 +110,7 @@ if __name__ == "__main__":
 
     if args.nb:
         exec_cmd("git checkout -b %s" % args.nb)
+
+    if args.l:
+        exec_cmd("git log")
 
