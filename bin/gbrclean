@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "Removing all branches except master..."
-git branch | grep -v "master" | xargs git branch -D 
-echo "Done."
