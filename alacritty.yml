@@ -8,11 +8,6 @@ window:
     x: 50
     y: 50
 
-  #startup_mode: SimpleFullscreen
-  #position:
-    #x: 0
-    #y: 0
-
   padding:
     x: 35
     y: 35 
