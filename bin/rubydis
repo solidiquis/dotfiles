@@ -1,4 +1,0 @@
-#!/Users/benjamin/.rvm/rubies/ruby-2.6.3/bin/ruby
-
-# https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
-puts RubyVM::InstructionSequence.compile(ARGV[0]).disassemble.split('\n')
