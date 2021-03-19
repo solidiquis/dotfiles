@@ -70,9 +70,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
+    Plug 'preservim/nerdtree'
+    Plug 'ctrlpvim/ctrlp.vim'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'neoclide/coc.nvim'
 
     " CoffeeScript
     Plug 'kchmck/vim-coffee-script'
@@ -98,6 +102,13 @@ call plug#end()
 " ============="
 " PluginConfigs"
 " ============="
+
+" nerdtree
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " prettier
 "let g:prettier#config#print_width = 500

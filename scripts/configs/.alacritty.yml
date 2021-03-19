@@ -1,4 +1,3 @@
-echo "
 window:
   dynamic_title: true
   dimensions:
@@ -95,15 +94,15 @@ colors:
 background_opacity: 0.8
 
 key_bindings:
-    - { key: J,        mods: Alt,           chars: '\x1bj'                       }
-    - { key: K,        mods: Alt,           chars: '\x1bk'                       }
-    - { key: H,        mods: Alt,           chars: '\x1bh'                       }
-    - { key: L,        mods: Alt,           chars: '\x1bl'                       }
-    - { key: T,        mods: Alt,           chars: '\x1bt'                       }
-    - { key: W,        mods: Alt|Shift,     chars: '\x1bW'                       }
-    - { key: P,        mods: Alt,           chars: '\x1bp'                       }
-    - { key: N,        mods: Alt,           chars: '\x1bn'                       }
-    - { key: D,        mods: Alt,           chars: '\x1bd'                       }
-    - { key: E,        mods: Alt,           chars: '\x1be'                       }
-    - { key: X,        mods: Alt|Shift,     chars: '\x1bX'                       }
-" >> ~/.alacritty.yml
+    - { key: J,        mods: Alt,           chars: 'j'                       }
+    - { key: K,        mods: Alt,           chars: 'k'                       }
+    - { key: H,        mods: Alt,           chars: 'h'                       }
+    - { key: L,        mods: Alt,           chars: 'l'                       }
+    - { key: T,        mods: Alt,           chars: 't'                       }
+    - { key: W,        mods: Alt|Shift,     chars: 'W'                       }
+    - { key: P,        mods: Alt,           chars: 'p'                       }
+    - { key: N,        mods: Alt,           chars: 'n'                       }
+    - { key: D,        mods: Alt,           chars: 'd'                       }
+    - { key: E,        mods: Alt,           chars: 'e'                       }
+    - { key: X,        mods: Alt|Shift,     chars: 'X'                       }
+
