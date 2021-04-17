@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Local IP of device.
+locipdev() {
+  [[ "$OSTYPE" =~ "darwin" ]] && ipconfig getifaddr en0 && return
+  hostname -I
+}
+
+# List bluetooth devices on mac.
+btdevices() {
+  [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
+}

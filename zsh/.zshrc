@@ -5,7 +5,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/custom_cmds --source_only
+source $DOTFILES/init_tasks --source_only
+source $DOTFILES/bookmarking --source_only
+source $DOTFILES/misc --source_only
 
 run_init_tasks
 
