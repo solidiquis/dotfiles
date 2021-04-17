@@ -22,6 +22,10 @@ mkbm() {
 
 # Jump to bookmark.
 jbm() {
+  [[ ! -f /tmp/bookmarks ]] && \
+    echo "You don't have any bookmarks yet." && \
+    return
+
   [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
 
   [[ -z "$1" ]] && \
@@ -40,6 +44,10 @@ jbm() {
 
 # Remove a bookmark.
 rmbm() {
+  [[ ! -f /tmp/bookmarks ]] && \
+    echo "You don't have any bookmarks yet." && \
+    return
+
   [[ -z "$1" ]] && \
     echo "Error: Provide a bookmark name." && \
     return 
@@ -51,5 +59,9 @@ rmbm() {
 
 # List bookmarks.
 lsbm() {
+  [[ ! -f /tmp/bookmarks ]] && \
+    echo "You don't have any bookmarks yet." && \
+    return
+
   cat /tmp/bookmarks
 }
