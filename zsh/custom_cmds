@@ -1,0 +1,107 @@
+#!/bin/bash
+
+# Initial tasks to run on window boot up.
+run_init_tasks() {
+  exec_tmux
+  curwin
+}
+
+# Info about current terminal window and other things.
+curwin() {
+  hline=""
+  for i in {0..55}; do
+    hline+="\u2500"
+  done
+
+  echo "\x1B[31m\u250C$hline\u2510\x1B[0m" 
+  echo "\x1B[31m\u2502   ____              _ _ _       ____  _          _ _   \u2502\x1B[0m" 
+  echo "\x1B[31m\u2502  | __ )  ___ _ __  (_|_| )___  / ___|| |__   ___| | |  \u2502\x1B[0m"
+  echo "\x1B[31m\u2502  |  _ \ / _ \ '_ \ | | |// __| \___ \| '_ \ / _ \ | |  \u2502\x1B[0m"
+  echo "\x1B[31m\u2502  | |_) |  __/ | | || | | \__ \  ___) | | | |  __/ | |  \u2502\x1B[0m"
+  echo "\x1B[31m\u2502  |____/ \___|_| |_|/ |_| |___/ |____/|_| |_|\___|_|_|  \u2502\x1B[0m"
+  echo "\x1B[31m\u2502                                                        \u2502\x1B[0m" 
+  echo "\x1B[31m\u2514$hline\u2518\x1B[0m" 
+
+  echo "\x1B[34m\u2192\x1B[0m User:        $(whoami)"
+  echo "\x1B[34m\u2192\x1B[0m OS Type:     $OSTYPE"
+  echo "\x1B[34m\u2192\x1B[0m Terminal:    $(tty) $(echo $$)"
+  echo "\x1B[34m\u2192\x1B[0m Shell:       $SHELL"
+  echo "\x1B[34m\u2192\x1B[0m Tmux:        $([ ! -z "$TMUX" ] && echo "\x1B[32mrunning...\x1B[0m" || echo "\x1B[31mnot found...\x1B[0m")"
+  echo "\x1B[34m\u2192\x1B[0m Local IP:    $(locipdev)"
+  echo
+}
+
+# Boot tmux if tmux exists and is not running.
+exec_tmux() {
+  which tmux &> /dev/null && \
+    [ -n "$PS1" ] && \
+    [[ ! "$TERM" =~ screen ]] && \
+    [[ ! "$TERM" =~ tmux ]] && \
+    [ -z "$TMUX" ] && \
+    exec tmux
+}
+
+# Local IP of device.
+locipdev() {
+  [[ "$OSTYPE" =~ "darwin" ]] && ipconfig getifaddr en0 && return
+  hostname -I
+}
+
+# List bluetooth devices on mac.
+btdevices() {
+  [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
+}
+
+# Bookmark current working directory.
+mkbm() {
+  [[ -z "$1" ]] && \
+    echo "Error: Provide a name for the bookmark." && \
+    return 
+
+  wd=$(pwd)
+
+  [[ ! -f /tmp/bookmarks ]] && \
+    echo "$1=$wd" > /tmp/bookmarks && \
+    echo "$1 added." && \
+    return
+
+  while IFS= read -r line; do
+    [[ $line =~ $1  ]] && echo "Bookmark $1 already exists." && return
+  done < /tmp/bookmarks
+
+  echo "$1=$wd" >> /tmp/bookmarks && echo "$1 added."
+}
+
+# Jump to bookmark.
+jbm() {
+  setopt local_options BASH_REMATCH
+
+  [[ -z "$1" ]] && \
+    echo "Error: Provide a bookmark name." && \
+    return 
+
+  bookmarks=$(cat /tmp/bookmarks)
+
+  [[ $bookmarks =~ ($1=[[:print:]]*) ]] && echo ${BASH_REMATCH[1]} && \
+    [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && \
+    cd ${BASH_REMATCH[1]:1} && \
+    return
+
+  echo "Bookmark $1 does not exist."
+}
+
+# Remove a bookmark.
+rmbm() {
+  [[ -z "$1" ]] && \
+    echo "Error: Provide a bookmark name." && \
+    return 
+
+  arg="/^$1=.*/d"
+  sed -i "" $arg /tmp/bookmarks
+  echo "Bookmark $1 removed."
+}
+
+# List bookmarks.
+lsbm() {
+  cat /tmp/bookmarks
+}

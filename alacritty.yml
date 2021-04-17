@@ -37,7 +37,7 @@ font:
     family: Fira Code
     style: Bold Italic
 
-  size: 13.0
+  size: 14.0
 
   offset:
     x: 0
@@ -52,51 +52,31 @@ font:
 draw_bold_text_with_bright_colors: true
 
 colors:
-
   primary:
-    background: '#2c2c2c'
-    foreground: '#d6d6d6'
-
-    dim_foreground:    '#dbdbdb'
-    bright_foreground: '#d9d9d9'
-    dim_background:    '#202020'
-    bright_background: '#3a3a3a'
-
-  cursor:
-    text:   '#2c2c2c'
-    cursor: '#d9d9d9'
+    background: '0x282828'
+    foreground: '0xebdbb2'
 
   normal:
-    black:   '#1c1c1c'
-    red:     '#bc5653'
-    green:   '#909d63'
-    yellow:  '#ebc17a'
-    blue:    '#7eaac7'
-    magenta: '#aa6292'
-    cyan:    '#86d3ce'
-    white:   '#cacaca'
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
   bright:
-    black:   '#636363'
-    red:     '#bc5653'
-    green:   '#909d63'
-    yellow:  '#ebc17a'
-    blue:    '#7eaac7'
-    magenta: '#aa6292'
-    cyan:    '#86d3ce'
-    white:   '#f7f7f7'
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
 
-  dim:
-    black:   '#232323'
-    red:     '#74423f'
-    green:   '#5e6547'
-    yellow:  '#8b7653'
-    blue:    '#556b79'
-    magenta: '#6e4962'
-    cyan:    '#5c8482'
-    white:   '#828282'
-
-background_opacity: 0.8
+background_opacity: 1.00
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }

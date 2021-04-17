@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+import os
+import sys
+
+def exec_cmd(cmd):
+    os.system(cmd)
+
+def detect_tmux():
+    term = os.popen("echo $TERM").read().rstrip("\n")
+    screen = os.popen("echo $TMUX").read().rstrip("\n")
+
+    return term and screen
+
+if __name__ == "__main__":
+    present = detect_tmux()
+
+    if not present:
+        raise "No tmux server running."
+
+    if sys.argv[1] == "25b":
+        exec_cmd("tmux splitw -v -p 25")
+

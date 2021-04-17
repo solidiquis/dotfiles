@@ -99,8 +99,8 @@ call plug#end()
 " PluginConfigs"
 " ============="
 
-" prettier
-"let g:prettier#config#print_width = 500
+" nerdtree
+let NERDTreeMinimalUI=1
 
 " fzf.vim
 let g:fzf_colors= {
