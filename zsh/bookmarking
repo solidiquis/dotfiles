@@ -22,7 +22,7 @@ mkbm() {
 
 # Jump to bookmark.
 jbm() {
-  setopt local_options BASH_REMATCH
+  [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
 
   [[ -z "$1" ]] && \
     echo "Error: Provide a bookmark name." && \

@@ -10,3 +10,8 @@ locipdev() {
 btdevices() {
   [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
 }
+
+# Copy working directory to clipboard.
+cpwd() {
+  pwd | pbcopy
+}
