@@ -1,5 +1,6 @@
-export DOTFILES="/Users/benjamin/dotfiles/zsh"
-export ZSH="/Users/benjamin/.oh-my-zsh"
+export DOTFILES="$HOME/dotfiles/zsh"
+export ZSH_DISABLE_COMPFIX="true"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 plugins=(git)
@@ -23,5 +24,4 @@ export GOPATH=$HOME/go
 export GOBIN="$GOPATH/bin:$PATH"
 
 # Paths
-export PATH="/Users/benjamin/dotfiles/bin:$PATH"
-
+export PATH="$HOME/dotfiles/bin:$PATH"
