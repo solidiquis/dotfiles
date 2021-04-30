@@ -1,5 +1,6 @@
-export DOTFILES="/Users/benjamin/dotfiles/zsh"
-export ZSH="/Users/benjamin/.oh-my-zsh"
+export DOTFILES="$HOME/dotfiles/zsh"
+export ZSH_DISABLE_COMPFIX="true"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 plugins=(git)
@@ -22,6 +23,12 @@ alias gr="go run"
 export GOPATH=$HOME/go
 export GOBIN="$GOPATH/bin:$PATH"
 
-# Paths
-export PATH="/Users/benjamin/dotfiles/bin:$PATH"
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$HOME/.deno/bin:$PATH"
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Misc Paths
+export PATH="$HOME/dotfiles/bin:$PATH"

@@ -26,18 +26,18 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code
+    family: Source Code Pro
     style: Regular
 
   bold:
-    family: Fira Code
+    family: Source Code Pro
     style: Bold
 
   italic:
-    family: Fira Code
+    family: Source Code Pro
     style: Bold Italic
 
-  size: 12.0
+  size: 13.0
 
   offset:
     x: 0
@@ -76,7 +76,7 @@ colors:
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 
-background_opacity: 1.00
+background_opacity: 0.95
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
