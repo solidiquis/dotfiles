@@ -8,21 +8,21 @@ mkbm() {
 
   wd=$(pwd)
 
-  [[ ! -f /tmp/bookmarks ]] && \
-    echo "$1=$wd" > /tmp/bookmarks && \
+  [[ ! -f $HOME/.cache/bookmarks ]] && \
+    echo "$1=$wd" > $HOME/.cache/bookmarks && \
     echo "$1 added." && \
     return
 
   while IFS= read -r line; do
     [[ $line =~ $1  ]] && echo "Bookmark $1 already exists." && return
-  done < /tmp/bookmarks
+  done < $HOME/.cache/bookmarks
 
-  echo "$1=$wd" >> /tmp/bookmarks && echo "$1 added."
+  echo "$1=$wd" >> $HOME/.cache/bookmarks && echo "$1 added."
 }
 
 # Jump to bookmark.
 jbm() {
-  [[ ! -f /tmp/bookmarks ]] && \
+  [[ ! -f $HOME/.cache/bookmarks ]] && \
     echo "You don't have any bookmarks yet." && \
     return
 
@@ -32,7 +32,7 @@ jbm() {
     echo "Error: Provide a bookmark name." && \
     return 
 
-  bookmarks=$(cat /tmp/bookmarks)
+  bookmarks=$(cat $HOME/.cache/bookmarks)
 
   [[ $bookmarks =~ ($1=[[:print:]]*) ]] && \
     [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && \
@@ -44,7 +44,7 @@ jbm() {
 
 # Remove a bookmark.
 rmbm() {
-  [[ ! -f /tmp/bookmarks ]] && \
+  [[ ! -f $HOME/.cache/bookmarks ]] && \
     echo "You don't have any bookmarks yet." && \
     return
 
@@ -53,15 +53,15 @@ rmbm() {
     return 
 
   arg="/^$1=.*/d"
-  sed -i "" $arg /tmp/bookmarks
+  sed -i "" $arg $HOME/.cache/bookmarks
   echo "Bookmark $1 removed."
 }
 
 # List bookmarks.
 lsbm() {
-  [[ ! -f /tmp/bookmarks ]] && \
+  [[ ! -f $HOME/.cache/bookmarks ]] && \
     echo "You don't have any bookmarks yet." && \
     return
 
-  cat /tmp/bookmarks
+  cat $HOME/.cache/bookmarks
 }

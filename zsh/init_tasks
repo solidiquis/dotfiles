@@ -13,6 +13,11 @@ curwin() {
     hline+="\u2500"
   done
 
+  [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
+
+  num_cores=$(system_profiler SPHardwareDataType | grep Cores)
+  num_cores=$([[ $num_cores =~ ([[:digit:]]+) ]] && echo ${BASH_REMATCH[1]})
+
   echo "\x1B[31m\u250C$hline\u2510\x1B[0m" 
   echo "\x1B[31m\u2502   ____              _ _ _       ____  _          _ _   \u2502\x1B[0m" 
   echo "\x1B[31m\u2502  | __ )  ___ _ __  (_|_| )___  / ___|| |__   ___| | |  \u2502\x1B[0m"
@@ -28,7 +33,8 @@ curwin() {
   echo "\x1B[34m\u2192\x1B[0m Shell:       $SHELL"
   echo "\x1B[34m\u2192\x1B[0m Tmux:        $([ ! -z "$TMUX" ] && echo "\x1B[32mrunning...\x1B[0m" || echo "\x1B[31mnot found...\x1B[0m")"
   echo "\x1B[34m\u2192\x1B[0m Local IP:    $(locipdev)"
-  echo
+  echo "\x1B[34m\u2192\x1B[0m Total Cores: $num_cores"
+  echo 
 }
 
 # Boot tmux if tmux exists and is not running.
