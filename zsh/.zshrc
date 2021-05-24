@@ -18,6 +18,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 alias python="python3"
 alias vi ="vim"
 alias gr="go run"
+alias cr="cargo run"
 
 # Go
 export GOPATH=$HOME/go
