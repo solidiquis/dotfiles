@@ -1,4 +1,13 @@
 #!/Users/benjamin/.rvm/rubies/ruby-2.6.3/bin/ruby
 
+input = ""
+code = ""
+until input == "\n" do
+  input = gets
+  code += input  
+end
+
+eval code # Check if errors
+
 # https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
-puts RubyVM::InstructionSequence.compile(ARGV[0]).disassemble.split('\n')
+puts RubyVM::InstructionSequence.compile(code).disassemble.split('\n')
