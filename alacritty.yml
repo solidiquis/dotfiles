@@ -37,7 +37,7 @@ font:
     family: Source Code Pro
     style: Bold Italic
 
-  size: 13.0
+  size: 16.0
 
   offset:
     x: 0
@@ -76,7 +76,7 @@ colors:
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 
-background_opacity: 0.95
+background_opacity: 0.9
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
