@@ -4,6 +4,7 @@
 run_init_tasks() {
   exec_tmux
   curwin
+  vi_mode
 }
 
 # Info about current terminal window and other things.
@@ -47,3 +48,6 @@ exec_tmux() {
     exec tmux
 }
 
+vi_mode() {
+  set -o vi
+}
