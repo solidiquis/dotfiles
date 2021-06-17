@@ -67,6 +67,8 @@ noremap <leader>f :Ag<cr>
 " nerdtree
 noremap <leader>e :NERDTreeToggle<cr>
 
+noremap <leader>/ :BTerm<cr>
+
 " ============="
 " ===Plugins==="
 " ============="
@@ -230,9 +232,16 @@ function! Jtag(name)
 endfunction
 command! -nargs=1 Jtag call Jtag(<f-args>)
 
+" Open up nerdtree and a bottom terminal
 function In()
   execute "below term++rows=15"
   execute "NERDTreeToggle"
   execute "wincmd l"
 endfunction
 command! In call In()
+
+" Open up a bottom terminal
+function BTerm()
+  execute "below term++rows=15"
+endfunction
+command! BTerm call BTerm()
