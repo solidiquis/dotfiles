@@ -51,6 +51,7 @@ tnoremap <C-J> <C-W><C-J>
 tnoremap <C-K> <C-W><C-K>
 tnoremap <C-L> <C-W><C-L>
 tnoremap <C-H> <C-W><C-H>
+tnoremap <C-b> <C-\><C-n>
 
 " Copy to system clipboard
 noremap <leader>c "*yy<cr>
@@ -67,6 +68,7 @@ noremap <leader>f :Ag<cr>
 " nerdtree
 noremap <leader>e :NERDTreeToggle<cr>
 
+" Custom cmd shortcuts
 noremap <leader>/ :BTerm<cr>
 
 " ============="
@@ -83,7 +85,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'flazz/vim-colorschemes'
+    Plug 'srcery-colors/srcery-vim'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -110,7 +112,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Default colorscheme
-colorscheme molokai
+colorscheme srcery
 
 " ============="
 " PluginConfigs"

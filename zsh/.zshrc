@@ -33,3 +33,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Misc Paths
 export PATH="$HOME/dotfiles/bin:$PATH"
+
+# Prompt
+export PS1=$'\n\U250C\U2500'$'\x1b[1;32m'" %c "$'\x1b[0m'"$(git_prompt_info)"$'\n\U2514 \x1b[1;31m\U03BB\x1b[0m '
