@@ -14,7 +14,7 @@ run_init_tasks
 
 # FZF 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-export FZF_DEFAULT_OPTS='--bind=ctrl-w:up,ctrl-m:down'
+export FZF_DEFAULT_OPTS='--bind ctrl-n:down,ctrl-p:up'
 
 alias python="python3"
 alias gr="go run"
