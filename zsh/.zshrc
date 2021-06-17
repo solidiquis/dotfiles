@@ -12,11 +12,11 @@ source $DOTFILES/misc --source_only
 
 run_init_tasks
 
-# FZF - Include dotfiles in search
+# FZF 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_OPTS='--bind=ctrl-w:up,ctrl-m:down'
 
 alias python="python3"
-alias vi ="vim"
 alias gr="go run"
 alias cr="cargo run"
 

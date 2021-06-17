@@ -15,3 +15,11 @@ btdevices() {
 cpwd() {
   pwd | pbcopy
 }
+
+vi() {
+  if [ -f /usr/local/Cellar/vim/8.2.3000/bin/vim ]; then
+    /usr/local/Cellar/vim/8.2.3000/bin/vim
+  else
+    vim
+  fi
+}

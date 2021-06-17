@@ -46,6 +46,12 @@ noremap <C-K> <C-W><C-K>
 noremap <C-L> <C-W><C-L>
 noremap <C-H> <C-W><C-H>
 
+" For vim-terminal
+tnoremap <C-J> <C-W><C-J>
+tnoremap <C-K> <C-W><C-K>
+tnoremap <C-L> <C-W><C-L>
+tnoremap <C-H> <C-W><C-H>
+
 " Copy to system clipboard
 noremap <leader>c "*yy<cr>
 
@@ -109,7 +115,7 @@ colorscheme molokai
 " ============="
 
 " nerdtree
-let NERDTreeShowHidden = 1
+"let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI=1
 autocmd BufEnter * if tabpagenr('$') == 1 
       \ && winnr('$') == 1 
@@ -223,3 +229,10 @@ function! Jtag(name)
     startinsert
 endfunction
 command! -nargs=1 Jtag call Jtag(<f-args>)
+
+function In()
+  execute "below term++rows=15"
+  execute "NERDTreeToggle"
+  execute "wincmd l"
+endfunction
+command! In call In()
