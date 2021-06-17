@@ -21,7 +21,7 @@ mkbm() {
 }
 
 # Jump to bookmark.
-jbm() {
+j() {
   [[ ! -f $HOME/.cache/bookmarks ]] && \
     echo "You don't have any bookmarks yet." && \
     return

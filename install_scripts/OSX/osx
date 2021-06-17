@@ -62,6 +62,8 @@ fi
 if [[ -f $(which vim) ]]; then
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 brew install the_silver_searcher
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 ln -s $VIM_CONF $HOME/.vimrc  &> /dev/null
 echo "Vim configured. Don't forget to :PlugInstall and re-source .vimrc."
 fi

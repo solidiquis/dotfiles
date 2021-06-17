@@ -13,6 +13,8 @@ set nobackup
 set incsearch
 set autoindent
 set laststatus=2
+set encoding=UTF-8
+set t_Co=256 
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -67,9 +69,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'ggreer/the_silver_searcher'
     Plug 'preservim/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'tpope/vim-fugitive'
     Plug 'preservim/nerdcommenter'
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'flazz/vim-colorschemes'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -95,12 +101,56 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+" Default colorscheme
+colorscheme molokai
+
 " ============="
 " PluginConfigs"
 " ============="
 
 " nerdtree
+let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI=1
+autocmd BufEnter * if tabpagenr('$') == 1 
+      \ && winnr('$') == 1 
+      \ && exists('b:NERDTree') 
+      \ && b:NERDTree.isTabTree()
+      \ | quit | endif
+
+" vim-nerdtree-syntax-highlight
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+
+let g:NERDTreeSyntaxEnabledExtensions = ['rb', 'ruby']
+
+" vim-devicons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jsx'] = 'ﰆ'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
+
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*vimrc.*'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.gitignore'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.lock.json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['node_modules'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack\.'] = 'ﰩ'
+
+let g:DevIconsEnableFoldersOpenClose = 1
+
+" vim-airlines
+let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
 
 " fzf.vim
 let g:fzf_colors= {
@@ -135,9 +185,6 @@ let g:go_highlight_function_calls = 1
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 let g:prettier#config#print_width = '100'
-" Note: Can't get autosave to work on .ts and .tsx
-" files so doing a :Prettier before save hook.
-"autocmd BufWritePre *.tsx,*.ts Prettier 
 
 " ============="
 " ==CustomCmds="
@@ -176,4 +223,3 @@ function! Jtag(name)
     startinsert
 endfunction
 command! -nargs=1 Jtag call Jtag(<f-args>)
-
