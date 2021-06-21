@@ -17,8 +17,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--bind ctrl-n:down,ctrl-p:up'
 
 alias python="python3"
-alias gr="go run"
-alias cr="cargo run"
 
 # Go
 export GOPATH=$HOME/go

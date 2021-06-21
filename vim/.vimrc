@@ -70,6 +70,9 @@ noremap <leader>e :NERDTreeToggle<cr>
 
 " Custom cmd shortcuts
 noremap <leader>/ :BTerm<cr>
+noremap <leader>= <C-W><C-=>
+noremap <leader>n gt
+noremap <leader>N gT
 
 " ============="
 " ===Plugins==="
