@@ -1,0 +1,18 @@
+#!/bin/bash
+
+print_divider() {
+  divider=""
+  wincols=$(expr $(tput cols) - 1)
+  for _ in {0..$wincols}; do
+    divider+="-"
+  done
+  echo $divider
+}
+
+preexec() {
+  print_divider
+}
+
+precmd() {
+  print_divider
+}
