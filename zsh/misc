@@ -31,3 +31,7 @@ cr() {
 ct() {
   cargo test
 }
+
+cursor_vis() {
+  echo "\x1b[?25h"
+}
