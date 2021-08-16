@@ -16,6 +16,11 @@ set laststatus=2
 set encoding=UTF-8
 set t_Co=256 
 
+" Enable true colors
+"set termguicolors
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
 
@@ -88,6 +93,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
+
+    " colorschemes
     Plug 'srcery-colors/srcery-vim'
 
     " TypeScript
