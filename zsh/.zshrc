@@ -33,5 +33,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 
 # Prompt
-export PS1=$'\x1b[34m\U250C\U2500\x1b[0m \x1b[1;32m%c\x1b[0m $(git_prompt_info) \n\x1b[34m\U2514\x1b[0m \x1b[1;31m\U03B2\x1b[0m '
+export PS1=$'\x1b[34m\U250C\U2500\x1b[0m \x1b[38;2;255;213;135m%c\x1b[0m $(git_prompt_info) \n\x1b[34m\U2514\x1b[0m \x1b[1;31m\U03B2\x1b[0m '
 

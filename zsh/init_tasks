@@ -4,7 +4,6 @@
 run_init_tasks() {
   exec_tmux
   curwin
-  vi_mode
 }
 
 # Info about current terminal window and other things.
@@ -19,13 +18,13 @@ curwin() {
   num_cores=$(system_profiler SPHardwareDataType | grep Cores)
   num_cores=$([[ $num_cores =~ ([[:digit:]]+) ]] && echo ${BASH_REMATCH[1]})
 
-  echo "\x1B[34m\u2192\x1B[0m User:        $(whoami)"
-  echo "\x1B[34m\u2192\x1B[0m OS Type:     $OSTYPE"
-  echo "\x1B[34m\u2192\x1B[0m Terminal:    $(tty) $(echo $$)"
-  echo "\x1B[34m\u2192\x1B[0m Shell:       $SHELL"
-  echo "\x1B[34m\u2192\x1B[0m Tmux:        $([ ! -z "$TMUX" ] && echo "\x1B[32mrunning...\x1B[0m" || echo "\x1B[31mnot found...\x1B[0m")"
-  echo "\x1B[34m\u2192\x1B[0m Local IP:    $(locipdev)"
-  echo "\x1B[34m\u2192\x1B[0m Total Cores: $num_cores"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mUser\x1B[0m:        \x1B[38;2;255;213;135m$(whoami)\x1B[0m"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mOS Type\x1B[0m:     \x1B[38;2;255;213;135m$OSTYPE\x1B[0m"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mTerminal\x1B[0m:    \x1B[38;2;255;213;135m$(tty)\x1B[0m"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mShell\x1B[0m:       \x1B[38;2;255;213;135m$SHELL\x1B[0m"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mTmux\x1B[0m:        $([ ! -z "$TMUX" ] && echo "\x1B[32mrunning...\x1B[0m" || echo "\x1B[31mnot found...\x1B[0m")"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mLocal IP\x1B[0m:    $(locipdev)"
+  echo "\x1B[38;2;102;222;237m\u2192\x1B[0m \x1B[38;2;227;135;255mTotal Cores\x1B[0m: \x1B[38;2;255;110;122m$num_cores\x1B[0m"
   echo 
 }
 

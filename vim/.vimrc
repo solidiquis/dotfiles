@@ -17,8 +17,8 @@ set encoding=UTF-8
 set t_Co=256 
 
 " Enable true colors
-"set termguicolors
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " File-types
@@ -96,6 +96,8 @@ call plug#begin('~/.vim/plugged')
 
     " colorschemes
     Plug 'srcery-colors/srcery-vim'
+    Plug 'pacokwon/onedarkpaco.vim'
+    Plug 'bluz71/vim-moonfly-colors'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -122,7 +124,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Default colorscheme
-colorscheme srcery
+colorscheme onedarkpaco
 
 " ============="
 " PluginConfigs"
@@ -257,3 +259,8 @@ function BTerm()
   execute "below term++rows=15"
 endfunction
 command! BTerm call BTerm()
+
+function GColor()
+  execute "echo synIDattr(synIDtrans(synID(line(\".\"), col(\".\"), 1)), \"fg#\")"
+endfunction
+command! GColor call GColor()
