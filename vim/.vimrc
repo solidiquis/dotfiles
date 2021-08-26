@@ -264,9 +264,3 @@ function GColor()
   execute "echo synIDattr(synIDtrans(synID(line(\".\"), col(\".\"), 1)), \"fg#\")"
 endfunction
 command! GColor call GColor()
-
-function Alex()
-  execute "echo 'hello world'"
-endfunction
-command! Alex call Alex()
-
