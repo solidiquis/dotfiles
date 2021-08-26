@@ -1,2 +1,4 @@
 bin/
 .DS_STORE
+vim/.vim/autoload/
+vim/.vim/plugged/
