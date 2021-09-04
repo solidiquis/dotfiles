@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 18.0
+  size: 17.0
 
   offset:
     x: 0
@@ -119,7 +119,7 @@ schemes:
       cyan:    '#2be4d0'
       white:   '#fce8c3'
 
-colors: *onedark
+colors: *srcery
 
 background_opacity: 1.00
 
