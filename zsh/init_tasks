@@ -4,6 +4,7 @@
 run_init_tasks() {
   exec_tmux
   curwin
+  i_beam_cursor
 }
 
 # Info about current terminal window and other things.
@@ -40,4 +41,8 @@ exec_tmux() {
 
 vi_mode() {
   set -o vi
+}
+
+i_beam_cursor() {
+  printf '\033[6 q'
 }
