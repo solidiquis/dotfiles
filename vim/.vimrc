@@ -16,8 +16,9 @@ set laststatus=2
 set encoding=UTF-8
 set t_Co=256 
 
-"Enable true colors
+" Enable true colors
 if exists('+termguicolors')
+  " Necessary when using tmux
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
@@ -105,6 +106,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'yassinebridi/vim-purpura'
     Plug 'lifepillar/vim-wwdc16-theme'
     Plug 'tckmn/hotdog.vim'
+    Plug 'rakr/vim-one'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -131,8 +133,11 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Default colorscheme
-let g:wwdc16_transp_bg = 1
-colorscheme wwdc16
+colorscheme onedarkpaco
+
+" Must come after colorscheme command
+" Ensure the any colorscheme has transparent bg
+hi Normal guibg=NONE ctermbg=NONE
 
 " ============="
 " PluginConfigs"

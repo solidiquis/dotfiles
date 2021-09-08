@@ -148,7 +148,7 @@ schemes:
         cyan:    '#78DCE8'
         white:   '#FCFCFA'
 
-colors: *monokai-pro
+colors: *onedark
 
 background_opacity: 1.0
 
