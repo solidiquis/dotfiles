@@ -16,10 +16,12 @@ set laststatus=2
 set encoding=UTF-8
 set t_Co=256 
 
- "Enable true colors
-"set termguicolors
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"Enable true colors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
@@ -98,6 +100,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'srcery-colors/srcery-vim'
     Plug 'pacokwon/onedarkpaco.vim'
     Plug 'bluz71/vim-moonfly-colors'
+    Plug 'sainnhe/sonokai'
+    Plug 'joshdick/onedark.vim'
+    Plug 'yassinebridi/vim-purpura'
+    Plug 'lifepillar/vim-wwdc16-theme'
+    Plug 'tckmn/hotdog.vim'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -124,7 +131,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Default colorscheme
-colorscheme srcery
+let g:wwdc16_transp_bg = 1
+colorscheme wwdc16
 
 " ============="
 " PluginConfigs"

@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 17.0
+  size: 20.0
 
   offset:
     x: 0
@@ -119,9 +119,38 @@ schemes:
       cyan:    '#2be4d0'
       white:   '#fce8c3'
 
-colors: *srcery
+  monokai-pro: &monokai-pro
+    colors:
+      # Default colors
+      primary:
+        background: '#2D2A2E'
+        foreground: '#FCFCFA'
 
-background_opacity: 1.00
+      # Normal colors
+      normal:
+        black:   '#403E41'
+        red:     '#FF6188'
+        green:   '#A9DC76'
+        yellow:  '#FFD866'
+        blue:    '#FC9867'
+        magenta: '#AB9DF2'
+        cyan:    '#78DCE8'
+        white:   '#FCFCFA'
+
+      # Bright colors
+      bright:
+        black:   '#727072'
+        red:     '#FF6188'
+        green:   '#A9DC76'
+        yellow:  '#FFD866'
+        blue:    '#FC9867'
+        magenta: '#AB9DF2'
+        cyan:    '#78DCE8'
+        white:   '#FCFCFA'
+
+colors: *monokai-pro
+
+background_opacity: 1.0
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
