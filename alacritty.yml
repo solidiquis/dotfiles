@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 20.0
+  size: 19.0
 
   offset:
     x: 0
@@ -121,36 +121,53 @@ schemes:
 
   monokai-pro: &monokai-pro
     colors:
-      # Default colors
-      primary:
-        background: '#2D2A2E'
-        foreground: '#FCFCFA'
 
-      # Normal colors
-      normal:
-        black:   '#403E41'
-        red:     '#FF6188'
-        green:   '#A9DC76'
-        yellow:  '#FFD866'
-        blue:    '#FC9867'
-        magenta: '#AB9DF2'
-        cyan:    '#78DCE8'
-        white:   '#FCFCFA'
+  primary:
+    background: '#2c2c2c'
+    foreground: '#d6d6d6'
 
-      # Bright colors
-      bright:
-        black:   '#727072'
-        red:     '#FF6188'
-        green:   '#A9DC76'
-        yellow:  '#FFD866'
-        blue:    '#FC9867'
-        magenta: '#AB9DF2'
-        cyan:    '#78DCE8'
-        white:   '#FCFCFA'
+    dim_foreground:    '#dbdbdb'
+    bright_foreground: '#d9d9d9'
+    dim_background:    '#202020'
+    bright_background: '#3a3a3a'
+
+  cursor:
+    text:   '#2c2c2c'
+    cursor: '#d9d9d9'
+
+  normal:
+    black:   '#1c1c1c'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#cacaca'
+
+  bright:
+    black:   '#636363'
+    red:     '#bc5653'
+    green:   '#909d63'
+    yellow:  '#ebc17a'
+    blue:    '#7eaac7'
+    magenta: '#aa6292'
+    cyan:    '#86d3ce'
+    white:   '#f7f7f7'
+
+  dim:
+    black:   '#232323'
+    red:     '#74423f'
+    green:   '#5e6547'
+    yellow:  '#8b7653'
+    blue:    '#556b79'
+    magenta: '#6e4962'
+    cyan:    '#5c8482'
+    white:   '#828282'
 
 colors: *onedark
 
-background_opacity: 1.0
+background_opacity: 1
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
