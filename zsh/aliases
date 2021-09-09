@@ -1,0 +1,8 @@
+#!/bin/bash
+
+alias python="python3"
+
+if [[ -f $(which exa) ]]; then
+  alias ls="exa -abghHliS"
+fi
+
