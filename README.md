@@ -1,6 +1,6 @@
 # Dotfiles
 
-<img src="https://github.com/solidiquis/solidiquis/blob/master/assets/setup_7.png?raw=true">
+<img src="https://github.com/solidiquis/solidiquis/blob/master/assets/setup_8.png?raw=true">
 
 ## MacOS Installation
 1. Download the [Alacritty](https://github.com/alacritty/alacritty) terminal emulator.
