@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ALACRITTY_CONF="$HOME/dotfiles/alacritty/alacritty.yml"
+ALACRITTY_COLORS="$HOME/dotfiles/alacritty/alacritty_color_schemes.yml"
 TMUX_CONF="$HOME/dotfiles/.tmux.conf"
 ZSH_CONF="$HOME/dotfiles/zsh/.zshrc"
 VIM_CONF="$HOME/dotfiles/vim/.vimrc"
@@ -53,6 +54,7 @@ fi
 ###################
 if [[ -f $ALACRITTY_CONF ]]; then
 ln -s $ALACRITTY_CONF $HOME/.alacritty.yml &> /dev/null
+ln -s $ALACRITTY_COLORS $HOME/.alacritty_color_schemes.yml &> /dev/null
 echo "Alacritty configured."
 fi 
 
