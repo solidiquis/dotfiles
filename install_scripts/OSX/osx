@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ALACRITTY_CONF="$HOME/dotfiles/alacritty.yml"
+ALACRITTY_CONF="$HOME/dotfiles/alacritty/alacritty.yml"
 TMUX_CONF="$HOME/dotfiles/.tmux.conf"
 ZSH_CONF="$HOME/dotfiles/zsh/.zshrc"
 VIM_CONF="$HOME/dotfiles/vim/.vimrc"

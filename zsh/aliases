@@ -1,8 +1,11 @@
 #!/bin/bash
 
 alias python="python3"
+alias :q="exit"
+alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
 
 if [[ -f $(which exa) ]]; then
-  alias ls="exa -abghHliS"
+  alias ls="exa"
+  alias l="exa -abghHliS"
 fi
 

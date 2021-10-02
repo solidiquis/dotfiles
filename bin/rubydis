@@ -3,4 +3,4 @@
 puts ARGV
 
 # https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
-puts RubyVM::InstructionSequence.compile(ARGV[0]).disassemble.split('\n')
+puts RubyVM::InstructionSequence.compile('puts "haha"').disassemble.split('\n')

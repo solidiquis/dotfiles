@@ -96,6 +96,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
+    Plug 'airblade/vim-gitgutter'
 
     " colorschemes
     Plug 'srcery-colors/srcery-vim'
@@ -107,6 +108,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'lifepillar/vim-wwdc16-theme'
     Plug 'tckmn/hotdog.vim'
     Plug 'rakr/vim-one'
+    Plug 'olivertaylor/vacme'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
