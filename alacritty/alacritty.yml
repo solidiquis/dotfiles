@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 14.0
+  size: 22.0
 
   offset:
     x: 0
@@ -51,7 +51,7 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 0.6
+background_opacity: 1.0
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
@@ -66,7 +66,7 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-colors: 
+scheme: &onedark
     primary:
       background: '0x1e2127'
       foreground: '0xabb2bf'
@@ -99,3 +99,5 @@ colors:
       magenta: '#ff5c8f'
       cyan:    '#2be4d0'
       white:   '#fce8c3'
+
+colors: *onedark

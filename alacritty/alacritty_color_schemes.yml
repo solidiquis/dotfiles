@@ -1086,7 +1086,6 @@ schemes:
       white:   '0xffffff'
 
   srcery: &srcery
-  # Default colors
     primary:
       background: '#1c1b19'
       foreground: '#fce8c3'

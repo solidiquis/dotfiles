@@ -219,9 +219,9 @@ let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
 
 " vim-prettier
-let g:prettier#autoformat = 1
+let g:prettier#autoformat = 0
 let g:prettier#autoformat_require_pragma = 0
-let g:prettier#config#print_width = '100'
+let g:prettier#config#print_width = '300'
 
 " ============="
 " ==CustomCmds="
