@@ -96,11 +96,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'airblade/vim-gitgutter'
+    "Plug 'airblade/vim-gitgutter'
 
     " colorschemes
     Plug 'srcery-colors/srcery-vim'
-    Plug 'pacokwon/onedarkpaco.vim'
+    Plug 'pacokwon/onedarkhc.vim'
     Plug 'bluz71/vim-moonfly-colors'
     Plug 'sainnhe/sonokai'
     Plug 'joshdick/onedark.vim'
@@ -127,6 +127,9 @@ call plug#begin('~/.vim/plugged')
     " Rust
     Plug 'rust-lang/rust.vim'
 
+    " GLSL
+    Plug 'tikhomirov/vim-glsl'
+
     " Prettifier
     Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
@@ -134,8 +137,13 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-" Default colorscheme
-colorscheme onedarkpaco
+if $MODE == 'light'
+  colorscheme one
+  let g:airline_theme='one'
+else
+  colorscheme onedarkhc
+  let g:airline_theme='onedark'
+endif
 
 " Must come after colorscheme command
 " Ensure the any colorscheme has transparent bg
@@ -182,7 +190,6 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack\.'] = 'ﰩ'
 let g:DevIconsEnableFoldersOpenClose = 1
 
 " vim-airlines
-let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline_left_sep = ''
