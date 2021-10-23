@@ -49,3 +49,15 @@ printrgb() {
   printf "$4\n"
   printf "\x1b[0m"
 }
+
+sm() {
+  if [[ $MODE == 'light' ]]; then
+    awk '{sub(/light/,"dark")}1' $DOTFILES/zsh/mode >> /dev/null
+    export MODE='dark'
+    alac-pretty onedark
+  else
+    awk '{sub(/dark/,"light")}1' $DOTFILES/zsh/mode >> /dev/null
+    export MODE='light'
+    alac-pretty solarized_light
+  fi
+}

@@ -11,6 +11,7 @@ source $DOTFILES/zsh/bookmarking --source_only
 source $DOTFILES/zsh/misc --source_only
 source $DOTFILES/zsh/aliases --source_only
 source $DOTFILES/zsh/paths --source_only
+source $DOTFILES/zsh/mode --source_only
 
 run_init_tasks
 
