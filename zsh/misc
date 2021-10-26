@@ -61,3 +61,9 @@ sm() {
     alac-pretty solarized_light
   fi
 }
+
+fp() {
+  res="$(pwd)/$1"
+  echo $res
+  printf $res | pbcopy
+}
