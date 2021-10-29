@@ -14,3 +14,8 @@ def h(*args)
     Readline::HISTORY.to_a
   end
 end
+
+def dis(code)
+  # https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
+  puts RubyVM::InstructionSequence.compile(code).disassemble.split('\n')
+end
