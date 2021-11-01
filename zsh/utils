@@ -1,35 +1,16 @@
 #!/bin/bash
 
-# Local IP of device.
 locipdev() {
   [[ "$OSTYPE" =~ "darwin" ]] && ipconfig getifaddr en0 && return
   hostname -I
 }
 
-# List bluetooth devices on mac.
 btdevices() {
   [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
 }
 
-# Copy working directory to clipboard.
 cpwd() {
   pwd | pbcopy
-}
-
-vi() {
-  if [ -f /usr/local/Cellar/vim/8.2.3000/bin/vim ]; then
-    /usr/local/Cellar/vim/8.2.3000/bin/vim
-  else
-    vim
-  fi
-}
-
-nv() {
-  if [[ -z "$1" ]]; then
-    /usr/local/Cellar/neovim/0.5.0/bin/nvim
-  else
-    /usr/local/Cellar/neovim/0.5.0/bin/nvim $1
-  fi
 }
 
 cr() {
@@ -66,4 +47,14 @@ fp() {
   res="$(pwd)/$1"
   echo $res
   printf $res | pbcopy
+}
+
+s() {
+  source $HOME/.zshrc
+}
+
+colref() {
+  for i in {30..37}; do
+    printf "$i \u2B62  \e[${i}m\u25C6\e[0m\n"
+  done
 }

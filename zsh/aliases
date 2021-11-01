@@ -2,7 +2,11 @@
 
 alias python="python3"
 alias :q="exit"
-alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
+alias vi="vim"
+
+if [[ $OSTYPE =~ "darwin" ]]; then
+  alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
+fi
 
 if [[ -f $(which exa) ]]; then
   alias ls="exa"
