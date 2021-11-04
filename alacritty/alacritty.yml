@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 15.0
+  size: 18.0
 
   offset:
     x: 0
@@ -66,12 +66,10 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &onedark
+scheme: &srcery
     primary:
-      background: '0x1e2127'
-      foreground: '0xabb2bf'
-
-      bright_foreground: '0xe6efff'
+      background: '#1c1b19'
+      foreground: '#fce8c3'
 
     # Cursor colors
     cursor:
@@ -100,4 +98,4 @@ scheme: &onedark
       cyan:    '#2be4d0'
       white:   '#fce8c3'
 
-colors: *onedark
+colors: *srcery

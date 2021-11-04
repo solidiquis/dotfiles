@@ -26,6 +26,7 @@ endif
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
+autocmd BufNewFile,BufRead *.txt set filetype=text
 
 " Tabs
 set sw=2 ts=2 sts=2 " Default
@@ -109,6 +110,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tckmn/hotdog.vim'
     Plug 'rakr/vim-one'
     Plug 'olivertaylor/vacme'
+    Plug 'julien/vim-colors-green'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -141,8 +143,8 @@ if $MODE == 'light'
   colorscheme one
   let g:airline_theme='one'
 else
-  colorscheme onedarkhc
-  let g:airline_theme='onedark'
+  colorscheme srcery
+  let g:airline_theme='base16'
 endif
 
 " Must come after colorscheme command
@@ -286,3 +288,8 @@ function GColor()
   execute "echo synIDattr(synIDtrans(synID(line(\".\"), col(\".\"), 1)), \"fg#\")"
 endfunction
 command! GColor call GColor()
+
+function F()
+  execute "NERDTreeFind"
+endfunction
+command! F call F()
