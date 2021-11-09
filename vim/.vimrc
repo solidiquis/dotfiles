@@ -111,6 +111,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rakr/vim-one'
     Plug 'olivertaylor/vacme'
     Plug 'julien/vim-colors-green'
+    Plug 'morhetz/gruvbox'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -143,8 +144,10 @@ if $MODE == 'light'
   colorscheme one
   let g:airline_theme='one'
 else
-  colorscheme srcery
-  let g:airline_theme='base16'
+  set background=dark
+  let g:gruvbox_transparent_bg=1
+  colorscheme gruvbox
+  let g:airline_theme='gruvbox'
 endif
 
 " Must come after colorscheme command
