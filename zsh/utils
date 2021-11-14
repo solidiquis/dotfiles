@@ -27,11 +27,11 @@ sm() {
   if [[ $MODE == 'light' ]]; then
     awk '{sub(/light/,"dark")}1' $DOTFILES/zsh/mode >> /dev/null
     export MODE='dark'
-    alac-pretty onedark
+    alac-pretty gruvbox_dark
   else
     awk '{sub(/dark/,"light")}1' $DOTFILES/zsh/mode >> /dev/null
     export MODE='light'
-    alac-pretty solarized_light
+    alac-pretty gruvbox_light
   fi
 }
 

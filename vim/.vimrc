@@ -141,14 +141,14 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 if $MODE == 'light'
-  colorscheme one
-  let g:airline_theme='one'
+  set background=light
 else
   set background=dark
-  let g:gruvbox_transparent_bg=1
-  colorscheme gruvbox
-  let g:airline_theme='gruvbox'
 endif
+
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 " Must come after colorscheme command
 " Ensure the any colorscheme has transparent bg
