@@ -15,6 +15,10 @@ def h(*args)
   end
 end
 
+def c(str)
+  IO.popen('pbcopy', 'w') { |f| f << str }
+end
+
 def dis(code)
   # https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
   puts RubyVM::InstructionSequence.compile(code).disassemble.split('\n')
