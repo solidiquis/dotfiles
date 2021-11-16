@@ -263,7 +263,7 @@ function! Tag(name)
     normal! pbbl
     startinsert
 endfunction
-command! -nargs=1 Tag call Tag(<f-args>)
+command! -nargs=1 T call Tag(<f-args>)
 
 " ex) :Jtag HelloWorld
 function! Jtag(name)
@@ -271,7 +271,7 @@ function! Jtag(name)
     normal! pb
     startinsert
 endfunction
-command! -nargs=1 Jtag call Jtag(<f-args>)
+command! -nargs=1 J call Jtag(<f-args>)
 
 " Open up nerdtree and a bottom terminal
 function In()
@@ -296,3 +296,10 @@ function F()
   execute "NERDTreeFind"
 endfunction
 command! F call F()
+
+function LineUp()
+  " There be a whitespace at the end of next line
+  normal! ^dg_k$A 
+  normal! pjdd
+endfunction
+command! LU call LineUp()
