@@ -35,14 +35,12 @@ sm() {
   fi
 }
 
-fp() {
-  res="$(pwd)/$1"
-  echo $res
-  printf $res | pbcopy
-}
-
 s() {
   source $HOME/.zshrc
+}
+
+h() {
+  history | grep $1
 }
 
 16col() {
