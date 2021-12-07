@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 15.0
+  size: 14.0
 
   offset:
     x: 0
@@ -66,27 +66,27 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &gruvbox_dark
+scheme: &oceanic_next
     primary:
-      background: '0x282828'
-      foreground: '0xebdbb2'
+      background: '0x1b2b34'
+      foreground: '0xd8dee9'
     normal:
-      black:   '0x282828'
-      red:     '0xcc241d'
-      green:   '0x98971a'
-      yellow:  '0xd79921'
-      blue:    '0x458588'
-      magenta: '0xb16286'
-      cyan:    '0x689d6a'
-      white:   '0xa89984'
+      black:   '0x29414f'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0x65737e'
     bright:
-      black:   '0x928374'
-      red:     '0xfb4934'
-      green:   '0xb8bb26'
-      yellow:  '0xfabd2f'
-      blue:    '0x83a598'
-      magenta: '0xd3869b'
-      cyan:    '0x8ec07c'
-      white:   '0xebdbb2'
+      black:   '0x405860'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0xadb5c0'
 
-colors: *gruvbox_dark
+colors: *oceanic_next

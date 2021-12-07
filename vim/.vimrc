@@ -112,6 +112,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'olivertaylor/vacme'
     Plug 'julien/vim-colors-green'
     Plug 'morhetz/gruvbox'
+    Plug 'foxbunny/vim-amber'
+    Plug 'adrian5/oceanic-next-vim'
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -146,9 +148,8 @@ else
   set background=dark
 endif
 
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme oceanicnext
+let g:airline_theme='base16_oceanicnext'
 
 " Must come after colorscheme command
 " Ensure the any colorscheme has transparent bg
