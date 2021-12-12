@@ -23,3 +23,8 @@ def dis(code)
   # https://lifegoo.pluskid.org/upload/doc/yarv/yarv_iset.html
   puts RubyVM::InstructionSequence.compile(code).disassemble.split('\n')
 end
+
+def parse_money(money)
+  re = %r{\$([,0-9]+\.*\d*)$}
+  money.match(re).captures.first.gsub(",", "").to_f
+end

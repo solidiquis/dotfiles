@@ -83,6 +83,12 @@ noremap <leader>= <C-W><C-=>
 noremap <leader>n gt
 noremap <leader>N gT
 
+" Tab autocomplete
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
 " ============="
 " ===Plugins==="
 " ============="
@@ -97,7 +103,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ryanoasis/vim-devicons'
-    "Plug 'airblade/vim-gitgutter'
 
     " colorschemes
     Plug 'srcery-colors/srcery-vim'
@@ -114,6 +119,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'foxbunny/vim-amber'
     Plug 'adrian5/oceanic-next-vim'
+
+    "CoC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " TypeScript
     Plug 'leafgarland/typescript-vim'
@@ -304,3 +312,8 @@ function LineUp()
   normal! pjdd
 endfunction
 command! LU call LineUp()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
