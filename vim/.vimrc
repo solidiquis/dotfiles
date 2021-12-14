@@ -89,6 +89,10 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+" Shift + j/k in visual mode for smart move
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " ============="
 " ===Plugins==="
 " ============="
