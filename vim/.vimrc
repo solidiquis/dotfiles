@@ -111,14 +111,6 @@ call plug#begin('~/.vim/plugged')
     " colorschemes
     Plug 'srcery-colors/srcery-vim'
     Plug 'pacokwon/onedarkhc.vim'
-    Plug 'bluz71/vim-moonfly-colors'
-    Plug 'sainnhe/sonokai'
-    Plug 'joshdick/onedark.vim'
-    Plug 'yassinebridi/vim-purpura'
-    Plug 'lifepillar/vim-wwdc16-theme'
-    Plug 'tckmn/hotdog.vim'
-    Plug 'rakr/vim-one'
-    Plug 'olivertaylor/vacme'
     Plug 'julien/vim-colors-green'
     Plug 'morhetz/gruvbox'
     Plug 'foxbunny/vim-amber'
@@ -154,14 +146,8 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-if $MODE == 'light'
-  set background=light
-else
-  set background=dark
-endif
-
-colorscheme oceanicnext
-let g:airline_theme='base16_oceanicnext'
+colorscheme onedarkhc
+let g:airline_theme='night_owl'
 
 " Must come after colorscheme command
 " Ensure the any colorscheme has transparent bg
