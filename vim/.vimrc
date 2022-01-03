@@ -146,8 +146,8 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-colorscheme onedarkhc
-let g:airline_theme='night_owl'
+colorscheme oceanicnext
+let g:airline_theme='oceanicnext'
 
 " Must come after colorscheme command
 " Ensure the any colorscheme has transparent bg

@@ -13,3 +13,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Misc Paths
 export PATH="$HOME/dotfiles/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
