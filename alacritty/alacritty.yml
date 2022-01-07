@@ -66,27 +66,36 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &oceanic_next
+scheme: &srcery
     primary:
-      background: '0x1b2b34'
-      foreground: '0xd8dee9'
-    normal:
-      black:   '0x29414f'
-      red:     '0xec5f67'
-      green:   '0x99c794'
-      yellow:  '0xfac863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0x65737e'
-    bright:
-      black:   '0x405860'
-      red:     '0xec5f67'
-      green:   '0x99c794'
-      yellow:  '0xfac863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0xadb5c0'
+      background: '#1c1b19'
+      foreground: '#fce8c3'
 
-colors: *oceanic_next
+    # Cursor colors
+    cursor:
+      text: CellBackground
+      cursor: '#fbb829'
+
+    # Normal colors
+    normal:
+      black:   '#1c1b19'
+      red:     '#ef2f27'
+      green:   '#519f50'
+      yellow:  '#fbb829'
+      blue:    '#2c78bf'
+      magenta: '#e02c6d'
+      cyan:    '#0aaeb3'
+      white:   '#baa67f'
+
+    # Bright colors
+    bright:
+      black:   '#918175'
+      red:     '#f75341'
+      green:   '#98bc37'
+      yellow:  '#fed06e'
+      blue:    '#68a8e4'
+      magenta: '#ff5c8f'
+      cyan:    '#2be4d0'
+      white:   '#fce8c3'
+
+colors: *srcery
