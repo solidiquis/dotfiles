@@ -1,8 +1,7 @@
 #!/bin/bash
 
-alias python="python3"
-alias :q="exit"
 alias vi="vim"
+alias c="clear"
 
 if [[ $OSTYPE =~ "darwin" ]]; then
   alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
