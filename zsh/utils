@@ -46,6 +46,14 @@ h() {
 }
 
 j() {
+  if [[ -z $BOOKMARKS ]]; then
+    BOOKMARKS="$HOME/.cache/bookmarks"
+  fi
+
+  if [[ ! -f $BOOKMARKS ]]; then
+    touch $BOOKMARKS
+  fi
+
   case $1 in
 
     -l)
