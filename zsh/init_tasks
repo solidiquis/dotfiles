@@ -6,6 +6,7 @@ run_init_tasks() {
   curwin
   i_beam_cursor
   load_nvm
+  print_todos
 }
 
 load_nvm() {
@@ -53,4 +54,9 @@ vi_mode() {
 
 i_beam_cursor() {
   printf '\033[6 q'
+}
+
+print_todos() {
+  [[ -f $TODOS ]] && cat $TODOS
+  echo
 }

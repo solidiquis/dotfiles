@@ -138,12 +138,6 @@ call plug#begin('~/.vim/plugged')
 
     " GLSL
     Plug 'tikhomirov/vim-glsl'
-
-    " Prettifier
-    Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'for': ['javascript', 'typescript'] }
-
 call plug#end()
 
 colorscheme srcery
@@ -228,11 +222,6 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_types = 1
 let g:go_highlight_function_calls = 1
-
-" vim-prettier
-let g:prettier#autoformat = 0
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#config#print_width = '300'
 
 " ============="
 " ==CustomCmds="

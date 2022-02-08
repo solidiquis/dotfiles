@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export BOOKMARKS="$HOME/.cache/bookmarks"
+export TODOS="$HOME/.cache/todos"
 
 # FZF 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
