@@ -5,7 +5,6 @@ run_init_tasks() {
   exec_tmux
   curwin
   i_beam_cursor
-  load_nvm
   print_todos
 }
 
