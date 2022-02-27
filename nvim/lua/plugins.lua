@@ -20,6 +20,7 @@ end
 
 return require('packer').startup(function()
   use { 'wbthomason/packer.nvim' }
+  use { 'preservim/nerdcommenter' }
   use {
     'preservim/nerdtree',
     config = get_setup("nerdtree")
