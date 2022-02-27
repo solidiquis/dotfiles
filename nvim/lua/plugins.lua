@@ -39,4 +39,14 @@ return require('packer').startup(function()
     'ryanoasis/vim-devicons',
     config = get_setup("vim_devicons")
   }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = get_setup("telescope")
+  }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    config = get_setup("telescope_fzf_native"),
+    run = 'make'
+  }
 end)

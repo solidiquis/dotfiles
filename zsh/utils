@@ -39,7 +39,7 @@ h() {
 
 256col() {
   for i in {0..255}; do
-    printf "\e[38;5;${i}m${i}\e[0m "
+    printf "\e[1;38;5;${i}m${i}\e[0m "
   done
   
   printf "\n"

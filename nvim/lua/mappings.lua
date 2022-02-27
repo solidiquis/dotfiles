@@ -35,5 +35,16 @@ map(MODES.normal, "<leader>=", "<C-W><C-=>")
 map(MODES.visual_select, '<leader>c', '"*yy<CR>')
 map(MODES.normal, '<leader>v', '"+p<CR>')
 
+-- Tab nav
+map(MODES.normal, "<leader>n", "gt")
+map(MODES.normal, "<leader>N", "gT")
+
 -- NERDTree
 map(MODES.normal, "<leader>e", ":NERDTreeToggle<CR>")
+
+-- Telescope
+map(MODES.normal, "<leader>p", ":Telescope find_files hidden=true<CR>")
+map(MODES.normal, "<leader>f", ":Telescope live_grep<CR>")
+map(MODES.normal, "<leader>s", ":Telescope grep_string<CR>")
+map(MODES.normal, "<leader>b", ":Telescope buffers<CR>")
+map(MODES.normal, "<leader>h", ":Telescope help_tags<CR>")
