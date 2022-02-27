@@ -26,7 +26,6 @@ endif
 
 " File-types
 autocmd BufNewFile,BufRead *.go set filetype=go
-autocmd BufNewFile,BufRead *.txt set filetype=text
 
 " Tabs
 set sw=2 ts=2 sts=2 " Default
@@ -115,6 +114,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'foxbunny/vim-amber'
     Plug 'adrian5/oceanic-next-vim'
+    Plug 'tckmn/hotdog.vim'
 
     "CoC
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
