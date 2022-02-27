@@ -3,6 +3,8 @@
 export BOOKMARKS="$HOME/.cache/bookmarks"
 export TODOS="$HOME/.cache/todos"
 
+export PACKPATH="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
 # FZF 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--bind ctrl-n:down,ctrl-p:up'
