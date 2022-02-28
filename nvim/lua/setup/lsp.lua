@@ -22,6 +22,15 @@ local cmp_mappings = vim.tbl_extend("force", cmp_default_mappings, {
       cmp.complete()
     end
   end, {'i', 's'}), 
+
+  ['<S-Tab>'] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_prev_item(select_opts)
+      cmp.mapping.confirm({select = true})
+    else
+      fallback()
+    end
+  end, {'i', 's'}),
 })
 
 
