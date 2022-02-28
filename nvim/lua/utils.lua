@@ -52,10 +52,13 @@ function ft()
 end
 
 function cc_rfp()
-  local file_name = vim.split(vim.api.nvim_buf_get_name(0), vim.fn.getcwd())[2]
-  local cmd = string.format("printf %s | pbcopy", file_name)
+  local full_path = vim.api.nvim_buf_get_name(0)
+  local cwd = vim.fn.getcwd()
+  local rfp = vim.split(full_path, string.format("%s/", cwd))[2]
+  local cmd = string.format("printf %s | pbcopy", rfp)
   os.execute(cmd)
 end
+alias("cc_rfp", "CCRFP")
 
 function inspect(...)
   local objects = {}
