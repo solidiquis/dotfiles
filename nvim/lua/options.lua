@@ -9,6 +9,7 @@ opt.swapfile = false
 opt.backup = false
 opt.incsearch = true
 opt.autoindent = true
+opt.hlsearch = false
 
 -- tabs
 vim.cmd([[

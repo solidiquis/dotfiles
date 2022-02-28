@@ -47,6 +47,14 @@ return require('packer').startup(function()
     config = get_setup("telescope_fzf_native"),
     run = 'make'
   }
+  use { "tpope/vim-fugitive" }
+
+
+  -- TODO:
+  --use {
+    --'akinsho/toggleterm.nvim',
+    --config = get_setup("toggleterm")
+  --}
 
   -- Colorscheme
   use {
