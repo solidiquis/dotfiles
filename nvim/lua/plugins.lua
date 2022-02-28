@@ -20,6 +20,8 @@ end
 
 return require('packer').startup(function()
   use { 'wbthomason/packer.nvim' }
+
+  -- The Basics
   use { 'preservim/nerdcommenter' }
   use {
     'preservim/nerdtree',
@@ -30,11 +32,6 @@ return require('packer').startup(function()
     event = "VimEnter",
     config = get_setup("lualine"),
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    'folke/tokyonight.nvim',
-    event = "VimEnter",
-    config = get_setup("tokyonight")
   }
   use {
     'ryanoasis/vim-devicons',
@@ -49,6 +46,13 @@ return require('packer').startup(function()
     'nvim-telescope/telescope-fzf-native.nvim',
     config = get_setup("telescope_fzf_native"),
     run = 'make'
+  }
+
+  -- Colorscheme
+  use {
+    'folke/tokyonight.nvim',
+    event = "VimEnter",
+    config = get_setup("tokyonight")
   }
 
   -- LSP Support
@@ -70,4 +74,11 @@ return require('packer').startup(function()
   -- Snippets
   use { 'L3MON4D3/LuaSnip' }
   use { 'rafamadriz/friendly-snippets' }
+
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = get_setup("treesitter")
+  }
 end)
