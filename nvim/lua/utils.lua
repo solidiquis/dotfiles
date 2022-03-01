@@ -71,6 +71,28 @@ function inspect(...)
   return ...
 end
 
+function dark_mode()
+  if vim.g.tokyonight_style == "night" then
+    return
+  end
+
+  vim.g.tokyonight_style = "night"
+  vim.cmd("colorscheme tokyonight")
+  os.execute("alac-pretty tokyonight_night")
+end
+alias("dark_mode", "DM")
+
+function light_mode()
+  if vim.g.tokyonight_style == "storm" then
+    return
+  end
+
+  vim.g.tokyonight_style = "storm"
+  vim.cmd("colorscheme tokyonight")
+  os.execute("alac-pretty tokyonight_storm")
+end
+alias("light_mode", "LM")
+
 -- WIP
 --function _G.test()
   ----top_mark = vim.api.nvim.get_buf_get_mark(0, "<")

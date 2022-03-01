@@ -13,3 +13,5 @@ vim.g.tokyonight_italic_variables = false
 
 -- Load the colorscheme
 vim.cmd[[colorscheme tokyonight]]
+
+return theme_styles
