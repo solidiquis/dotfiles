@@ -1,5 +1,14 @@
 local cmp = require('cmp')
 
+local check_back_space = function()
+  local col = vim.fn.col('.') - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    return true
+  else
+    return false
+  end
+end
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -11,7 +20,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item(select_opts)
-      elseif s.check_back_space() then
+      elseif check_back_space() then
         fallback()
       else
         cmp.complete()
