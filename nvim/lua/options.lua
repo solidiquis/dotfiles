@@ -10,6 +10,7 @@ opt.backup = false
 opt.incsearch = true
 opt.autoindent = true
 opt.hlsearch = false
+opt.completeopt = "menu,menuone,noselect"
 
 -- tabs
 vim.cmd([[

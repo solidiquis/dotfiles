@@ -1,41 +1,15 @@
-local lsp = require('lsp-zero')
-local cmp = require('cmp')
+local lspconfig = require("lspconfig")
+local conf = require("lsp.conf")
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-function check_back_space()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-  else
-    return false
-  end
+local shared_settings = {
+  flags = {
+    debounce_text_changes = 500
+  },
+  capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities()) 
+}
+
+for _, server in pairs(lspconfig.available_servers()) do
+  local lsp_config = vim.tbl_extend("force", conf[server], shared_settings)
+  lspconfig[server].setup(lsp_config)
 end
-
-local cmp_default_mappings = require("lsp-zero.nvim-cmp-setup").default_mappings()
-local cmp_mappings = vim.tbl_extend("force", cmp_default_mappings, {
-  ['<Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_next_item(select_opts)
-    elseif check_back_space() then
-      fallback()
-    else
-      cmp.mapping.confirm({select = true})
-      cmp.complete()
-    end
-  end, {'i', 's'}), 
-
-  ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item(select_opts)
-      cmp.mapping.confirm({select = true})
-    else
-      fallback()
-    end
-  end, {'i', 's'}),
-})
-
-
-lsp.preset('recommended')
-
-lsp.setup_nvim_cmp({ mapping = cmp_mappings })
-
-lsp.setup()
