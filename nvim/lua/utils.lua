@@ -73,6 +73,7 @@ function cc_rfp()
   local rfp = vim.split(full_path, string.format("%s/", cwd))[2]
   local cmd = string.format("printf %s | pbcopy", rfp)
   os.execute(cmd)
+  print(rfp)
 end
 alias("cc_rfp", "CCRFP")
 
