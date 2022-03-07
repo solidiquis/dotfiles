@@ -144,3 +144,22 @@ function collapse(sep)
   local curr_ln_len = #vim.api.nvim_get_current_line() 
   vim.api.nvim_win_set_cursor(0, { curr_row, curr_ln_len })
 end
+
+-- Toggle (hide/show) diagnostics.. hack but it works
+function toggle_diagnostics()
+  vim.g.diagnostics_enabled = not vim.g.diagnostics_enabled
+
+  if vim.g.diagnostics_enabled then
+    vim.diagnostic.show()
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = false,
+        virtual_text = true
+      }
+    )
+  else
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+    vim.diagnostic.hide()
+  end
+end
+alias("toggle_diagnostics", "TD")

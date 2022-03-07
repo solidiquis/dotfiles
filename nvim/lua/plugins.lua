@@ -49,7 +49,6 @@ return require('packer').startup(function()
   }
   use { "tpope/vim-fugitive" }
 
-
   -- TODO:
   --use {
     --'akinsho/toggleterm.nvim',
@@ -72,6 +71,9 @@ return require('packer').startup(function()
   use { 'L3MON4D3/LuaSnip' }
   use { 'saadparwaiz1/cmp_luasnip' }
 
+  -- LSP Installer
+  use { 'williamboman/nvim-lsp-installer' }
+
   -- Colorscheme
   use {
     'folke/tokyonight.nvim',
@@ -85,4 +87,7 @@ return require('packer').startup(function()
     run = ':TSUpdate',
     config = get_setup("treesitter")
   }
+
+  -- Language-specific plugins
+  use { "kchmck/vim-coffee-script" }
 end)
