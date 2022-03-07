@@ -1,5 +1,7 @@
 -- tabs
 vim.cmd([[
+autocmd BufWrite * lua enable_diagnostics()
+
 autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd BufNewFile,BufRead *.rs set filetype=rust
 
