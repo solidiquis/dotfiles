@@ -14,3 +14,5 @@ opt.completeopt = "menu,menuone,noselect"
 opt.sw = 2
 opt.ts = 2
 opt.sts = 2
+
+vim.o.signcolumn = "number"
