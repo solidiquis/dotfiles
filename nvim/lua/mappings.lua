@@ -21,6 +21,7 @@ map(mode.normal, "<leader>=", "<C-W><C-=>")
 
 -- copy/paste
 map(mode.visual_select, '<leader>c', '"*yy<CR>')
+map(mode.visual_select, '<leader>v', 'd"+p<CR>')
 map(mode.normal, '<leader>v', '"+p<CR>')
 
 -- Tab nav
