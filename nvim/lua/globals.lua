@@ -1,1 +1,1 @@
-vim.g.diagnostics_enabled = false
+vim.g.diagnostics_enabled = true

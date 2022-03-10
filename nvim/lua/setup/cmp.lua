@@ -1,13 +1,5 @@
 local cmp = require('cmp')
-
-local function check_back_space()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-  else
-    return false
-  end
-end
+local utils = require('utils')
 
 cmp.setup({
   snippet = {
@@ -20,7 +12,7 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item(select_opts)
-      elseif check_back_space() then
+      elseif utils.check_back_space() then
         fallback()
       else
         cmp.complete()
@@ -38,10 +30,16 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
 
-  sources = cmp.config.sources({
-   { name = 'luasnip' }
-  }, {
-    { name = 'buffer' },
-  })
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "treesitter" },
+    { name = "buffer" },
+    { name = "luasnip" },
+    { name = "nvim_lua" },
+    { name = "path" },
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
+  },
 })
-
