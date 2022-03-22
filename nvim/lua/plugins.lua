@@ -31,7 +31,14 @@ return require('packer').startup(function()
     "nvim-lualine/lualine.nvim",
     event = "VimEnter",
     config = get_setup("lualine"),
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+      {
+        'folke/tokyonight.nvim',
+        event = "VimEnter",
+        config = get_setup("tokyonight")
+      }
+    }
   }
   use {
     'ryanoasis/vim-devicons',
@@ -39,7 +46,7 @@ return require('packer').startup(function()
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} },
+    requires = { 'nvim-lua/plenary.nvim' },
     config = get_setup("telescope")
   }
   use {
@@ -48,12 +55,11 @@ return require('packer').startup(function()
     run = 'make'
   }
   use { "tpope/vim-fugitive" }
-
-  -- TODO:
-  --use {
-    --'akinsho/toggleterm.nvim',
-    --config = get_setup("toggleterm")
-  --}
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = get_setup("trouble")
+  }
 
   -- LSP
   use {
@@ -91,13 +97,6 @@ return require('packer').startup(function()
       "rafamadriz/friendly-snippets",
     },
     disable = false,
-  }
-
-  -- Colorscheme
-  use {
-    'folke/tokyonight.nvim',
-    event = "VimEnter",
-    config = get_setup("tokyonight")
   }
 
   -- Which-key

@@ -37,3 +37,6 @@ map(mode.normal, "<leader>f", ":Telescope live_grep<CR>")
 map(mode.normal, "<leader>s", ":Telescope grep_string<CR>")
 map(mode.normal, "<leader>b", ":Telescope buffers<CR>")
 map(mode.normal, "<leader>h", ":Telescope help_tags<CR>")
+
+-- Trouble
+map(mode.normal, "<leader>dg", ":TroubleToggle<CR>")
