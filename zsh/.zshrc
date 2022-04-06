@@ -6,10 +6,10 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $DOTFILES/zsh/utils --source_only
 source $DOTFILES/zsh/paths --source_only
 source $DOTFILES/zsh/vars --source_only
-source $DOTFILES/zsh/init_tasks --source_only
-source $DOTFILES/zsh/utils --source_only
+source $DOTFILES/zsh/init --source_only
 source $DOTFILES/zsh/aliases --source_only
 
-run_init_tasks
+init
