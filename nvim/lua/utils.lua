@@ -72,4 +72,11 @@ function M.info(msg, name)
   vim.notify(msg, vim.log.levels.INFO, { title = name })
 end
 
+function M.winsize()
+  return unpack({
+    vim.api.nvim_win_get_width(0),
+    vim.api.nvim_win_get_height(0)
+  })
+end
+
 return M

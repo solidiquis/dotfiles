@@ -5,16 +5,17 @@ local function map(mode, mapping, cmd, options)
   if options then
     opts = vim.tbl_extend("force", opts, options)
   end
+
   vim.api.nvim_set_keymap(mode, mapping, cmd, opts)
 end
 
 vim.g.mapleader = " "
 
 -- Pane navigation
-map(mode.normal, "<C-J>", "<C-W><C-J>")
-map(mode.normal, "<C-K>", "<C-W><C-K>")
-map(mode.normal, "<C-L>", "<C-W><C-L>")
-map(mode.normal, "<C-H>", "<C-W><C-H>")
+map(mode.normal, "<C-j>", "<C-w><C-j>")
+map(mode.normal, "<C-k>", "<C-w><C-k>")
+map(mode.normal, "<C-l>", "<C-w><C-l>")
+map(mode.normal, "<C-h>", "<C-w><C-h>")
 
 -- Equalize pane widths
 map(mode.normal, "<leader>=", "<C-W><C-=>")
@@ -40,3 +41,9 @@ map(mode.normal, "<leader>h", ":Telescope help_tags<CR>")
 
 -- Trouble
 map(mode.normal, "<leader>dg", ":TroubleToggle<CR>")
+
+-- Terminal
+map(mode.terminal, "<C-j>", [[<C-\><C-n><C-j>]])
+map(mode.terminal, "<C-k>", [[<C-\><C-n><C-w>k]])
+map(mode.terminal, "<C-l>", [[<C-\><C-n><C-l>]])
+map(mode.terminal, "<C-h>", [[<C-\><C-n><C-h>]])

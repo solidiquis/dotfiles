@@ -29,13 +29,11 @@ return require('packer').startup(function()
   }
   use {
     "nvim-lualine/lualine.nvim",
-    event = "VimEnter",
     config = get_setup("lualine"),
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
         'folke/tokyonight.nvim',
-        event = "VimEnter",
         config = get_setup("tokyonight")
       }
     }
@@ -59,6 +57,10 @@ return require('packer').startup(function()
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = get_setup("trouble")
+  }
+  use {
+    "akinsho/toggleterm.nvim",
+    config = get_setup("toggleterm")
   }
 
   -- LSP
@@ -91,6 +93,7 @@ return require('packer').startup(function()
       "hrsh7th/cmp-nvim-lsp",
       {
         "L3MON4D3/LuaSnip",
+        branch = "master",
         wants = "friendly-snippets",
         config = get_setup("luasnip"),
       },
