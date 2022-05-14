@@ -94,3 +94,7 @@ load_nvm() {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   fi
 }
+
+ghpa() {
+  cat $HOME/.secrets/gh_personal_access.txt | pbcopy
+}
