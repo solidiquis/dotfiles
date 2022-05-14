@@ -11,5 +11,6 @@ source $DOTFILES/zsh/paths --source_only
 source $DOTFILES/zsh/vars --source_only
 source $DOTFILES/zsh/init --source_only
 source $DOTFILES/zsh/aliases --source_only
+source $DOTFILES/zsh/hooks --source_only
 
 init

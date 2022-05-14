@@ -50,5 +50,4 @@ i_beam_cursor() {
 
 print_todos() {
   [[ -f $TODOS ]] && cat $TODOS
-  echo
 }
