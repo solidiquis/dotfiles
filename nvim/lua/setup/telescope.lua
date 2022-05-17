@@ -5,6 +5,11 @@ require('telescope').setup({
   pickers = {
     buffers = {
       sort_lastused = true,
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        }
+      }
     },
   },
 })
