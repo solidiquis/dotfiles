@@ -1,4 +1,6 @@
-bin/
+bin/*
+!bin/fs
+
 .DS_STORE
 vim/.vim/autoload/
 vim/.vim/plugged/
