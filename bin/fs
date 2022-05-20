@@ -143,9 +143,9 @@ class AlacrittyFontSize
   end
 
   def write_new_font_size
-    config = current_config.gsub! PATTERN, "#{PREFIX}#{font_size}"
+    current_config.gsub! PATTERN, "#{PREFIX}#{font_size}"
 
-    File.open(ALACRITTY_CONFIG, "w+") { |file| file.write config }
+    File.open(ALACRITTY_CONFIG, "w+") { |file| file.write current_config }
   end
 
   def backup_and_current_fontsize
