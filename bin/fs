@@ -61,10 +61,48 @@ module Terminal
   end
 end
 
+module AlacrittyConfig
+  POSSIBLE_PATHS = %w[
+    $XDG_CONFIG_HOME/alacritty/alacritty.yml
+    $XDG_CONFIG_HOME/alacritty.yml
+    $HOME/.config/alacritty/alacritty.yml
+    $HOME/.alacritty.yml
+  ].freeze
+
+  def alacritty_config
+    config_home = ENV["XDG_CONFIG_HOME"]
+
+    if config_home
+      path = File.join config_home, "alacritty.yml"
+
+      return path if File.exist?(path)
+
+      path = File.join config_home, "alacritty", "alacritty.yml"
+
+      return path if File.exist?(path)
+    end 
+
+    path = File.join(Dir.home, ".alacritty.yml")
+
+    return path if File.exist?(path)
+  
+    path = File.join(Dir.home, ".config", "alacritty", ".alacritty.yml")
+
+    return path if File.exist?(path)
+
+    raise "Unable to locate alacritty config. Make sure it's at one of the following:\n#{paths}"
+  end
+
+  private
+
+  def paths
+    POSSIBLE_PATHS.join("\n") 
+  end
+end
+
 class AlacrittyFontSize
   include Terminal
-
-  ALACRITTY_CONFIG = File.join(Dir.home, ".alacritty.yml").freeze
+  include AlacrittyConfig
 
   PATTERN = %r{size:\s+(\d+)}
   PREFIX = "size: "
@@ -84,9 +122,10 @@ class AlacrittyFontSize
   MINIMUM_FONT_SIZE = 6
   MAXIMUM_FONT_SIZE = 32
 
-  attr_reader :font_size, :backup, :current_config
+  attr_reader :font_size, :backup, :current_config, :config_path
 
   def initialize
+    @config_path = alacritty_config
     @backup, @font_size = backup_and_current_fontsize
     @current_config = @backup.clone
   end
@@ -159,18 +198,18 @@ class AlacrittyFontSize
   def write_new_font_size
     current_config.gsub! PATTERN, "#{PREFIX}#{font_size}"
 
-    File.open(ALACRITTY_CONFIG, "w+") { |file| file.write current_config }
+    File.open(config_path, "w+") { |file| file.write current_config }
   end
 
   def backup_and_current_fontsize
-    config = File.read(ALACRITTY_CONFIG)
+    config = File.read(config_path)
     current_font_size = config.match(PATTERN).captures.first.to_i
 
     [config, current_font_size]
   end
 
   def restore_backup
-    File.open(ALACRITTY_CONFIG, "w+") { |file| file.write backup }
+    File.open(config_path, "w+") { |file| file.write backup }
   end
 end
 
