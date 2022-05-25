@@ -4,8 +4,7 @@
 init() {
   exec_tmux
   curwin
-  i_beam_cursor
-  print_todos
+  [[ $CURSOR_TYPE == "ibeam" ]] && i_beam_cursor
 }
 
 # Info about current terminal window and other things.
