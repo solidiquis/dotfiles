@@ -33,8 +33,8 @@ return require('packer').startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        'folke/tokyonight.nvim',
-        config = get_setup("tokyonight")
+        "navarasu/onedark.nvim",
+        config = get_setup("onedark")
       }
     }
   }

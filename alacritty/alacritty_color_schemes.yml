@@ -1119,7 +1119,7 @@ schemes:
 
   onedark: &onedark
     primary:
-      background: '0x1e2127'
+      background: '0x1e232a'
       foreground: '0xabb2bf'
 
       bright_foreground: '0xe6efff'
