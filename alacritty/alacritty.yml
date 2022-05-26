@@ -14,8 +14,8 @@ window:
     #y: 0
 
   padding:
-    x: 35
-    y: 35 
+    x: 25
+    y: 15 
 
   dynamic_padding: false
   decorations: none
