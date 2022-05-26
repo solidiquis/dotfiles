@@ -29,8 +29,8 @@ map(mode.normal, '<leader>v', '"+p<CR>')
 map(mode.normal, "<leader>n", "gt")
 map(mode.normal, "<leader>N", "gT")
 
--- NERDTree
-map(mode.normal, "<leader>e", ":NERDTreeToggle<CR>")
+-- Nvim-tree
+map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Telescope
 map(mode.normal, "<leader>p", ":Telescope find_files hidden=true<CR>")

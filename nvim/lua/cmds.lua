@@ -2,7 +2,7 @@ local alias = require("utils").alias
 
 -- Toggles NERDTree.
 function nt_find()
-  vim.api.nvim_command("NERDTreeFind")
+  vim.api.nvim_command("NvimTreeFindFile")
 end
 alias("nt_find", "F")
 

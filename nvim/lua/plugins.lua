@@ -24,10 +24,6 @@ return require('packer').startup(function()
   -- The Basics
   use { 'preservim/nerdcommenter' }
   use {
-    'preservim/nerdtree',
-    config = get_setup("nerdtree")
-  }
-  use {
     "nvim-lualine/lualine.nvim",
     config = get_setup("lualine"),
     requires = {
@@ -35,6 +31,10 @@ return require('packer').startup(function()
       {
         "navarasu/onedark.nvim",
         config = get_setup("onedark")
+      },
+      {
+        "kyazdani42/nvim-tree.lua",
+        config = get_setup("nvim_tree")
       }
     }
   }
