@@ -1,4 +1,4 @@
-local utils = require("utils")
+local mode = require("consts").modes
 
 local function termwidth()
   math.floor(vim.api.nvim_win_get_width(0) * 0.8)
@@ -9,6 +9,8 @@ local function termheight()
 end
 
 require("toggleterm").setup {
+  open_mapping = [[<c-\>]],
+  direction = "float",
   hide_numbers = true,
   shade_terminals = true,
   shading_factor = 1,

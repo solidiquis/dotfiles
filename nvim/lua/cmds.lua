@@ -64,18 +64,6 @@ function dark_mode()
 end
 alias("dark_mode", "DM")
 
--- Sets NeoVim and Alacritty to "light" mode.
-function light_mode()
-  if vim.g.tokyonight_style == "storm" then
-    return
-  end
-
-  vim.g.tokyonight_style = "storm"
-  vim.cmd("colorscheme tokyonight")
-  os.execute("alac-pretty tokyonight_storm")
-end
-alias("light_mode", "LM")
-
 -- Collapses visually selected lines into single line separated by "sep".
 function collapse(sep)
   local start_ln = vim.api.nvim_buf_get_mark(0, "<")[1] - 1

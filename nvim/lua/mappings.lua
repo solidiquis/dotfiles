@@ -42,8 +42,14 @@ map(mode.normal, "<leader>h", ":Telescope help_tags<CR>")
 -- Trouble
 map(mode.normal, "<leader>dg", ":TroubleToggle<CR>")
 
--- Terminal
-map(mode.terminal, "<C-j>", [[<C-\><C-n><C-j>]])
-map(mode.terminal, "<C-k>", [[<C-\><C-n><C-w>k]])
-map(mode.terminal, "<C-l>", [[<C-\><C-n><C-l>]])
-map(mode.terminal, "<C-h>", [[<C-\><C-n><C-h>]])
+-- Terminal buffer-scoped maps
+function _G.set_terminal_keymaps()
+  local opts = { noremap = true }
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<esc>", [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-j>", [[<C-\><C-n><C-j>]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-k>", [[<C-\><C-n><C-w>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-l>", [[<C-\><C-n><C-l>]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-h>", [[<C-\><C-n><C-h>]], opts)
+end
+
+vim.cmd [[ autocmd TermOpen term://* lua set_terminal_keymaps() ]]
