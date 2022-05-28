@@ -43,3 +43,4 @@ def epc(index, pattern = nil)
     eval h[index]
   end
 end
+

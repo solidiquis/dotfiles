@@ -1,6 +1,22 @@
+local winsize = require("utils").winsize
+
+local function inc_width()
+  local width, _height = winsize()
+  vim.cmd(string.format("NvimTreeResize %d", width + 10))
+end
+
+local function dec_width()
+  local width, _height = winsize()
+
+  local new_width = width - 10
+
+  if new_width < 30 then return end
+
+  vim.cmd(string.format("NvimTreeResize %d", width - 10))
+end
+
 require'nvim-tree'.setup {
   auto_reload_on_write = true,
-  resize_window = true,
   sort_by = "name",
   view = {
     mappings = {
@@ -20,6 +36,8 @@ require'nvim-tree'.setup {
         { key = "W",       action = "collapse_all" },
         { key = "S",       action = "search_node" },
         { key = "<C-k>",   action = "toggle_file_info" },
+        { key = ">",       action = "more_wide", action_cb = inc_width },
+        { key = "<",       action = "less_wide", action_cb = dec_width },
       },
     },
   }

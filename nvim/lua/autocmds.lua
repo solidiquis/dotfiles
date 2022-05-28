@@ -12,5 +12,7 @@ autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType go :setlocal sw=4 ts=4 sts=4
 autocmd FileType rust :setlocal sw=4 ts=4 sts=4
 
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 ]])
+
+
+--autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
