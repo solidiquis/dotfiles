@@ -5,4 +5,5 @@
 #}
 
 precmd() {
+  i_beam_cursor
 }
