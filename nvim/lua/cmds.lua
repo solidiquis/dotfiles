@@ -1,5 +1,11 @@
 local alias = require("utils").alias
 
+-- Go to definition
+function def()
+  vim.lsp.buf.definition()
+end
+alias("def", "Def")
+
 -- Toggles NERDTree.
 function nt_find()
   vim.api.nvim_command("NvimTreeFindFile")
