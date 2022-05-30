@@ -126,13 +126,16 @@ git_info() {
     return
   fi
 
-  [[ $stats =~ "[[:digit:]]+ insertions" ]] && insertions=${BASH_REMATCH[1]/ insertions/""} || insertions=0
-  [[ $stats =~ "[[:digit:]]+ deletions" ]] && deletions=${BASH_REMATCH[1]/ deletions/""} || deletions=0
+  [[ $stats =~ "[[:digit:]]+ insertions" ]] && insertions=${BASH_REMATCH[1]/ insertions/""}
+  [[ $stats =~ "[[:digit:]]+ deletions" ]] && deletions=${BASH_REMATCH[1]/ deletions/""}
 
-  if [[ $insertions == 0 && deletions == 0 ]]; then
-    printf $styled_branch_name
-    return
+  if [[ ! -z $insertions && ! -z $deletions ]]; then
+    printf "$styled_branch_name::<\e[1;32m+\e[0m$insertions\e[36m|\e[0m\e[1;31m-\e[0m$deletions>"
+  elif [[ ! -z $insertions && -z $deletions ]]; then
+    printf "$styled_branch_name::<\e[1;32m+\e[0m$insertions>"
+  elif [[ -z $insertions && ! -z $deletions ]]; then
+    printf "$styled_branch_name::<\e[1;31m-\e[0m$deletions>"
+  else
+    printf "$styled_branch_name::<\e[1;32m+\e[0m$insertions\e[36m|\e[0m\e[1;31m-\e[0m$deletions>"
   fi
-
-  printf "$styled_branch_name::<\e[1;32m+\e[0m$insertions\e[36m|\e[0m\e[1;31m-\e[0m$deletions>"
 }

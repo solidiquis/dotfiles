@@ -62,6 +62,7 @@ return require('packer').startup(function()
     "akinsho/toggleterm.nvim",
     config = get_setup("toggleterm")
   }
+  use { "andymass/vim-matchup" }
 
   -- LSP
   use {
