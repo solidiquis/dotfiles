@@ -4,6 +4,7 @@
 init() {
   exec_tmux
   curwin
+  enable_bash_rematch
   [[ $CURSOR_TYPE == "ibeam" ]] && i_beam_cursor
 }
 
@@ -49,4 +50,8 @@ i_beam_cursor() {
 
 print_todos() {
   [[ -f $TODOS ]] && cat $TODOS
+}
+
+enable_bash_rematch() {
+  setopt BASH_REMATCH
 }
