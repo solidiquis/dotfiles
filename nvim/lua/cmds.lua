@@ -16,7 +16,7 @@ alias("nt_find", "F")
 function source()
   vim.api.nvim_command("source $MYVIMRC")
 end
-alias("source", "SO")
+alias("source", "Source")
 
 -- Cuts current line and appends text without leading whitespace to the line above.
 function line_up()
@@ -44,7 +44,7 @@ function cc_rfp()
   os.execute(cmd)
   print(rfp)
 end
-alias("cc_rfp", "CCRFP")
+alias("cc_rfp", "CCP")
 
 -- Pretty prints a Lua table.
 function inspect(...)
@@ -58,17 +58,16 @@ function inspect(...)
   return ...
 end
 
--- Sets NeoVim and Alacritty to dark mode.
-function dark_mode()
-  if vim.g.tokyonight_style == "night" then
-    return
-  end
-
-  vim.g.tokyonight_style = "night"
-  vim.cmd("colorscheme tokyonight")
-  os.execute("alac-pretty tokyonight_night")
+-- Light mode
+function light_mode()
+  vim.cmd [[ colorscheme dawnfox ]]
 end
-alias("dark_mode", "DM")
+alias("light_mode", "Light")
+
+function dark_mode()
+  vim.cmd [[ colorscheme duskfox ]]
+end
+alias("dark_mode", "Dark")
 
 -- Collapses visually selected lines into single line separated by "sep".
 function collapse(sep)

@@ -37,11 +37,11 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 14.0
+  size: 13.0
 
   offset:
     x: 0
-    y: 2
+    y: 3
 
   glyph_offset:
     x: 0
@@ -68,7 +68,7 @@ key_bindings:
 
 scheme: &onedark
     primary:
-      background: '0x1e232a'
+      background: '0x232138'
       foreground: '0xabb2bf'
 
       bright_foreground: '0xe6efff'
