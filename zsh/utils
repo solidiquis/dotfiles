@@ -126,8 +126,8 @@ git_info() {
     return
   fi
 
-  [[ $stats =~ "[[:digit:]]+ insertions" ]] && insertions=${BASH_REMATCH[1]/ insertions/""}
-  [[ $stats =~ "[[:digit:]]+ deletions" ]] && deletions=${BASH_REMATCH[1]/ deletions/""}
+  [[ $stats =~ "[[:digit:]]+ insertion" ]] && insertions=${BASH_REMATCH[1]/ insertion/""}
+  [[ $stats =~ "[[:digit:]]+ deletion" ]] && deletions=${BASH_REMATCH[1]/ deletion/""}
 
   if [[ ! -z $insertions && ! -z $deletions ]]; then
     printf "$styled_branch_name::<\e[1;32m+\e[0m$insertions\e[36m|\e[0m\e[1;31m-\e[0m$deletions>"
