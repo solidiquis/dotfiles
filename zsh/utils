@@ -98,3 +98,23 @@ load_nvm() {
 ghpa() {
   cat $HOME/.secrets/gh_personal_access.txt | pbcopy
 }
+
+git_info() {
+  project_root=$(git rev-parse --show-toplevel)
+  
+  if [[ -z $project_root ]]; then
+    return
+  fi
+
+  current_branch=$(git branch --show-current) 
+
+  git diff-index --quiet HEAD -- || uncommitted_changes=true
+
+  styled_branch_name="\e[1;33m$current_branch\e[0m"
+
+  if [[ $uncommitted_changes ]]; then 
+    printf "$styled_branch_name \U1F527"
+  else
+    printf $styled_branch_name 
+  fi
+}
