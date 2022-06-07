@@ -29,7 +29,7 @@ return require('packer').startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        "EdenEast/nightfox.nvim",
+        "catppuccin/nvim",
         config = get_setup("colorscheme")
       },
       {

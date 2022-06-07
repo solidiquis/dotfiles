@@ -39,9 +39,6 @@ map(mode.normal, "<leader>s", ":Telescope grep_string<CR>")
 map(mode.normal, "<leader>b", ":Telescope buffers<CR>")
 map(mode.normal, "<leader>h", ":Telescope help_tags<CR>")
 
--- Trouble
-map(mode.normal, "<leader>dg", ":TroubleToggle<CR>")
-
 -- Terminal buffer-scoped maps
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }

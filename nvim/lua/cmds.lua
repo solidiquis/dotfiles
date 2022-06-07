@@ -12,6 +12,11 @@ function nt_find()
 end
 alias("nt_find", "F")
 
+function diagnose()
+  vim.api.nvim_command("TroubleToggle")
+end
+alias("diagnose", "Di")
+
 -- Sources init.lua.
 function source()
   vim.api.nvim_command("source $MYVIMRC")
@@ -60,12 +65,14 @@ end
 
 -- Light mode
 function light_mode()
-  vim.cmd [[ colorscheme dawnfox ]]
+  vim.g.catppuccin_flavour = "latte"
+  vim.cmd [[ colorscheme catppuccin ]]
 end
 alias("light_mode", "Light")
 
 function dark_mode()
-  vim.cmd [[ colorscheme duskfox ]]
+  vim.g.catppuccin_flavour = "mocha"
+  vim.cmd [[ colorscheme catppuccin ]]
 end
 alias("dark_mode", "Dark")
 

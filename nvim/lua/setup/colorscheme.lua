@@ -1,32 +1,28 @@
-		--bold
-		--underline
-		--underlineline	double underline
-		--undercurl	curly underline
-		--underdot	dotted underline
-		--underdash	dashed underline
-		--strikethrough
-		--reverse
-		--inverse		same as reverse
-		--italic
-		--standout
-		--nocombine	override attributes instead of combining them
-		--NONE		no attributes used (used to reset it)
-
-require("nightfox").setup({
-  options = {
-    styles = {
-      comments = "NONE",
-      conditionals = "NONE",
-      constants = "NONE",
-      functions = "NONE",
-      keywords = "NONE",
-      numbers = "NONE",
-      operators = "NONE",
-      strings = "NONE",
-      types = "NONE",
-      variables = "NONE",
-    }
-  }
+require("catppuccin").setup({
+  transparent_background = false,
+  term_colors = false,
+  styles = {
+    comments = "italic",
+    conditionals = "italic",
+    loops = "NONE",
+    functions = "NONE",
+    keywords = "NONE",
+    strings = "NONE",
+    variables = "NONE",
+    numbers = "NONE",
+    booleans = "NONE",
+    properties = "NONE",
+    types = "NONE",
+    operators = "NONE",
+  },
 })
 
-vim.cmd [[ colorscheme duskfox ]]
+local Flavour = {
+  latte = "latte",
+  frappe = "frappe",
+  macchiato = "macchiato",
+  mocha = "mocha",
+}
+
+vim.g.catppuccin_flavour = Flavour.mocha
+vim.cmd[[colorscheme catppuccin]]
