@@ -12,11 +12,6 @@ function nt_find()
 end
 alias("nt_find", "F")
 
-function send_to_terminal()
-  vim.api.nvim_command("ToggleTermSendVisualSelection")
-end
-alias("send_to_terminal", "SendToTerminal")
-
 function diagnose()
   vim.api.nvim_command("TroubleToggle")
 end

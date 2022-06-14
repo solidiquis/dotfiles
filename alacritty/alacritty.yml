@@ -41,7 +41,7 @@ font:
 
   offset:
     x: 0
-    y: 3
+    y: 2
 
   glyph_offset:
     x: 0
@@ -51,7 +51,7 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 1.0
+background_opacity: 1
 
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
@@ -66,10 +66,10 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &catppuccin_mocha
+scheme: &material_dark
 
     primary:
-      background: '0x1e1e2e'
+      background: '0x212121'
       foreground: '0xc0caf5'
 
     # Normal colors
@@ -98,4 +98,4 @@ scheme: &catppuccin_mocha
       - { index: 16, color: '0xff9e64' }
       - { index: 17, color: '0xdb4b4b' }
 
-colors: *catppuccin_mocha
+colors: *material_dark

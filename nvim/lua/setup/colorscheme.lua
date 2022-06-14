@@ -1,28 +1,48 @@
-require("catppuccin").setup({
-  transparent_background = true,
-  term_colors = false,
-  styles = {
-    comments = "italic",
-    conditionals = "italic",
-    loops = "NONE",
-    functions = "NONE",
-    keywords = "NONE",
-    strings = "NONE",
-    variables = "NONE",
-    numbers = "NONE",
-    booleans = "NONE",
-    properties = "NONE",
-    types = "NONE",
-    operators = "NONE",
-  },
+require('material').setup({
+	contrast = {
+		sidebars = false, 
+		floating_windows = false, 
+		line_numbers = false, 
+		sign_column = false, 
+		cursor_line = false, 
+		non_current_windows = false, 
+		popup_menu = false, 
+	},
+
+	italics = {
+		comments = false, 
+		keywords = false, 
+		functions = false, 
+		strings = false, 
+		variables = false 
+	},
+
+	contrast_filetypes = { 
+		"terminal", 
+		"packer", 
+		"qf" 
+	},
+
+	high_visibility = {
+		lighter = false, 
+		darker = false 
+	},
+
+	disable = {
+		colored_cursor = false, 
+		borders = false, 
+		background = false, 
+		term_colors = false, 
+		eob_lines = false 
+	},
+
+	lualine_style = "default", 
+
+	async_loading = true, 
+
+	custom_highlights = {} 
 })
 
-local Flavour = {
-  latte = "latte",
-  frappe = "frappe",
-  macchiato = "macchiato",
-  mocha = "mocha",
-}
+vim.g.material_style = "darker"
 
-vim.g.catppuccin_flavour = Flavour.mocha
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[colorscheme material]]

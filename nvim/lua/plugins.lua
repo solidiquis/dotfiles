@@ -29,7 +29,7 @@ return require('packer').startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        "catppuccin/nvim",
+        "marko-cerovac/material.nvim",
         config = get_setup("colorscheme")
       },
       {

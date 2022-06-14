@@ -44,3 +44,8 @@ def epc(index, pattern = nil)
   end
 end
 
+
+def kk
+  print "\e[2J"
+  print "\e[H"
+end
