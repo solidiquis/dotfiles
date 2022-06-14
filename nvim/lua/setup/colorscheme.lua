@@ -31,7 +31,7 @@ require('material').setup({
 	disable = {
 		colored_cursor = false, 
 		borders = false, 
-		background = false, 
+		background = true,
 		term_colors = false, 
 		eob_lines = false 
 	},
