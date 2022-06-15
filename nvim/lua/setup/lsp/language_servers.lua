@@ -8,5 +8,6 @@ return {
   "tsserver",
   "vimls",
   "eslint",
+  "tailwindcss",
   "solargraph",
 }
