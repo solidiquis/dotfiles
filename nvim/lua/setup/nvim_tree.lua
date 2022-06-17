@@ -18,6 +18,11 @@ end
 require'nvim-tree'.setup {
   auto_reload_on_write = true,
   sort_by = "name",
+  filters = {
+    custom = {
+      ".git"
+    }
+  },
   view = {
     mappings = {
       custom_only = false,
