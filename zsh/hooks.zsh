@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #preexec() {
   #print_divider
 #}

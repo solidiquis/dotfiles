@@ -6,11 +6,12 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/zsh/env --source_only
-source $DOTFILES/zsh/utils --source_only
-source $DOTFILES/zsh/paths --source_only
-source $DOTFILES/zsh/init --source_only
-source $DOTFILES/zsh/aliases --source_only
-source $DOTFILES/zsh/hooks --source_only
+source $DOTFILES/zsh/env.zsh --source_only
+source $DOTFILES/zsh/utils.zsh --source_only
+source $DOTFILES/zsh/paths.zsh --source_only
+source $DOTFILES/zsh/init.zsh --source_only
+source $DOTFILES/zsh/aliases.zsh --source_only
+source $DOTFILES/zsh/hooks.zsh --source_only
+source $DOTFILES/zsh/key_bindings.zsh --source_only
 
 init

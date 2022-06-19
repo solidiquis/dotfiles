@@ -1,5 +1,3 @@
-#!/bin/bash
-
 locipdev() {
   [[ "$OSTYPE" =~ "darwin" ]] && ipconfig getifaddr en0 && return
   hostname -I
@@ -7,10 +5,6 @@ locipdev() {
 
 btdevices() {
   [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
-}
-
-cpwd() {
-  pwd | pbcopy
 }
 
 cursor_vis() {
@@ -93,10 +87,6 @@ load_nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
   fi
-}
-
-ghpa() {
-  cat $HOME/.secrets/gh_personal_access.txt | pbcopy
 }
 
 git_info() {

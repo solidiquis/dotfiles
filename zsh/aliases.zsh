@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [[ -f $(which nvim) ]]; then
   alias vi="nvim"
 else

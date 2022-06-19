@@ -120,3 +120,11 @@ function toggle_diagnostics()
   end
 end
 alias("toggle_diagnostics", "TD")
+
+-- Horizontal terminal
+function hterm()
+  height = math.floor(vim.api.nvim_win_get_height(0) * 0.3)
+  cmd = string.format("ToggleTerm direction=horizontal size=%d", height)
+  vim.api.nvim_command(cmd)
+end
+alias("hterm", "HTerm")

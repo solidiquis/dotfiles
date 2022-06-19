@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Initial tasks to run on window boot up.
 init() {
   exec_tmux
