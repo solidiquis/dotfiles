@@ -3,12 +3,13 @@ local mode = require("consts").modes
 local Direction = {
   horizontal = "horizontal",
   vertical = "vertical",
-  tab = "tab"
+  tab = "tab",
+  float = "float"
 }
 
 require("toggleterm").setup {
   open_mapping = [[<c-\>]],
-  direction = Direction.horizontal,
+  direction = Direction.float,
   hide_numbers = true,
   shade_terminals = true,
   shading_factor = 3,
