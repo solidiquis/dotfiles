@@ -6,7 +6,7 @@ puts "Using Ruby version \e[31m#{RUBY_VERSION}\e[0m."
 AwesomePrint.irb!
 
 CUSTOM_PROMPT = {
-  AUTO_INDENT: true,
+  AUTO_INDENT: false,
   PROMPT_I: "\e[36m>\e[0m ",
   PROMPT_N: "\e[32m>\e[0m ", # wtf does this one do?
   PROMPT_S: "\e[31m>\e[0m ",
