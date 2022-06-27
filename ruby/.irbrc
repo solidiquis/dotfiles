@@ -46,6 +46,5 @@ end
 
 
 def kk
-  print "\e[2J"
-  print "\e[H"
+  print "\e[2J\e[H"
 end

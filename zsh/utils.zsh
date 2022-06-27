@@ -17,6 +17,10 @@ printrgb() {
   printf "\x1b[0m"
 }
 
+kk() {
+  printf "\e[2J\e[H"
+}
+
 s() {
   source $HOME/.zshrc
 }
