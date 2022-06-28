@@ -1,5 +1,6 @@
 return {
   "gopls",
+  "cssls",
   "html",
   "jsonls",
   "pyright",
