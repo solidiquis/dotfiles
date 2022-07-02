@@ -29,7 +29,6 @@ require'nvim-tree'.setup {
       list = {
         { key = "<C-v>",   action = "vsplit" },
         { key = "<C-x>",   action = "split" },
-        { key = "<C-t>",   action = "tabnew" },
         { key = "r",       action = "refresh" },
         { key = "a",       action = "create" },
         { key = "d",       action = "remove" },

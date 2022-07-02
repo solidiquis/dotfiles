@@ -63,6 +63,11 @@ return require('packer').startup(function()
     config = get_setup("toggleterm")
   }
   use { "andymass/vim-matchup" }
+  use {
+    "romgrk/barbar.nvim",
+    requires = {'kyazdani42/nvim-web-devicons'},
+    config = get_setup("barbar")
+  }
 
   -- LSP
   use {

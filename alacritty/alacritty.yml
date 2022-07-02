@@ -37,7 +37,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 14.0
+  size: 13.0
 
   offset:
     x: 0
@@ -51,8 +51,7 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 0.95
-
+background_opacity: 0.9
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
     - { key: K,        mods: Alt,           chars: "\x1bk"                       }

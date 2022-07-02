@@ -1,3 +1,6 @@
+local mode = require("consts").modes
+local map = require("utils").map
+
 require('nvim-treesitter.configs').setup({
   ensure_installed = "maintained",
   sync_install = false,
@@ -6,3 +9,6 @@ require('nvim-treesitter.configs').setup({
     additional_vim_regex_highlighting = false,
   }
 })
+
+map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")
+

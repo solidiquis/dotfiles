@@ -79,4 +79,13 @@ function M.winsize()
   })
 end
 
+function M.map(mode, mapping, cmd, options)
+  local opts = { noremap = true }
+  if options then
+    opts = vim.tbl_extend("force", opts, options)
+  end
+
+  vim.api.nvim_set_keymap(mode, mapping, cmd, opts)
+end
+
 return M

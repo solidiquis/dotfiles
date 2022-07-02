@@ -63,19 +63,6 @@ function inspect(...)
   return ...
 end
 
--- Light mode
-function light_mode()
-  vim.g.catppuccin_flavour = "latte"
-  vim.cmd [[ colorscheme catppuccin ]]
-end
-alias("light_mode", "Light")
-
-function dark_mode()
-  vim.g.catppuccin_flavour = "mocha"
-  vim.cmd [[ colorscheme catppuccin ]]
-end
-alias("dark_mode", "Dark")
-
 -- Collapses visually selected lines into single line separated by "sep".
 function collapse(sep)
   local start_ln = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
