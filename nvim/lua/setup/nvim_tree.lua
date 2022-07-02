@@ -1,8 +1,15 @@
 local winsize = require("utils").winsize
+local nvim_tree_events = require("nvim-tree.events")
+local bufferline_state = require("bufferline.state")
+
+local DEFAULT_WIDTH = 30
 
 local function inc_width()
   local width, _height = winsize()
-  vim.cmd(string.format("NvimTreeResize %d", width + 10))
+  local new_width = width + 10
+
+  vim.cmd(string.format("NvimTreeResize %d", new_width))
+  bufferline_state.set_offset(new_width, "File Tree")
 end
 
 local function dec_width()
@@ -10,9 +17,10 @@ local function dec_width()
 
   local new_width = width - 10
 
-  if new_width < 30 then return end
+  if new_width < DEFAULT_WIDTH then return end
 
-  vim.cmd(string.format("NvimTreeResize %d", width - 10))
+  vim.cmd(string.format("NvimTreeResize %d", new_width))
+  bufferline_state.set_offset(new_width, "File Tree")
 end
 
 require'nvim-tree'.setup {
@@ -24,6 +32,7 @@ require'nvim-tree'.setup {
     }
   },
   view = {
+    width = DEFAULT_WIDTH,
     mappings = {
       custom_only = false,
       list = {
@@ -46,3 +55,11 @@ require'nvim-tree'.setup {
     },
   }
 }
+
+nvim_tree_events.on_tree_open(function ()
+  bufferline_state.set_offset(DEFAULT_WIDTH, "File Tree")
+end)
+
+nvim_tree_events.on_tree_close(function ()
+  bufferline_state.set_offset(0)
+end)
