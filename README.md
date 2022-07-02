@@ -1,11 +1,13 @@
 # Dotfiles
 
-## Zsh Rice
+Detailed setup instructions to come..
+
+## Zsh rice
 
 <img src="https://github.com/solidiquis/solidiquis/blob/master/assets/1.png?raw=true">
 
 
-## NeoVim Rice
+## NeoVim rice
 
 <img src="https://github.com/solidiquis/solidiquis/blob/master/assets/2.png?raw=true">
 <img src="https://github.com/solidiquis/solidiquis/blob/master/assets/3.png?raw=true">
