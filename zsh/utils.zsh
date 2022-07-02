@@ -11,10 +11,8 @@ cursor_vis() {
   echo "\x1b[?25h"
 }
 
-printrgb() {
-  printf "\x1b[38;2;$1;$2;$3m"
-  printf "$4\n"
-  printf "\x1b[0m"
+testface() {
+  echo "hah"
 }
 
 kk() {

@@ -25,4 +25,11 @@ lsp_signature.setup {
   },
 }
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+ vim.lsp.handlers.hover, {
+   -- Use a sharp border with `FloatBorder` highlights
+   border = "double"
+ }
+)
+
 installer.setup(language_servers, opts)
