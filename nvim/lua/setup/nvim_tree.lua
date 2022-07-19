@@ -1,4 +1,6 @@
 local winsize = require("utils").winsize
+local mode = require("consts").modes
+local map = require("utils").map
 local nvim_tree_events = require("nvim-tree.events")
 local bufferline_state = require("bufferline.state")
 
@@ -23,8 +25,11 @@ local function dec_width()
   bufferline_state.set_offset(new_width, "File Tree")
 end
 
-require'nvim-tree'.setup {
+require("nvim-tree").setup {
   auto_reload_on_write = true,
+  update_focused_file = {
+    enable = true
+  },
   sort_by = "name",
   filters = {
     custom = {
@@ -63,3 +68,5 @@ end)
 nvim_tree_events.on_tree_close(function ()
   bufferline_state.set_offset(0)
 end)
+
+map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")

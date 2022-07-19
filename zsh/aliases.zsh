@@ -13,3 +13,8 @@ if [[ $(which exa) ]]; then
   alias ls="exa"
   alias l="exa -lah"
 fi
+
+alias gs="git status"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gp="git push"

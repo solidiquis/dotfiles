@@ -1,7 +1,7 @@
 require('material').setup({
 	contrast = {
 		sidebars = false, 
-		floating_windows = false, 
+		floating_windows = true, 
 		line_numbers = false, 
 		sign_column = false, 
 		cursor_line = false, 

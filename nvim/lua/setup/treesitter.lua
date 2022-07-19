@@ -9,6 +9,3 @@ require('nvim-treesitter.configs').setup({
     additional_vim_regex_highlighting = false,
   }
 })
-
-map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")
-
