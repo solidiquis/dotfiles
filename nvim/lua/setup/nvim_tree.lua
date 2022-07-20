@@ -11,7 +11,6 @@ local function inc_width()
   local new_width = width + 10
 
   vim.cmd(string.format("NvimTreeResize %d", new_width))
-  bufferline_state.set_offset(new_width, "File Tree")
 end
 
 local function dec_width()
@@ -22,7 +21,6 @@ local function dec_width()
   if new_width < DEFAULT_WIDTH then return end
 
   vim.cmd(string.format("NvimTreeResize %d", new_width))
-  bufferline_state.set_offset(new_width, "File Tree")
 end
 
 require("nvim-tree").setup {
@@ -36,7 +34,12 @@ require("nvim-tree").setup {
       ".git"
     }
   },
+  renderer = {
+    highlight_opened_files = "name",
+  },
   view = {
+    adaptive_size = true,
+    centralize_selection = true,
     width = DEFAULT_WIDTH,
     mappings = {
       custom_only = false,
@@ -61,12 +64,8 @@ require("nvim-tree").setup {
   }
 }
 
-nvim_tree_events.on_tree_open(function ()
-  bufferline_state.set_offset(DEFAULT_WIDTH, "File Tree")
-end)
-
-nvim_tree_events.on_tree_close(function ()
-  bufferline_state.set_offset(0)
+nvim_tree_events.on_tree_resize(function (new_size)
+  bufferline_state.set_offset(new_size, "File Tree")
 end)
 
 map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")

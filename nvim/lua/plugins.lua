@@ -21,7 +21,51 @@ end
 return require('packer').startup(function()
   use { 'wbthomason/packer.nvim' }
 
+  -- LSP
+  use {
+    "neovim/nvim-lspconfig",
+    opt = true,
+    event = "BufEnter", -- Prefer BufReadPre.. figure out how to debug: `E201: autocommands must not change current buffer`.
+    wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" },
+    config = get_setup("lsp.config"),
+    requires = {
+      "williamboman/nvim-lsp-installer",
+      "ray-x/lsp_signature.nvim",
+    },
+  }
+
+  -- CMP
+  use {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    opt = true,
+    config = get_setup("cmp"),
+    wants = { "LuaSnip" },
+    requires = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+      "ray-x/cmp-treesitter",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      {
+        "L3MON4D3/LuaSnip",
+        branch = "master",
+        wants = "friendly-snippets",
+        config = get_setup("luasnip"),
+      },
+      "rafamadriz/friendly-snippets",
+    },
+    disable = false,
+  }
+
   -- The Basics
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = get_setup("treesitter")
+  }
   use { 'preservim/nerdcommenter' }
   use {
     "nvim-lualine/lualine.nvim",
@@ -69,54 +113,8 @@ return require('packer').startup(function()
     config = get_setup("barbar")
   }
 
-  -- LSP
-  use {
-    "neovim/nvim-lspconfig",
-    opt = true,
-    event = "BufReadPre",
-    wants = { "cmp-nvim-lsp", "nvim-lsp-installer", "lsp_signature.nvim" },
-    config = get_setup("lsp.config"),
-    requires = {
-      "williamboman/nvim-lsp-installer",
-      "ray-x/lsp_signature.nvim",
-    },
-  }
-
-  -- CMP
-  use {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    opt = true,
-    config = get_setup("cmp"),
-    wants = { "LuaSnip" },
-    requires = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lua",
-      "ray-x/cmp-treesitter",
-      "hrsh7th/cmp-cmdline",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lsp",
-      {
-        "L3MON4D3/LuaSnip",
-        branch = "master",
-        wants = "friendly-snippets",
-        config = get_setup("luasnip"),
-      },
-      "rafamadriz/friendly-snippets",
-    },
-    disable = false,
-  }
-
   -- Which-key
   use { "folke/which-key.nvim" }
-
-  -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = get_setup("treesitter")
-  }
 
   -- Language-specific plugins
   use { "kchmck/vim-coffee-script" }
