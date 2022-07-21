@@ -1,10 +1,19 @@
---vim.cmd [[ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
+local plugins_group = vim.api.nvim_create_augroup("PackerPlugin", { clear = true })
 
 vim.api.nvim_create_autocmd("BufEnter", {
+  group = syntax_group,
   pattern = "*",
   callback = function()
     if vim.api.nvim_buf_line_count(0) > 10000 then
       vim.cmd [[ syntax off ]]
     end
+  end
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = plugins_group,
+  pattern = "plugins.lua",
+  callback = function()
+    vim.cmd [[ source $MYVIMRC | PackerCompile ]]
   end
 })
