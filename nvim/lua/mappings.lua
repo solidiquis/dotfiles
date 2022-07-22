@@ -2,23 +2,26 @@
 -- found in setup folders for each respective plugin.
 
 local mode = require("consts").modes
-local map = require("utils").map
+local utils = require("utils")
 
 vim.g.mapleader = " "
 
 -- Pane navigation
-map(mode.normal, "<C-j>", "<C-w><C-j>")
-map(mode.normal, "<C-k>", "<C-w><C-k>")
-map(mode.normal, "<C-l>", "<C-w><C-l>")
-map(mode.normal, "<C-h>", "<C-w><C-h>")
+utils.map(mode.normal, "<C-j>", "<C-w><C-j>")
+utils.map(mode.normal, "<C-k>", "<C-w><C-k>")
+utils.map(mode.normal, "<C-l>", "<C-w><C-l>")
+utils.map(mode.normal, "<C-h>", "<C-w><C-h>")
 
 -- Equalize pane widths
-map(mode.normal, "<leader>=", "<C-W><C-=>")
+utils.map(mode.normal, "<leader>=", "<C-W><C-=>")
 
 -- copy/paste
-map(mode.visual_select, '<leader>c', '"*yy<CR>')
-map(mode.visual_select, '<leader>v', '"+p<CR>')
-map(mode.normal, '<leader>v', '"+p<CR>')
+utils.map(mode.visual_select, '<leader>c', '"*yy<CR>')
+utils.map(mode.visual_select, '<leader>v', '"+p<CR>')
+utils.map(mode.normal, '<leader>v', '"+p<CR>')
+
+-- Convenience
+utils.map(mode.normal, "<leader>ts", ":lua toggle_style()<CR>")
 
 -- Terminal buffer-scoped maps
 function _G.set_terminal_keymaps()

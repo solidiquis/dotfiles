@@ -31,7 +31,7 @@ require('material').setup({
 	disable = {
 		colored_cursor = false, 
 		borders = false, 
-		background = true,
+		background = false,
 		term_colors = false, 
 		eob_lines = false 
 	},
@@ -45,4 +45,10 @@ require('material').setup({
 
 vim.g.material_style = "darker"
 
-vim.cmd[[colorscheme material]]
+vim.cmd[[ colorscheme material ]]
+
+require("lualine").setup {
+  options = {
+    theme = "material-stealth"
+  }
+}

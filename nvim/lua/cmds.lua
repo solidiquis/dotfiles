@@ -108,6 +108,17 @@ function toggle_diagnostics()
 end
 alias("toggle_diagnostics", "TD")
 
+-- Toggle light and dark mode
+function toggle_style()
+  if vim.g.material_style == "lighter" then
+    vim.g.material_style = "darker"
+  else
+    vim.g.material_style = "lighter"
+  end
+
+  vim.cmd [[ colorscheme material ]]
+end
+
 -- Horizontal terminal
 function hterm()
   height = math.floor(vim.api.nvim_win_get_height(0) * 0.3)

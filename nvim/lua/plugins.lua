@@ -69,7 +69,6 @@ return require('packer').startup(function()
   use { 'preservim/nerdcommenter' }
   use {
     "nvim-lualine/lualine.nvim",
-    config = get_setup("lualine"),
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
