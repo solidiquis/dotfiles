@@ -38,6 +38,7 @@ require("nvim-tree").setup {
     highlight_opened_files = "name",
   },
   view = {
+    side = "left",
     adaptive_size = true,
     centralize_selection = true,
     width = DEFAULT_WIDTH,

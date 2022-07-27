@@ -108,16 +108,18 @@ function toggle_diagnostics()
 end
 alias("toggle_diagnostics", "TD")
 
--- Toggle light and dark mode
 function toggle_style()
-  if vim.g.material_style == "lighter" then
-    vim.g.material_style = "darker"
+  if vim.g.tokyonight_style == "storm" then
+    vim.g.tokyonight_style = "day"
+  elseif vim.g.tokyonight_style == "day" then
+    vim.g.tokyonight_style = "night"
   else
-    vim.g.material_style = "lighter"
+    vim.g.tokyonight_style = "storm"
   end
 
-  vim.cmd [[ colorscheme material ]]
+  vim.cmd[[colorscheme tokyonight]]
 end
+
 
 -- Horizontal terminal
 function hterm()

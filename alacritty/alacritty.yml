@@ -66,10 +66,10 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &material_dark
+scheme: &tokyonight_night
 
     primary:
-      background: '0x212121'
+      background: '0x1a1b26'
       foreground: '0xc0caf5'
 
     # Normal colors
@@ -98,4 +98,4 @@ scheme: &material_dark
       - { index: 16, color: '0xff9e64' }
       - { index: 17, color: '0xdb4b4b' }
 
-colors: *material_dark
+colors: *tokyonight_night

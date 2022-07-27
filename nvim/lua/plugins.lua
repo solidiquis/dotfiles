@@ -72,7 +72,7 @@ return require('packer').startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        "marko-cerovac/material.nvim",
+        "folke/tokyonight.nvim",
         config = get_setup("colorscheme")
       },
       {
