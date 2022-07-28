@@ -8,5 +8,9 @@ export PACKPATH="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_DEFAULT_OPTS='--bind ctrl-n:down,ctrl-p:up'
 
+left="%{\e[34m%}\U250C\U2500%{\e[0m%}"
+cwd="%{\e[1;38;2;122;162;247m%}%c%{\e[0m%}"
+bottom="\n%{\e[34m%}\U2514%{\e[0m%} %{\e[1;31m%}\U1F9CB%{\e[0m%}"
+
 # Prompt
-export PS1=$'%{\x1b[34m%}\U250C\U2500%{\x1b[0m%} %{\x1b[1;38;2;227;135;255m%}%c%{\x1b[0m%}$(git_info) \n%{\x1b[34m%}\U2514%{\x1b[0m%} %{\x1b[1;31m%}\U1F9CB%{\x1b[0m%} '
+export PS1=$'$(print $left) $(print $cwd)$(git_info) $(print $bottom) '
