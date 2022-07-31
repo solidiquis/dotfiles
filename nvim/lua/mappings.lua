@@ -27,10 +27,12 @@ utils.map(mode.normal, "<leader>ts", ":lua toggle_style()<CR>")
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, mode.terminal, "<esc>", [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-j>", [[<C-\><C-n><C-j>]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-j>", [[<C-\><C-n><C-w>j]], opts)
   vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-k>", [[<C-\><C-n><C-w>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-l>", [[<C-\><C-n><C-l>]], opts)
-  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-h>", [[<C-\><C-n><C-h>]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-l>", [[<C-\><C-n><C-w>l]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-h>", [[<C-\><C-n><C-w>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.normal, "<C-c>", [[i]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.normal, "p", [[pi]], opts)
 end
 
 vim.cmd [[ autocmd TermOpen term://* lua set_terminal_keymaps() ]]
