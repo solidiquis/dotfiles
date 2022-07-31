@@ -4,7 +4,7 @@ local style = {
   day = "day"
 }
 
-vim.g.tokyonight_style = style.storm
+vim.g.tokyonight_style = style.night
 vim.g.tokyonight_italic_comments = false
 vim.g.tokyonight_italic_keywords = false
 vim.g.tokyonight_dark_sidebar = false

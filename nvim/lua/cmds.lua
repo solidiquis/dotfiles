@@ -109,12 +109,10 @@ end
 alias("toggle_diagnostics", "TD")
 
 function toggle_style()
-  if vim.g.tokyonight_style == "storm" then
+  if vim.g.tokyonight_style == "night" then
     vim.g.tokyonight_style = "day"
   elseif vim.g.tokyonight_style == "day" then
     vim.g.tokyonight_style = "night"
-  else
-    vim.g.tokyonight_style = "storm"
   end
 
   vim.cmd[[colorscheme tokyonight]]
