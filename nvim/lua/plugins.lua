@@ -111,6 +111,10 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons'},
     config = get_setup("barbar")
   }
+  use {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = get_setup("lsp_lines")
+  }
 
   -- Which-key
   use { "folke/which-key.nvim" }

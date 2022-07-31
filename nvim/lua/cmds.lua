@@ -96,17 +96,13 @@ function collapse(sep)
   vim.api.nvim_win_set_cursor(0, { curr_row, curr_ln_len })
 end
 
--- Toggle (hide/show) diagnostics.. hack but it works
-function toggle_diagnostics()
-  if vim.g.diagnostics_enabled then
-    vim.g.diagnostics_enabled = false
-    vim.diagnostic.disable()
-  else
-    vim.g.diagnostics_enabled = true
-    vim.diagnostic.enable()
-  end
+function show_virtual_diagnostics()
+  vim.diagnostic.config({ virtual_lines = true })
 end
-alias("toggle_diagnostics", "TD")
+
+function hide_virtual_diagnostics()
+  vim.diagnostic.config({ virtual_lines = false })
+end
 
 function toggle_style()
   if vim.g.tokyonight_style == "night" then
@@ -115,9 +111,13 @@ function toggle_style()
     vim.g.tokyonight_style = "night"
   end
 
-  vim.cmd[[colorscheme tokyonight]]
+  vim.cmd("colorscheme tokyonight")
 end
 
+function send_visual_selection_to_terminal()
+  vim.cmd("ToggleTermSendVisualSelection")
+  vim.cmd("ToggleTerm")
+end
 
 -- Horizontal terminal
 function hterm()
