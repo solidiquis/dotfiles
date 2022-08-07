@@ -1,4 +1,3 @@
-require("globals")
 require("autocmds")
 require("options")
 require("plugins")
