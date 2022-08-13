@@ -15,4 +15,4 @@ opt.sw = 2
 opt.ts = 2
 opt.sts = 2
 
-vim.o.signcolumn = "number"
+vim.o.signcolumn = "yes:1"

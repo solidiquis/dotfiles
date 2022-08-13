@@ -60,7 +60,7 @@ return require('packer').startup(function()
     disable = false,
   }
 
-  -- The Basics
+  -- Misc.
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -95,7 +95,6 @@ return require('packer').startup(function()
     config = get_setup("telescope_fzf_native"),
     run = 'make'
   }
-  use { "tpope/vim-fugitive" }
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -115,10 +114,14 @@ return require('packer').startup(function()
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
     config = get_setup("lsp_lines")
   }
-
-  -- Which-key
   use { "folke/which-key.nvim" }
-
-  -- Language-specific plugins
   use { "kchmck/vim-coffee-script" }
+  use {
+    "windwp/nvim-ts-autotag",
+    config = get_setup("nvim_ts_autotag")
+  }
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = get_setup("gitsigns")
+  }
 end)
