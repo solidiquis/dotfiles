@@ -11,4 +11,5 @@ return {
   "eslint",
   "tailwindcss",
   "solargraph",
+  "sqls"
 }
