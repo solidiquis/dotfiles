@@ -32,6 +32,7 @@ function _G.set_terminal_keymaps()
   vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-l>", [[<C-\><C-n><C-w>l]], opts)
   vim.api.nvim_buf_set_keymap(0, mode.terminal, "<C-h>", [[<C-\><C-n><C-w>h]], opts)
   vim.api.nvim_buf_set_keymap(0, mode.normal, "<C-c>", [[i]], opts)
+  vim.api.nvim_buf_set_keymap(0, mode.normal, "q", [[i]], opts)
   vim.api.nvim_buf_set_keymap(0, mode.normal, "p", [[pi]], opts)
 end
 
