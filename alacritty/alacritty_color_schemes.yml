@@ -1321,3 +1321,32 @@ schemes:
     indexed_colors:
       - { index: 16, color: '0xff9e64' }
       - { index: 17, color: '0xdb4b4b' }
+
+  vscode_dark: &vscode_dark
+    primary:
+      background: '#1e1e1e'
+      foreground: '#d4d4d4'
+
+    cursor:
+      text: '#d4d4d4'
+      cursor: '#d4d4d4'
+
+    normal:
+      black:   '#1e1e1e'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'
+
+    bright:
+      black:   '#545454'
+      red:     '#f44747'
+      green:   '#608b4e'
+      yellow:  '#dcdcaa'
+      blue:    '#569cd6'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#d4d4d4'

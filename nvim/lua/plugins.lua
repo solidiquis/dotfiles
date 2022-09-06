@@ -72,7 +72,7 @@ return require('packer').startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        "folke/tokyonight.nvim",
+        "Mofiqul/vscode.nvim",
         config = get_setup("colorscheme")
       },
       {
@@ -116,10 +116,6 @@ return require('packer').startup(function()
   }
   use { "folke/which-key.nvim" }
   use { "kchmck/vim-coffee-script" }
-  use {
-    "windwp/nvim-ts-autotag",
-    config = get_setup("nvim_ts_autotag")
-  }
   use {
     "lewis6991/gitsigns.nvim",
     config = get_setup("gitsigns")
