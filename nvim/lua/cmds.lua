@@ -104,19 +104,19 @@ function hide_virtual_diagnostics()
   vim.diagnostic.config({ virtual_lines = false })
 end
 
-function toggle_style()
-  if vim.g.tokyonight_style == "night" then
-    vim.g.tokyonight_style = "day"
-  elseif vim.g.tokyonight_style == "day" then
-    vim.g.tokyonight_style = "night"
-  end
-
-  vim.cmd("colorscheme tokyonight")
-end
-
 function send_visual_selection_to_terminal()
   vim.cmd("ToggleTermSendVisualSelection")
   vim.cmd("ToggleTerm")
+end
+
+function update_buf_width(amnt)
+  local current_width = vim.api.nvim_win_get_width(0)
+  vim.api.nvim_win_set_width(0, current_width + amnt)
+end
+
+function update_buf_height(amnt)
+  local current_height = vim.api.nvim_win_get_height(0)
+  vim.api.nvim_win_set_height(0, current_height + amnt)
 end
 
 -- Horizontal terminal

@@ -20,8 +20,11 @@ utils.map(mode.visual_select, '<leader>c', '"*yy<CR>')
 utils.map(mode.visual_select, '<leader>v', '"+p<CR>')
 utils.map(mode.normal, '<leader>v', '"+p<CR>')
 
--- Convenience
-utils.map(mode.normal, "<leader>ts", ":lua toggle_style()<CR>")
+-- Misc
+utils.map(mode.normal, '=', ":lua update_buf_width(2)<CR>")
+utils.map(mode.normal, '-', ":lua update_buf_width(-2)<CR>")
+utils.map(mode.normal, '+', ":lua update_buf_height(2)<CR>")
+utils.map(mode.normal, '_', ":lua update_buf_height(-2)<CR>")
 
 -- Terminal buffer-scoped maps
 function _G.set_terminal_keymaps()
