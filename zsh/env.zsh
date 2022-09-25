@@ -1,5 +1,3 @@
-export BOOKMARKS="$HOME/.cache/bookmarks"
-export TODOS="$HOME/.cache/todos"
 export CURSOR_TYPE="ibeam"
 
 export PACKPATH="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"

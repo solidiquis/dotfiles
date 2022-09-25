@@ -42,35 +42,49 @@ h() {
 }
 
 j() {
-  if [[ -z $BOOKMARKS ]]; then
-    BOOKMARKS="$HOME/.cache/bookmarks"
+  bookmarks="$HOME/.bookmarks"
+
+  if [[ ! -f "$bookmarks" ]]; then
+    touch "$bookmarks"
   fi
 
-  if [[ ! -f $BOOKMARKS ]]; then
-    touch $BOOKMARKS
+  if [[ "$*" =~ "(-h|--help)" ]]; then
+    read -r -d "" usage << EOT
+USAGE:
+  j [ARGUMENT] [OPTIONS]
+
+ARGUMENT:
+  Name of book mark to cd into.
+
+OPTIONS:
+  -h, --help          Display usage text.
+  -l                  Display all bookmarks.
+  -d <bookmark>       Bookmark to delete.
+  -c <bookmark>       Bookmark to create.
+EOT
+
+    echo "$usage"
   fi
 
   case $1 in
-
     -l)
-      cat $BOOKMARKS
+      cat $bookmarks
       ;;
 
     -c)
       bookmark="${2}=$(pwd)"
-      echo $bookmark >> $BOOKMARKS
-      echo $bookmark
+      if [[ -z $(grep "$bookmark" "$bookmarks") ]]; then
+        echo $bookmark >> $BOOKMARKS
+        echo $bookmark
+      else
+        echo "Bookmark '$bookmark' already exists."
+      fi
       ;;
 
     -d)
       pat="/^$2=.*/d"
-      sed -i "" $pat $BOOKMARKS
-      cat $BOOKMARKS
-      ;;
-
-    -w)
-      cat $BOOKMARKS
-      echo "" > $BOOKMARKS
+      sed -i "" "$pat" "$bookmarks"
+      cat "$bookmarks"
       ;;
 
     *)
@@ -79,6 +93,8 @@ j() {
 
       if [[ $bookmarks =~ ($1=[[:print:]]*) ]]; then
         [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && cd ${BASH_REMATCH[1]:1}
+      else
+        echo "No such bookmark, $2"
       fi
       ;;
   esac
