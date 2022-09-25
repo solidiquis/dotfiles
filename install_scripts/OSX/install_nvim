@@ -1,2 +1,0 @@
-brew install neovim
-ln -s ~/dotfiles/nvim/ ~/.config/nvim
