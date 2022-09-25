@@ -12,27 +12,18 @@ if [[ ! -d $(xcode-select -p) ]]; then
   fi
 fi
 
-install_unless_exists() {
-  if [[ ! f $(brew --prefix "$1") ]]; then
-    echo "Installing $1..."
-    brew install "$1"
-  else
-    echo "$1 already installed. Skipping..."
-  fi
-}
-
 echo "Installing homebrew..."
 which brew 2>&1 > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing oh-my-zsh..."
 [[ ! -d "$HOME/.oh-my-zsh" ]] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-install_unless_exists "--cask alacritty"
-install_unless_exists tmux
-install_unless_exists neovim
-install_unless_exists ripgrep
-install_unless_exists fd
-install_unless_exists exa
+brew install --cask alacritty
+brew install tmux
+brew install neovim
+brew install ripgrep
+brew install fd
+brew install exa
 
 brew tap solidiquis/tap
-install_unless_exists erdtree
+brew install erdtree
