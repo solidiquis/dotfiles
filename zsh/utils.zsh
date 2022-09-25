@@ -58,21 +58,21 @@ EOT
   fi
 
   case $1 in
-    -l)
+    "-l")
       cat $bookmarks
       ;;
 
-    -c)
+    "-c")
       bookmark="${2}=$(pwd)"
       if [[ -z $(grep "$bookmark" "$bookmarks") ]]; then
-        echo $bookmark >> $BOOKMARKS
+        echo $bookmark >> $bookmarks
         echo $bookmark
       else
         echo "Bookmark '$bookmark' already exists."
       fi
       ;;
 
-    -d)
+    "-d")
       pat="/^$2=.*/d"
       sed -i "" "$pat" "$bookmarks"
       cat "$bookmarks"
@@ -80,7 +80,7 @@ EOT
 
     *)
       [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
-      bookmarks=$(cat $BOOKMARKS)
+      bookmarks=$(cat $bookmarks)
 
       if [[ $bookmarks =~ ($1=[[:print:]]*) ]]; then
         [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && cd ${BASH_REMATCH[1]:1}
