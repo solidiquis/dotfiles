@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 
-which brew 2>&1 > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [[ ! -d $(xcode-select -p) ]]; then
+  printf "XCode dev utilities not detected. Enter `xcode` to install: "
 
-[[ ! -d "$HOME/.oh-my-zsh" ]] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  read can_install_xcode
+
+  if [[ "$can_install_xcode" == "xcode" ]]; then
+    xcode-select --install
+  else
+    echo "Manual installation command: \e[36mxcode-select --install\e[0m"
+  fi
+fi
 
 install_unless_exists() {
   [[ ! f $(brew --prefix $1) ]] brew install "$1"
 }
+
+echo "Installing homebrew..."
+which brew 2>&1 > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "Installing oh-my-zsh..."
+[[ ! -d "$HOME/.oh-my-zsh" ]] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 install_unless_exists "--cask alacritty"
 install_unless_exists tmux
