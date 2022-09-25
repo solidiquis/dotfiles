@@ -13,7 +13,7 @@ if [[ ! -d $(xcode-select -p) ]]; then
 fi
 
 install_unless_exists() {
-  if [[ ! f $(brew --prefix $1) ]]; then
+  if [[ ! f $(brew --prefix "$1") ]]; then
     echo "Installing $1..."
     brew install "$1"
   else
