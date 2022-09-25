@@ -1324,7 +1324,7 @@ schemes:
 
   vscode_dark: &vscode_dark
     primary:
-      background: '#1e1e1e'
+      background: '#1b1b1c'
       foreground: '#d4d4d4'
 
     cursor:

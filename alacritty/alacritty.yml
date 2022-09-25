@@ -4,6 +4,8 @@ window:
     columns: 0
     lines: 0
 
+  opacity: 1.0
+
   position:
     x: 0
     y: 0
@@ -51,8 +53,6 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 1.0
-
 key_bindings:
     - { key: J,        mods: Alt,           chars: "\x1bj"                       }
     - { key: K,        mods: Alt,           chars: "\x1bk"                       }
@@ -68,7 +68,7 @@ key_bindings:
 
 scheme: &vscode_dark
     primary:
-      background: '#1e1e1e'
+      background: '#1b1b1c'
       foreground: '#d4d4d4'
 
     cursor:

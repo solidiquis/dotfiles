@@ -9,7 +9,3 @@ if [[ $OSTYPE =~ "darwin" ]]; then
   alias abrew="/opt/homebrew/bin/brew"
 fi
 
-if [[ $(which exa) ]]; then
-  alias ls="exa"
-  alias l="exa -lah"
-fi

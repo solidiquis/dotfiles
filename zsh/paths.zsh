@@ -12,3 +12,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Misc Paths
 export PATH="$HOME/dotfiles/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
+
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  if [[ $(arch) =~ "arm64" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+  fi
+fi

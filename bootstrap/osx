@@ -13,17 +13,19 @@ if [[ ! -d $(xcode-select -p) ]]; then
 fi
 
 echo "Installing homebrew..."
-which brew 2>&1 > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing oh-my-zsh..."
-[[ ! -d "$HOME/.oh-my-zsh" ]] && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "Installing native dependencies..."
 brew install --cask alacritty
 brew install tmux
 brew install neovim
 brew install ripgrep
 brew install fd
 brew install exa
+brew install gitui
 
 brew tap solidiquis/tap
 brew install erdtree

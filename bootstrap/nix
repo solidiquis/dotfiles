@@ -5,13 +5,17 @@ if [[ -z "$DOTFILES" ]]; then
   exit 1
 fi
 
+if [[ ! -d "$HOME/.config" ]]; then
+  mkdir "$HOME/.config"
+fi
+
 # Symlinks for dotfiles
 ln -s "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
 ln -s "$DOTFILES/vim" "$HOME/.vim"
-ln -s "$DOTFILES/nvim" "$HOME/.nvim"
+ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
 ln -s "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -s "$DOTFILES/alacritty/alacritty.yml" "$HOME/.alacritty.yml"
-ln -s "$DOTFILES/alacritty/alacritty_color_schemes.yml" "$HOME/alacritty_color_schemes.yml"
+ln -s "$DOTFILES/alacritty/alacritty_color_schemes.yml" "$HOME/.alacritty_color_schemes.yml"
 ln -s "$DOTFILES/ruby/.irbrc" "$HOME/.irbrc"
 
 # Init Packer
