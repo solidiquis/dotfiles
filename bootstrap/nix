@@ -16,3 +16,9 @@ ln -s "$DOTFILES/ruby/.irbrc" "$HOME/.irbrc"
 
 # Init Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Init system dependencies
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  echo "Darwin operating system detected."
+  . "$DOTFILES/bootstrap/osx"
+fi
