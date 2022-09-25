@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ -z "$DOTFILES" ]]; then
+  echo "Ensure path to dotfiles, '\$DOTFILES', is set."
+  exit 1
+fi
+
+# Symlinks for dotfiles
+ln -s "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
+ln -s "$DOTFILES/vim" "$HOME/.vim"
+ln -s "$DOTFILES/nvim" "$HOME/.nvim"
+ln -s "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+ln -s "$DOTFILES/alacritty/alacritty.yml" "$HOME/.alacritty.yml"
+ln -s "$DOTFILES/alacritty/alacritty_color_schemes.yml" "$HOME/alacritty_color_schemes.yml"
+ln -s "$DOTFILES/ruby/.irbrc" "$HOME/.irbrc"
+
+# Init Packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim

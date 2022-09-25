@@ -1,10 +1,10 @@
--- autocompile
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+local packer = require("packer")
+local versions = require("consts").plugin_versions_filename
+
+if os.getenv("DOTFILES") ~= nil then
+  packer.config.snapshot_path = os.getenv("DOTFILES") .. "/nvim"
+  packer.config.snapshot = os.getenv("DOTFILES") .. "/nvim/" .. versions
+end
 
 -- auto bootstrap
 local fn = vim.fn
@@ -18,7 +18,7 @@ local function get_setup(name)
   return string.format('require("setup.%s")', name)
 end
 
-return require('packer').startup(function()
+return packer.startup(function()
   use { 'wbthomason/packer.nvim' }
 
   -- LSP

@@ -16,7 +16,8 @@ local consts = {
     command_line = "c",
     terminal = "t"
   },
-  runtime_path = runtime_path
+  runtime_path = runtime_path,
+  plugin_versions_filename = "plugin_versions"
 }
 
 return consts

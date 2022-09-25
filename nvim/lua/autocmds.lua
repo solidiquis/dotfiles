@@ -1,4 +1,4 @@
-local plugins_group = vim.api.nvim_create_augroup("PackerPlugin", { clear = true })
+local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 
 vim.api.nvim_create_autocmd("BufEnter", {
   group = syntax_group,
@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = plugins_group,
   pattern = "plugins.lua",
   callback = function()
-    vim.cmd [[ source $MYVIMRC | PackerCompile ]]
+    vim.cmd [[ BufWritePost plugins.lua source <afile> | PackerCompile ]]
   end
 })
 
