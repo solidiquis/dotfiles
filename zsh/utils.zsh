@@ -1,18 +1,5 @@
-locipdev() {
-  [[ "$OSTYPE" =~ "darwin" ]] && ipconfig getifaddr en0 && return
-  hostname -I
-}
-
-btdevices() {
-  [[ "$OSTYPE" =~ "darwin" ]] && system_profiler SPBluetoothDataType
-}
-
 cursor_vis() {
   echo "\x1b[?25h"
-}
-
-testface() {
-  echo "hah"
 }
 
 kk() {
@@ -20,7 +7,11 @@ kk() {
 }
 
 s() {
-  source $HOME/.zshrc
+  if [[ "$SHELL" =~ "zsh" ]]; then
+    source $HOME/.zshrc
+  elif [[ "$SHELL" =~ "bash" ]]; then
+    source $HOME/.bash_profile
+  fi
 }
 
 h() {
