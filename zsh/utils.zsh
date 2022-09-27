@@ -55,14 +55,20 @@ OPTIONS:
 EOT
 
     echo "$usage"
+    return
   fi
 
   case $1 in
     "-l")
-      cat $bookmarks
+      cat "$bookmarks"
       ;;
 
     "-c")
+      if [[ -z "$2" ]]; then
+        echo "Missing argument for -c" 
+        return
+      fi
+      
       local bookmark="${2}=$(pwd)"
       if [[ -z $(grep "$bookmark" "$bookmarks") ]]; then
         echo $bookmark >> $bookmarks
@@ -79,14 +85,9 @@ EOT
       ;;
 
     *)
-      [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
-      local bookmarks=$(cat $bookmarks)
-
-      if [[ $bookmarks =~ ($1=[[:print:]]*) ]]; then
-        [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && cd ${BASH_REMATCH[1]:1}
-      else
-        echo "No such bookmark, $2"
-      fi
+      local target=$(grep "$1=" "$HOME/.bookmarks")
+      local result=${target/$1=/}
+      cd "$result"
       ;;
   esac
 }
