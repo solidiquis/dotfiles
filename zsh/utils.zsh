@@ -33,7 +33,7 @@ h() {
 }
 
 j() {
-  bookmarks="$HOME/.bookmarks"
+  local bookmarks="$HOME/.bookmarks"
 
   if [[ ! -f "$bookmarks" ]]; then
     touch "$bookmarks"
@@ -63,7 +63,7 @@ EOT
       ;;
 
     "-c")
-      bookmark="${2}=$(pwd)"
+      local bookmark="${2}=$(pwd)"
       if [[ -z $(grep "$bookmark" "$bookmarks") ]]; then
         echo $bookmark >> $bookmarks
         echo $bookmark
@@ -73,14 +73,14 @@ EOT
       ;;
 
     "-d")
-      pat="/^$2=.*/d"
+      local pat="/^$2=.*/d"
       sed -i "" "$pat" "$bookmarks"
       cat "$bookmarks"
       ;;
 
     *)
       [[ $SHELL == "/bin/zsh" ]] && setopt local_options BASH_REMATCH
-      bookmarks=$(cat $bookmarks)
+      local bookmarks=$(cat $bookmarks)
 
       if [[ $bookmarks =~ ($1=[[:print:]]*) ]]; then
         [[ ${BASH_REMATCH[1]} =~ (=[[:print:]]*) ]] && cd ${BASH_REMATCH[1]:1}
@@ -101,24 +101,24 @@ load_nvm() {
 git_info() {
   # Will not work unless setopt BASH_REMATCH.
 
-  project_root=$(git rev-parse --show-toplevel 2> /dev/null)
+  local project_root=$(git rev-parse --show-toplevel 2> /dev/null)
   
   if [[ -z $project_root ]]; then
     return
   fi
 
-  current_branch=$(git branch --show-current) 
+  local current_branch=$(git branch --show-current) 
 
   git diff-index --quiet HEAD -- 2> /dev/null || uncommitted_changes=true
 
-  styled_branch_name="::\e[1;38;2;255;213;135m$current_branch\e[0m"
+  local styled_branch_name="::\e[1;38;2;255;213;135m$current_branch\e[0m"
 
   if [[ ! $uncommitted_changes ]]; then 
     printf $styled_branch_name 
     return
   fi
 
-  stats=$(git diff --stat)
+  local stats=$(git diff --stat)
 
   if [[ -z $stats ]]; then
     printf $styled_branch_name
