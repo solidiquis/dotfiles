@@ -992,7 +992,7 @@ schemes:
 
   tomorrow_night: &tomorrow_night
     primary:
-      background: '0x1d1f21'
+      background: '0x1c1c1c'
       foreground: '0xc5c8c6'
     cursor:
       text: '0x1d1f21'
@@ -1203,7 +1203,7 @@ schemes:
 
     # Normal colors
     normal:
-      black:   '0x15161E'
+      black:   '0x15161e'
       red:     '0xf7768e'
       green:   '0x9ece6a'
       yellow:  '0xe0af68'
@@ -1290,6 +1290,37 @@ schemes:
       - { index: 16, color: '0xb15c00' }
       - { index: 17, color: '0xc64343' }
 
+  tokyo_moon: &tokyo_moon
+    primary:
+      background: '0x222436'
+      foreground: '0xc8d3f5'
+
+    # Normal colors
+    normal:
+      black:   '0x1b1d2b'
+      red:     '0xff757f'
+      green:   '0xc3e88d'
+      yellow:  '0xffc777'
+      blue:    '0x82aaff'
+      magenta: '0xc099ff'
+      cyan:    '0x86e1fc'
+      white:   '0x828bb8'
+
+    # Bright colors
+    bright:
+      black:   '0x444a73'
+      red:     '0xff757f'
+      green:   '0xc3e88d'
+      yellow:  '0xffc777'
+      blue:    '0x82aaff'
+      magenta: '0xc099ff'
+      cyan:    '0x86e1fc'
+      white:   '0xc8d3f5'
+
+    indexed_colors:
+      - { index: 16, color: '0xff966c' }
+      - { index: 17, color: '0xc53b53' }
+
   material_dark: &material_dark
 
     primary:
@@ -1350,3 +1381,4 @@ schemes:
       magenta: '#c678dd'
       cyan:    '#56b6c2'
       white:   '#d4d4d4'
+

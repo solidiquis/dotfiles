@@ -39,7 +39,7 @@ font:
     family: SauceCodePro NF
     style: Bold Italic
 
-  size: 14.0
+  size: 13.0
 
   offset:
     x: 0
@@ -66,33 +66,35 @@ key_bindings:
     - { key: E,        mods: Alt,           chars: "\x1be"                       }
     - { key: X,        mods: Alt|Shift,     chars: "\x1bX"                       }
 
-scheme: &vscode_dark
+scheme: &tokyo_moon
     primary:
-      background: '#1b1b1c'
-      foreground: '#d4d4d4'
+      background: '0x222436'
+      foreground: '0xc8d3f5'
 
-    cursor:
-      text: '#d4d4d4'
-      cursor: '#d4d4d4'
-
+    # Normal colors
     normal:
-      black:   '#1e1e1e'
-      red:     '#f44747'
-      green:   '#608b4e'
-      yellow:  '#dcdcaa'
-      blue:    '#569cd6'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
+      black:   '0x1b1d2b'
+      red:     '0xff757f'
+      green:   '0xc3e88d'
+      yellow:  '0xffc777'
+      blue:    '0x82aaff'
+      magenta: '0xc099ff'
+      cyan:    '0x86e1fc'
+      white:   '0x828bb8'
 
+    # Bright colors
     bright:
-      black:   '#545454'
-      red:     '#f44747'
-      green:   '#608b4e'
-      yellow:  '#dcdcaa'
-      blue:    '#569cd6'
-      magenta: '#c678dd'
-      cyan:    '#56b6c2'
-      white:   '#d4d4d4'
+      black:   '0x444a73'
+      red:     '0xff757f'
+      green:   '0xc3e88d'
+      yellow:  '0xffc777'
+      blue:    '0x82aaff'
+      magenta: '0xc099ff'
+      cyan:    '0x86e1fc'
+      white:   '0xc8d3f5'
 
-colors: *vscode_dark
+    indexed_colors:
+      - { index: 16, color: '0xff966c' }
+      - { index: 17, color: '0xc53b53' }
+
+colors: *tokyo_moon
