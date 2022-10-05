@@ -1,3 +1,5 @@
+local lualine = require("lualine")
+
 require("tokyonight").setup({
   style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
   transparent = false, -- Enable this to disable setting the background color
@@ -22,7 +24,7 @@ require("tokyonight").setup({
   on_highlights = function(highlights, colors) end,
 })
 
-require("lualine").setup {
+lualine.setup {
   options = {
     theme = "tokyonight"
   }

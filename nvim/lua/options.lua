@@ -17,4 +17,3 @@ opt.sts = 2
 
 
 vim.o.signcolumn = "yes:1"
-vim.o.ch = 0
