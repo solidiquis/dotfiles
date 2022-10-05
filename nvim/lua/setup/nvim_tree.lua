@@ -2,7 +2,7 @@ local winsize = require("utils").winsize
 local mode = require("consts").modes
 local map = require("utils").map
 local nvim_tree_events = require("nvim-tree.events")
-local bufferline_state = require("bufferline.state")
+local bufferline_api = require("bufferline.api")
 
 local DEFAULT_WIDTH = 30
 
@@ -66,7 +66,7 @@ require("nvim-tree").setup {
 }
 
 nvim_tree_events.on_tree_resize(function (new_size)
-  bufferline_state.set_offset(new_size, "File Tree")
+  bufferline_api.set_offset(new_size, "File Tree")
 end)
 
 map(mode.normal, "<leader>e", ":NvimTreeToggle<CR>")
