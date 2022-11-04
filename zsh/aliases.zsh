@@ -9,3 +9,10 @@ if [[ $OSTYPE =~ "darwin" ]]; then
   alias abrew="/opt/homebrew/bin/brew"
 fi
 
+if [[ ! -z $(command -v lsd) ]]; then
+  alias ls="lsd"
+fi
+
+if [[ ! -z $(command -v bat) ]]; then
+  alias bat="cat"
+fi

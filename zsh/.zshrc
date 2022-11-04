@@ -9,4 +9,9 @@ source $DOTFILES/zsh/aliases.zsh --source_only
 source $DOTFILES/zsh/hooks.zsh --source_only
 source $DOTFILES/zsh/key_bindings.zsh --source_only
 
+# Machine specific keys to be ignored by git.
+if [[ -f "$DOTFILES/zsh/keys.zsh" ]]; then
+  source $DOTFILES/zsh/keys.zsh --source_only
+fi
+
 init

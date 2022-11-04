@@ -5,3 +5,4 @@ bin/*
 vim/.vim/autoload/
 vim/.vim/plugged/
 nvim/plugin
+zsh/keys.zsh
