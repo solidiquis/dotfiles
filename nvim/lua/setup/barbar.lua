@@ -67,3 +67,5 @@ require('bufferline').setup({
 map(mode.normal, "<leader>n", ":BufferNext<CR>")
 map(mode.normal, "<leader>N", ":BufferPrevious<CR>")
 map(mode.normal, "<leader>q", ":BufferClose<CR>")
+map(mode.normal, "<C-s>", ":BufferMoveNext<CR>")
+map(mode.normal, "<C-a>", ":BufferMovePrevious<CR>")
