@@ -25,6 +25,7 @@ end
 
 require("nvim-tree").setup {
   auto_reload_on_write = true,
+  hijack_cursor = true,
   update_focused_file = {
     enable = true
   },
@@ -35,6 +36,9 @@ require("nvim-tree").setup {
     }
   },
   renderer = {
+    indent_markers = {
+      enable = true
+    },
     highlight_opened_files = "name",
   },
   view = {
