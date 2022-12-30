@@ -36,9 +36,6 @@ require("nvim-tree").setup {
     }
   },
   renderer = {
-    indent_markers = {
-      enable = true
-    },
     highlight_opened_files = "name",
   },
   view = {
