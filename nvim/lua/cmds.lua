@@ -1,4 +1,5 @@
-local alias = require("utils").alias
+local utils = require("utils")
+local alias = utils.alias
 
 -- Go to definition
 function def()
@@ -35,12 +36,7 @@ function line_up()
 end
 alias("line_up", "LU")
 
--- Shows the filetype.
-function ft()
-  vim.cmd("set filetype?")
-end
-
--- Copies the relative file path of file in current buffer to system clipboard.
+-- Copies relative file path of current buffer into clipboard.
 function cc_rfp()
   local full_path = vim.api.nvim_buf_get_name(0)
   local cwd = vim.fn.getcwd()
@@ -51,7 +47,6 @@ function cc_rfp()
 end
 alias("cc_rfp", "CCP")
 
--- Pretty prints a Lua table.
 function inspect(...)
   local objects = {}
   for i = 1, select('#', ...) do
@@ -63,11 +58,11 @@ function inspect(...)
   return ...
 end
 
--- Collapses visually selected lines into single line separated by "sep".
 function collapse(sep)
-  local start_ln = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
-  local end_ln = vim.api.nvim_buf_get_mark(0, ">")[1]
-  local lines = vim.api.nvim_buf_get_lines(0, start_ln, end_ln, true)
+  local data = utils.visual_get_lines()
+  local lines = data.lines
+  local start_ln = data.start_ln
+  local end_ln = data.end_ln
 
   local result = ""
 
@@ -96,19 +91,6 @@ function collapse(sep)
   vim.api.nvim_win_set_cursor(0, { curr_row, curr_ln_len })
 end
 
-function show_virtual_diagnostics()
-  vim.diagnostic.config({ virtual_lines = true })
-end
-
-function hide_virtual_diagnostics()
-  vim.diagnostic.config({ virtual_lines = false })
-end
-
-function send_visual_selection_to_terminal()
-  vim.cmd("ToggleTermSendVisualSelection")
-  vim.cmd("ToggleTerm")
-end
-
 function update_buf_width(amnt)
   local current_width = vim.api.nvim_win_get_width(0)
   vim.api.nvim_win_set_width(0, current_width + amnt)
@@ -119,10 +101,48 @@ function update_buf_height(amnt)
   vim.api.nvim_win_set_height(0, current_height + amnt)
 end
 
--- Horizontal terminal
-function hterm()
-  height = math.floor(vim.api.nvim_win_get_height(0) * 0.3)
-  cmd = string.format("ToggleTerm direction=horizontal size=%d", height)
-  vim.api.nvim_command(cmd)
+-- Alphabetizes visual selection lines
+function alphabetize_lines()
+  local data = utils.visual_get_lines()
+
+  local lower_byte = function(s)
+    return string.byte(string.lower(s))
+  end
+
+  local prev_lhs = nil
+  local prev_rhs = nil
+
+  local function comparator(a, b)
+    local lhs = string.match(a, "%w") or "~"
+    local rhs = string.match(b, "%w") or "~"
+
+    if lhs ~= "~" and rhs ~= "~" and lhs == rhs then
+      prev_lhs = lhs
+      prev_rhs = rhs
+
+      return comparator(
+        string.sub(a, 2, #a),
+        string.sub(b, 2, #b)
+      )
+
+    elseif prev_lhs ~= nil and prev_rhs ~= nil and prev_lhs == prev_rhs then
+      prev_lhs = nil
+      prev_rhs = nil
+
+      if lhs == "~" and rhs ~= "~" then
+        return true
+      elseif lhs ~= "~" and rhs == "~" then
+        return false
+      end
+    else
+      prev_lhs = nil
+      prev_rhs = nil
+    end
+
+    return lower_byte(lhs) < lower_byte(rhs)
+  end
+
+  table.sort(data.lines, comparator)
+
+  vim.api.nvim_buf_set_lines(0, data.start_ln, data.end_ln, true, data.lines)
 end
-alias("hterm", "HTerm")
