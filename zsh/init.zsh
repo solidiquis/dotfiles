@@ -3,6 +3,7 @@ init() {
   exec_tmux
   curwin
   enable_bash_rematch
+  setopt BASH_REMATCH
   [[ $CURSOR_TYPE == "ibeam" ]] && i_beam_cursor
 }
 
