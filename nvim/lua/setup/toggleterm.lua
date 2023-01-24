@@ -1,4 +1,5 @@
 local mode = require("consts").modes
+local utils = require("utils")
 
 local Direction = {
   horizontal = "horizontal",
@@ -30,3 +31,5 @@ require("toggleterm").setup {
     winblend = 3,
   }
 }
+
+utils.map(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>")
