@@ -72,7 +72,7 @@ return packer.startup(function()
     requires = {
       "kyazdani42/nvim-web-devicons",
       {
-        "folke/tokyonight.nvim",
+        "EdenEast/nightfox.nvim",
         config = get_setup("colorscheme")
       },
       {

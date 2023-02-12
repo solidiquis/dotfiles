@@ -1,7 +1,7 @@
 # Initial tasks to run on window boot up.
 init() {
   exec_tmux
-  curwin
+  #curwin
   enable_bash_rematch
   setopt BASH_REMATCH
   [[ $CURSOR_TYPE == "ibeam" ]] && i_beam_cursor
