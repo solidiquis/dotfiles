@@ -1,6 +1,7 @@
 local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 local info_log = require("utils").info
 
+-- Turn off syntax highlighting for large files
 vim.api.nvim_create_autocmd("BufEnter", {
   group = syntax_group,
   pattern = "*",
@@ -11,6 +12,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end
 })
 
+-- Recompile plugins when changes made to plugins.lua
 vim.api.nvim_create_autocmd("BufWritePost", {
   group = plugins_group,
   pattern = "plugins.lua",
@@ -20,6 +22,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end
 })
 
+-- Make NvimTree bufferline align tabs
 vim.api.nvim_create_autocmd('BufWinLeave', {
   pattern = '*',
   callback = function()

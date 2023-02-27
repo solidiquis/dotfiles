@@ -1,12 +1,6 @@
 local utils = require("utils")
 local alias = utils.alias
 
--- Go to definition
-function def()
-  vim.lsp.buf.definition()
-end
-alias("def", "Def")
-
 -- Toggles NERDTree.
 function nt_find()
   vim.api.nvim_command("NvimTreeFindFile")
@@ -102,7 +96,7 @@ function update_buf_height(amnt)
 end
 
 -- Alphabetizes visual selection lines
-function alphabetize_lines()
+function ajphabetize_lines()
   local data = utils.visual_get_lines()
 
   local lower_byte = function(s)
