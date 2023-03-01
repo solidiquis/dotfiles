@@ -26,7 +26,6 @@ utils.map(mode.normal, "-", ":lua update_buf_width(-2)<CR>")
 utils.map(mode.normal, "+", ":lua update_buf_height(2)<CR>")
 utils.map(mode.normal, "_", ":lua update_buf_height(-2)<CR>")
 utils.map(mode.normal, "<leader>d", ":lua vim.lsp.buf.definition()<CR>")
-utils.map(mode.normal, "<leader>r", ":lua vim.lsp.buf.references()<CR>")
 
 -- Terminal buffer-scoped maps
 function _G.set_terminal_keymaps()
