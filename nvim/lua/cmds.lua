@@ -140,3 +140,10 @@ function ajphabetize_lines()
 
   vim.api.nvim_buf_set_lines(0, data.start_ln, data.end_ln, true, data.lines)
 end
+
+function ts()
+  local cursor = vim.api.nvim_win_get_cursor(0)
+  local cursor_row = cursor[1]
+  local cursor_col = cursor[2]
+  vim.api.nvim_buf_set_text(0, cursor_row - 1, cursor_col, cursor_row - 1, cursor_col, { utils.my_time() })
+end

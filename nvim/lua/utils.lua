@@ -98,4 +98,8 @@ function M.visual_get_lines()
   }
 end
 
+function M.my_time()
+  return os.date("%b %d, %Y - %H:%M:%S")
+end
+
 return M
