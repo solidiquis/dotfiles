@@ -1,8 +1,4 @@
-if [[ -f $(which nvim) ]]; then
-  alias vi="nvim"
-else
-  alias vi="vim"
-fi
+alias vi="$HOME/progs/nvim-macos/bin/nvim"
 
 if [[ $OSTYPE =~ "darwin" ]]; then
   alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
