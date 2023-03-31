@@ -96,7 +96,7 @@ function update_buf_height(amnt)
 end
 
 -- Alphabetizes visual selection lines
-function ajphabetize_lines()
+function alphabetize_lines()
   local data = utils.visual_get_lines()
 
   local lower_byte = function(s)
