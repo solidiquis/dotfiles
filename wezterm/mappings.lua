@@ -5,7 +5,7 @@ local M = {}
 
 -- Keys
 -- 1. Pane and tab management
--- 2. Window and font sizing
+-- 2. Window and font
 
 -- Key tables
 -- 1. Search mode
@@ -15,77 +15,30 @@ function M.update_config(config)
     -----------------------------
     -- Pane and tab management --
     -----------------------------
-    {
-      key = "d",
-      mods = "CMD",
-      action = action.SplitPane {
-        direction = "Right",
-        size = { Percent = 50 },
-      },
-    },
-    {
-      key = "e",
-      mods = "CMD",
-      action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
-    },
-    {
-      key = "l",
-      mods = "CMD",
-      action = action.ActivatePaneDirection("Right")
-    },
-    {
-      key = "h",
-      mods = "CMD",
-      action = action.ActivatePaneDirection("Left")
-    },
+    { key = "d", mods = "CMD", action = action.SplitHorizontal { domain = "CurrentPaneDomain" } },
+    { key = "e", mods = "CMD", action = action.SplitVertical { domain = "CurrentPaneDomain" } },
+    { key = "l", mods = "CMD", action = action.ActivatePaneDirection("Right") },
+    { key = "h", mods = "CMD", action = action.ActivatePaneDirection("Left") },
+    { key = "k", mods = "CMD", action = action.ActivatePaneDirection("Up") },
+    { key = "j", mods = "CMD", action = action.ActivatePaneDirection("Down") },
+    { key = "w", mods = "CMD", action = action.CloseCurrentPane { confirm = false } },
+    { key = "w", mods = "CMD|SHIFT", action = action.CloseCurrentTab { confirm = true } },
+    { key = "]", mods = "CMD", action = action.ActivateTabRelative(1) },
+    { key = "[", mods = "CMD", action = action.ActivateTabRelative(-1) },
+
+    -----------------------------
+    ------ Window and font ------
+    -----------------------------
+    { key = "f", mods = "SHIFT|CMD", action = wezterm.action.ToggleFullScreen },
+    { key = "+", mods = "CMD", action = wezterm.action.IncreaseFontSize },
+    { key = "-", mods = "CMD", action = wezterm.action.DecreaseFontSize },
     {
       key = "k",
       mods = "CMD",
-      action = action.ActivatePaneDirection("Up")
-    },
-    {
-      key = "j",
-      mods = "CMD",
-      action = action.ActivatePaneDirection("Down")
-    },
-    {
-      key = "w",
-      mods = "CMD",
-      action = action.CloseCurrentPane({ confirm = false })
-    },
-    {
-      key = "w",
-      mods = "CMD|SHIFT",
-      action = action.CloseCurrentTab({ confirm = true })
-    },
-    {
-      key = "]",
-      mods = "CMD",
-      action = action.ActivateTabRelative(1)
-    },
-    {
-      key = "[",
-      mods = "CMD",
-      action = action.ActivateTabRelative(-1)
-    },
-
-    -----------------------------
-    -- Window and font sizing ---
-    -----------------------------
-    {
-      key = "f",
-      mods = "SHIFT|CMD",
-      action = wezterm.action.ToggleFullScreen,
-    },
-    {
-      key = "+",
-      mods = "CMD",
-      action = wezterm.action.IncreaseFontSize,
-    },
-    {
-      key = "-",
-      mods = "CMD",
-      action = wezterm.action.DecreaseFontSize,
+      action = action.Multiple({
+        action.ClearScrollback "ScrollbackAndViewport",
+        action.SendKey { key = "L", mods = "CTRL" },
+      })
     },
   }
 
@@ -96,8 +49,15 @@ function M.update_config(config)
     search_mode = {
       { key = "Enter", mods = "NONE", action = action.CopyMode "PriorMatch" },
       { key = "Enter", mods = "SHIFT", action = action.CopyMode "NextMatch" },
-      { key = "Escape", mods = "NONE", action = action.CopyMode "Close" },
       { key = "u", mods = "CTRL", action = action.CopyMode "ClearPattern" },
+      {
+        key = "Escape",
+        mods = "NONE",
+        action = action.Multiple {
+          action.CopyMode "ClearPattern",
+          action.CopyMode "Close"
+        }
+      },
     }
   }
 end
