@@ -31,3 +31,16 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
     end
   end
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  desc = "Prevent the overwriting of highlight group by colorschemes",
+  callback = function()
+    vim.api.nvim_set_hl(0, "NormalFloat", {
+      link = "Normal",
+    })
+    vim.api.nvim_set_hl(0, "FloatBorder", {
+      bg = "none",
+    })
+  end,
+})

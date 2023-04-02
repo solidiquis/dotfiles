@@ -1,11 +1,13 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
+local events = require("events")
 
 local M = {}
 
 -- Keys
 -- 1. Pane and tab management
 -- 2. Window and font
+-- 3. Custom events
 
 -- Key tables
 -- 1. Search mode
@@ -29,9 +31,9 @@ function M.update_config(config)
     -----------------------------
     ------ Window and font ------
     -----------------------------
-    { key = "f", mods = "SHIFT|CMD", action = wezterm.action.ToggleFullScreen },
-    { key = "+", mods = "CMD", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "CMD", action = wezterm.action.DecreaseFontSize },
+    { key = "f", mods = "SHIFT|CMD", action = action.ToggleFullScreen },
+    { key = "+", mods = "CMD", action = action.IncreaseFontSize },
+    { key = "-", mods = "CMD", action = action.DecreaseFontSize },
     {
       key = "k",
       mods = "CMD",
@@ -40,6 +42,12 @@ function M.update_config(config)
         action.SendKey { key = "L", mods = "CTRL" },
       })
     },
+
+    -----------------------------
+    ------- Custom Events -------
+    -----------------------------
+    { key = ".", mods = "CMD", action = action.EmitEvent(events.IncreaseOpacity) },
+    { key = ",", mods = "CMD", action = action.EmitEvent(events.DecreaseOpacity) },
   }
 
   config.key_tables = {
