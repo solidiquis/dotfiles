@@ -36,7 +36,7 @@ function M.update_config(config)
     { key = "-", mods = "CMD", action = action.DecreaseFontSize },
     {
       key = "k",
-      mods = "CMD",
+      mods = "CMD|SHIFT",
       action = action.Multiple({
         action.ClearScrollback "ScrollbackAndViewport",
         action.SendKey { key = "L", mods = "CTRL" },
