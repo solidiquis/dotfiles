@@ -99,6 +99,24 @@ load_nvm() {
   fi
 }
 
+git_prune_branches() {
+  printf "Confirm that you wish to delete all branches except for main/master: [y/n]\n"
+  read confirm
+
+  if [[ "$confirm" != "y" ]]; then
+    echo "Aborted."
+    return
+  fi
+
+  for i in $(git branch); do
+    if [[ "$i" != "master" && "$i" != "main" && ! "$i" =~ "\*.*" ]]; then
+      git branch -D "$i"
+    fi
+  done
+
+  printf "Done.\n"
+}
+
 git_info() {
   # Will not work unless setopt BASH_REMATCH.
 
