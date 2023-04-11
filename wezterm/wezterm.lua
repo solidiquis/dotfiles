@@ -10,9 +10,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+window.update_config(config)
 color_scheme.update_config(config)
 font.update_config(config)
 mappings.update_config(config)
-window.update_config(config)
 
 return config

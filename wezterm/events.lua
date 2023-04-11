@@ -12,7 +12,7 @@ register_event("IncreaseOpacity", function(win, _pane)
   local overrides = win:get_config_overrides()
 
   if not overrides.window_background_opacity then
-    return
+    overrides.window_background_opacity = 0.8
   end
 
   local opacity = overrides.window_background_opacity
@@ -27,15 +27,15 @@ register_event("IncreaseOpacity", function(win, _pane)
 end)
 
 register_event("DecreaseOpacity", function(win, _pane)
-  local overrides = win:get_config_overrides()
+  local overrides = win:get_config_overrides() or {}
 
   if not overrides.window_background_opacity then
-    return
+    overrides.window_background_opacity = 0.8
   end
 
   local opacity = overrides.window_background_opacity
 
-  if opacity <= 0.0 then
+  if opacity and opacity <= 0.0 then
     return
   end
 
