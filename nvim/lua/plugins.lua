@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 --------------------
 local function get_setup(conf_name)
   return function(_plugin, _opts)
-    local mod = string.format("setup.%s", conf_name)
+    local mod = string.format("plug_conf.%s", conf_name)
     require(mod)
   end
 end
@@ -129,6 +129,8 @@ local plugins = {
 
   -- Wrapper around `git` command
   { "tpope/vim-fugitive" },
+
+  -- Interactive git diff and staging tool
   {
     "sindrets/diffview.nvim",
     dependencies = {

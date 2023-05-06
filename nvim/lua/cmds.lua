@@ -7,11 +7,6 @@ function nt_find()
 end
 alias("nt_find", "F")
 
-function diagnose()
-  vim.api.nvim_command("TroubleToggle")
-end
-alias("diagnose", "Di")
-
 -- Sources init.lua.
 function source()
   vim.api.nvim_command("source $MYVIMRC")

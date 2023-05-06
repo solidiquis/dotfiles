@@ -1,7 +1,22 @@
 local DISABLE_HIGHLIGHT_THRESHOLD = 10000
 
 require("nvim-treesitter.configs").setup({
-  ensure_installed = "all",
+  ensure_installed = {
+    "bash",
+    "c",
+    "cpp",
+    "css",
+    "go",
+    "html",
+    "javascript",
+    "lua",
+    "python",
+    "ruby",
+    "rust",
+    "sql",
+    "typescript",
+    "yaml",
+  },
   auto_install = true,
   sync_install = false,
   highlight = {
