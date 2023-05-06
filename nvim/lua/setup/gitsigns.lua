@@ -1,6 +1,10 @@
 local alias = require("utils").alias
 
-require("gitsigns").setup()
+require("gitsigns").setup({
+  signs = {
+    untracked = { text = '│' },
+  },
+})
 
 function git_blame_line()
   vim.cmd "Gitsigns blame_line"

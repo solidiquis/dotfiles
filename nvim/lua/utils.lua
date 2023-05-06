@@ -79,15 +79,6 @@ function M.winsize()
   })
 end
 
-function M.map(mode, mapping, cmd, options)
-  local opts = { noremap = true }
-  if options then
-    opts = vim.tbl_extend("force", opts, options)
-  end
-
-  vim.api.nvim_set_keymap(mode, mapping, cmd, opts)
-end
-
 function M.visual_get_lines()
   local start_ln = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
   local end_ln = vim.api.nvim_buf_get_mark(0, ">")[1]

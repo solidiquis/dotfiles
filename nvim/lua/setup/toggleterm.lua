@@ -1,5 +1,4 @@
 local mode = require("consts").modes
-local utils = require("utils")
 
 local Direction = {
   horizontal = "horizontal",
@@ -32,4 +31,4 @@ require("toggleterm").setup {
   }
 }
 
-utils.map(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>")
+vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>", { noremap = true })

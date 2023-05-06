@@ -1,5 +1,4 @@
-local mode = require("consts").modes
-local map = require("utils").map
+local Mode = require("consts").modes
 
 vim.g.barbar_auto_setup = false
 
@@ -26,8 +25,8 @@ require("barbar").setup({
   semantic_letters = true,
 })
 
-map(mode.normal, "<leader>n", ":BufferNext<CR>")
-map(mode.normal, "<leader>N", ":BufferPrevious<CR>")
-map(mode.normal, "<leader>q", ":BufferClose<CR>")
-map(mode.normal, "<C-s>", ":BufferMoveNext<CR>")
-map(mode.normal, "<C-a>", ":BufferMovePrevious<CR>")
+vim.keymap.set(Mode.normal, "<leader>n", ":BufferNext<CR>", { noremap = true })
+vim.keymap.set(Mode.normal, "<leader>N", ":BufferPrevious<CR>", { noremap = true })
+vim.keymap.set(Mode.normal, "<leader>q", ":BufferClose<CR>", { noremap = true })
+vim.keymap.set(Mode.normal, "<C-s>", ":BufferMoveNext<CR>", { noremap = true })
+vim.keymap.set(Mode.normal, "<C-a>", ":BufferMovePrevious<CR>", { noremap = true })

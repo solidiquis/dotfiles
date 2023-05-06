@@ -122,7 +122,20 @@ local plugins = {
   { "andymass/vim-matchup" },
 
   -- Git decorations
-  { "lewis6991/gitsigns.nvim" },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = get_setup("gitsigns")
+  },
+
+  -- Wrapper around `git` command
+  { "tpope/vim-fugitive" },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+    config = get_setup("diffview"),
+  }
 }
 
 local opts = {}

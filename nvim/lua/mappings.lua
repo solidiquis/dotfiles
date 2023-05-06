@@ -2,29 +2,28 @@
 -- found in setup folders for each respective plugin.
 
 local mode = require("consts").modes
-local utils = require("utils")
 
 vim.g.mapleader = " "
 
 -- Pane navigation
-utils.map(mode.normal, "<C-j>", "<C-w><C-j>")
-utils.map(mode.normal, "<C-k>", "<C-w><C-k>")
-utils.map(mode.normal, "<C-l>", "<C-w><C-l>")
-utils.map(mode.normal, "<C-h>", "<C-w><C-h>")
+vim.keymap.set(mode.normal, "<C-j>", "<C-w><C-j>", { noremap = true })
+vim.keymap.set(mode.normal, "<C-k>", "<C-w><C-k>", { noremap = true })
+vim.keymap.set(mode.normal, "<C-l>", "<C-w><C-l>", { noremap = true })
+vim.keymap.set(mode.normal, "<C-h>", "<C-w><C-h>", { noremap = true })
 
 -- Equalize pane widths
-utils.map(mode.normal, "<leader>=", "<C-W><C-=>")
+vim.keymap.set(mode.normal, "<leader>=", "<C-W><C-=>", { noremap = true })
 
 -- copy/paste
-utils.map(mode.visual_select, '<leader>c', '"*yy<CR>')
-utils.map(mode.visual_select, '<leader>v', '"+p<CR>')
-utils.map(mode.normal, '<leader>v', '"+p<CR>')
+vim.keymap.set(mode.visual_select, '<leader>c', '"*yy<CR>', { noremap = true })
+vim.keymap.set(mode.visual_select, '<leader>v', '"+p<CR>', { noremap = true })
+vim.keymap.set(mode.normal, '<leader>v', '"+p<CR>', { noremap = true })
 
 -- Misc
-utils.map(mode.normal, "=", ":lua update_buf_width(2)<CR>")
-utils.map(mode.normal, "-", ":lua update_buf_width(-2)<CR>")
-utils.map(mode.normal, "+", ":lua update_buf_height(2)<CR>")
-utils.map(mode.normal, "_", ":lua update_buf_height(-2)<CR>")
+vim.keymap.set(mode.normal, "=", ":lua update_buf_width(2)<CR>", { noremap = true })
+vim.keymap.set(mode.normal, "-", ":lua update_buf_width(-2)<CR>", { noremap = true })
+vim.keymap.set(mode.normal, "+", ":lua update_buf_height(2)<CR>", { noremap = true })
+vim.keymap.set(mode.normal, "_", ":lua update_buf_height(-2)<CR>", { noremap = true })
 
 -- Terminal buffer-scoped maps
 function _G.set_terminal_keymaps()

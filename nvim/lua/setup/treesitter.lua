@@ -1,9 +1,6 @@
-local mode = require("consts").modes
-local map = require("utils").map
-
 local DISABLE_HIGHLIGHT_THRESHOLD = 10000
 
-require('nvim-treesitter.configs').setup({
+require("nvim-treesitter.configs").setup({
   ensure_installed = "all",
   auto_install = true,
   sync_install = false,

@@ -50,11 +50,10 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 )
 
 -- Hide inline diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)
+vim.diagnostic.config({
+  virtual_text = false,
+  virtual_lines = false
+})
 
 -- LSP float window UI tweaks
 vim.diagnostic.config {

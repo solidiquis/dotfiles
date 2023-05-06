@@ -12,16 +12,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end
 })
 
--- Recompile plugins when changes made to plugins.lua
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = plugins_group,
-  pattern = "plugins.lua",
-  callback = function()
-    vim.cmd [[ source <afile> | PackerCompile ]]
-    info_log("Recompiled plugins", "autocmds.lua")
-  end
-})
-
 -- Make NvimTree bufferline align tabs
 vim.api.nvim_create_autocmd('BufWinLeave', {
   pattern = '*',
