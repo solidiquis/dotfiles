@@ -1,7 +1,7 @@
 local winsize = require("utils").winsize
-local mode = require("consts").modes
 local map = require("utils").map
-local nvim_tree_events = require("nvim-tree.events")
+local api = require("nvim-tree.api")
+local mode = require("consts").modes
 local bufferline_api = require("bufferline.api")
 
 local DEFAULT_WIDTH = 30
@@ -23,6 +23,25 @@ local function dec_width()
   vim.cmd(string.format("NvimTreeResize %d", new_width))
 end
 
+local function on_attach(bufnr)
+  local opts = { buffer = bufnr, noremap = true, silent = true, nowait = true }
+
+  vim.keymap.set("n", "<C-v>", api.node.open.vertical, opts)
+  vim.keymap.set("n", "<C-x>", api.node.open.horizontal, opts)
+  vim.keymap.set("n", "r", api.tree.reload, opts)
+  vim.keymap.set("n", "a", api.fs.create, opts)
+  vim.keymap.set("n", "d", api.fs.remove, opts)
+  vim.keymap.set("n", "m", api.fs.rename_sub, opts)
+  vim.keymap.set("n", "y", api.fs.copy.relative_path, opts)
+  vim.keymap.set("n", "Y", api.fs.copy.absolute_path, opts)
+  vim.keymap.set("n", "C", api.tree.collapse_all, opts)
+  vim.keymap.set("n", "K", api.node.show_info_popup, opts)
+  vim.keymap.set("n", "o", api.node.open.edit, opts)
+  vim.keymap.set("n", ">", inc_width, opts)
+  vim.keymap.set("n", "<", dec_width, opts)
+  vim.keymap.set("n", "<", dec_width, opts)
+end
+
 require("nvim-tree").setup {
   auto_reload_on_write = true,
   hijack_cursor = true,
@@ -38,35 +57,16 @@ require("nvim-tree").setup {
   renderer = {
     highlight_opened_files = "name",
   },
+  on_attach = on_attach,
   view = {
     side = "left",
     adaptive_size = true,
     centralize_selection = true,
     width = DEFAULT_WIDTH,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = "<C-v>",   action = "vsplit" },
-        { key = "<C-x>",   action = "split" },
-        { key = "r",       action = "refresh" },
-        { key = "a",       action = "create" },
-        { key = "d",       action = "remove" },
-        { key = "m",       action = "rename" },
-        { key = "y",       action = "copy_name" },
-        { key = "Y",       action = "copy_path" },
-        { key = "gy",      action = "copy_absolute_path" },
-        { key = "q",       action = "close" },
-        { key = "W",       action = "collapse_all" },
-        { key = "S",       action = "search_node" },
-        { key = "<C-k>",   action = "toggle_file_info" },
-        { key = ">",       action = "more_wide", action_cb = inc_width },
-        { key = "<",       action = "less_wide", action_cb = dec_width },
-      },
-    },
   }
 }
 
-nvim_tree_events.on_tree_resize(function (new_size)
+api.events.subscribe(api.events.Event.Resize, function(new_size)
   bufferline_api.set_offset(new_size, "File Tree")
 end)
 

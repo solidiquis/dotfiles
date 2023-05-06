@@ -1,10 +1,29 @@
 local cmp = require('cmp')
 local utils = require('utils')
+local luasnip = require("luasnip")
+
+luasnip.config.set_config({
+  history = false,
+  updateevents = "TextChanged,TextChangedI",
+})
+
+luasnip.snippets = {
+  html = {}
+}
+
+luasnip.filetype_extend("javascriptreact", { "html" })
+luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.snippets.javascript = luasnip.snippets.html
+luasnip.snippets.javascriptreact = luasnip.snippets.html
+luasnip.snippets.typescriptreact = luasnip.snippets.html
+
+require("luasnip.loaders.from_vscode").load({include = {"html"}})
+require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
   snippet = {
     expand = function(args)
-     require('luasnip').lsp_expand(args.body)
+     luasnip.lsp_expand(args.body)
     end,
   },
 
@@ -30,14 +49,15 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
 
-  sources = {
+  -- Order of sources determines order of sourcing
+  sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "treesitter" },
     { name = "buffer" },
     { name = "luasnip" },
     { name = "nvim_lua" },
     { name = "path" },
-  },
+  }),
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
