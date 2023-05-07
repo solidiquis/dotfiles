@@ -49,15 +49,12 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   }
 )
 
--- Hide inline diagnostics
-vim.diagnostic.config({
-  virtual_text = false,
-  virtual_lines = false
-})
-
--- LSP float window UI tweaks
+-- LSP diagnostics
 vim.diagnostic.config {
     float = { border = "single" },
+    underline = false,
+    virtual_text = false,
+    virtual_lines = false
 }
 
 -- Key bindings to be set after LSP attaches to buffer
@@ -72,7 +69,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
