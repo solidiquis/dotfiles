@@ -87,6 +87,12 @@ local plugins = {
     config = get_setup("treesitter"),
   },
 
+  -- Treesitter playground
+  {
+    "nvim-treesitter/playground",
+    build = ":TSInstall query",
+  },
+
   -- Extended glyphs
   { "kyazdani42/nvim-web-devicons" },
 

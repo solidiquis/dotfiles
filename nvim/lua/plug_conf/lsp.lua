@@ -52,7 +52,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
 -- LSP diagnostics
 vim.diagnostic.config {
     float = { border = "single" },
-    underline = false,
+    underline = true,
     virtual_text = false,
     virtual_lines = false
 }
