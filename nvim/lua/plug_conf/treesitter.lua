@@ -1,4 +1,4 @@
-local DISABLE_HIGHLIGHT_THRESHOLD = 10000
+local DISABLE_HIGHLIGHT_THRESHOLD = 30000
 
 require("nvim-treesitter.configs").setup({
   ensure_installed = {

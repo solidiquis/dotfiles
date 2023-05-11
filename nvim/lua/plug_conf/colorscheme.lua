@@ -1,16 +1,12 @@
 local lualine = require("lualine")
-local colorscheme = require("nightfox")
+--local colorscheme = require("tokyonight")
 
-colorscheme.setup({
-  options = {
-    transparent = true
-  }
-})
+vim.g.gruvbox_material_background = "hard"
 
 lualine.setup {
   options = {
-    theme = "carbonfox"
+    theme = "gruvbox-material"
   }
 }
 
-vim.cmd[[ colorscheme carbonfox ]]
+vim.cmd [[ colorscheme gruvbox-material ]]

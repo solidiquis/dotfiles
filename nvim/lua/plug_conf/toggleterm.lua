@@ -31,4 +31,4 @@ require("toggleterm").setup {
   }
 }
 
-vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>", { noremap = true })
+vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>q", { noremap = true })
