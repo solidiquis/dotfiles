@@ -15,7 +15,7 @@ local language_servers = {
   "lua_ls",
   "marksman",
   "pyright",
-  --"solargraph",
+  "solargraph",
   "rust_analyzer",
   "sqlls",
   "tailwindcss",

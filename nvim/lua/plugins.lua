@@ -143,7 +143,10 @@ local plugins = {
       "nvim-lua/plenary.nvim"
     },
     config = get_setup("diffview"),
-  }
+  },
+
+  -- CoffeeScript.. not supported by TS
+  { "kchmck/vim-coffee-script" },
 }
 
 local opts = {}
