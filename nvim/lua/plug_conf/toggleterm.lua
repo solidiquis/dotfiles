@@ -9,7 +9,13 @@ local Direction = {
 
 require("toggleterm").setup {
   open_mapping = [[<c-\>]],
-  direction = Direction.float,
+  direction = Direction.horizontal,
+  size = function(term)
+    if term.direction == "horizontal" then
+      return math.floor(vim.api.nvim_win_get_height(0) * 0.5)
+    end
+    return vim.api.nvim_win_get_height(0)
+  end,
   hide_numbers = true,
   shade_terminals = false,
   shading_factor = 3,
@@ -31,4 +37,4 @@ require("toggleterm").setup {
   }
 }
 
-vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>q", { noremap = true })
+vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualSelection<CR>:ToggleTerm<CR>", { noremap = true })
