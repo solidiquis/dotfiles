@@ -41,7 +41,7 @@ local function on_attach(bufnr)
   vim.keymap.set(Mode.normal, "<", dec_width, opts)
 end
 
-require("nvim-tree").setup {
+require("nvim-tree").setup({
   auto_reload_on_write = true,
   hijack_cursor = true,
   update_focused_file = {
@@ -62,8 +62,8 @@ require("nvim-tree").setup {
     adaptive_size = true,
     centralize_selection = true,
     width = DEFAULT_WIDTH,
-  }
-}
+  },
+})
 
 api.events.subscribe(api.events.Event.Resize, function(new_size)
   bufferline_api.set_offset(new_size, "File Tree")
