@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "folke/tokyonight.nvim",
+    "EdenEast/nightfox.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
