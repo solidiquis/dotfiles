@@ -25,7 +25,7 @@ lspconfig["rust_analyzer"].setup({
   settings = {
     ["rust-analyzer"] = {
       diagnostics = {
-        disabled = { "inactive_code" },
+        disabled = { "inactive-code" },
       }
     },
   },
