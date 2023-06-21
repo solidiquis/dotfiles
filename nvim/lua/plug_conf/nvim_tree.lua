@@ -59,7 +59,7 @@ require("nvim-tree").setup({
   on_attach = on_attach,
   view = {
     side = "left",
-    adaptive_size = true,
+    adaptive_size = false,
     centralize_selection = true,
     width = DEFAULT_WIDTH,
   },

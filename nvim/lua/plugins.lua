@@ -145,6 +145,11 @@ local plugins = {
     config = get_setup("diffview"),
   },
 
+  {
+    "RRethy/vim-illuminate",
+    config = get_setup("vim_illuminate")
+  },
+
   -- CoffeeScript.. not supported by TS
   { "kchmck/vim-coffee-script" },
 }

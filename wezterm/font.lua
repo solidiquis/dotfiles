@@ -9,7 +9,7 @@ function M.update_config(config)
     { family = "SauceCodePro NF", weight = "Medium" },
     { family = "JetBrains Mono", weight = "Medium" },
   }
-  config.font_size = 17.0
+  config.font_size = 16.0
 end
 
 return M

@@ -1,38 +1,35 @@
 require("mason").setup()
 
--- Language servers to eagerly install
-local language_servers = {
-  "bashls",
-  "clangd",
-  "cssls",
-  "denols",
-  "docker_compose_language_service",
-  "dockerls",
-  "eslint",
-  "gopls",
-  "html",
-  "lemminx",
-  "lua_ls",
-  "marksman",
-  "pyright",
-  "solargraph",
-  "rust_analyzer",
-  "sqlls",
-  "tailwindcss",
-  "tsserver",
-  "yamlls",
-}
-
-require("mason-lspconfig").setup({
-  ensure_installed = language_servers
-})
-
 local lspconfig = require("lspconfig")
 
--- Configure individual language servers here
-for _, server in pairs(language_servers) do
-  lspconfig[server].setup({})
-end
+lspconfig["bashls"].setup({})
+lspconfig["clangd"].setup({})
+lspconfig["cssls"].setup({})
+lspconfig["denols"].setup({})
+lspconfig["docker_compose_language_service"].setup({})
+lspconfig["dockerls"].setup({})
+lspconfig["eslint"].setup({})
+lspconfig["gopls"].setup({})
+lspconfig["html"].setup({})
+lspconfig["lemminx"].setup({})
+lspconfig["lua_ls"].setup({})
+lspconfig["marksman"].setup({})
+lspconfig["pyright"].setup({})
+lspconfig["solargraph"].setup({})
+lspconfig["sqlls"].setup({})
+lspconfig["tailwindcss"].setup({})
+lspconfig["tsserver"].setup({})
+lspconfig["yamlls"].setup({})
+
+lspconfig["rust_analyzer"].setup({
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+        disabled = { "inactive_code" },
+      }
+    },
+  },
+})
 
 -- lsp_signature UI tweaks
 require("lsp_signature").setup({
