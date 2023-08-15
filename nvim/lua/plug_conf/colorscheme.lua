@@ -2,7 +2,7 @@ local lualine = require("lualine")
 
 require("nightfox").setup({
   options = {
-    transparent = true,
+    transparent = false,
     terminal_colors = false,
   }
 })

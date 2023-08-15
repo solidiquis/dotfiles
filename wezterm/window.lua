@@ -1,7 +1,7 @@
 local M = {}
 
 function M.update_config(config)
-  config.window_background_opacity = 0.8
+  config.window_background_opacity = 1.0
   config.macos_window_background_blur = 20
 
   config.initial_rows = 25
