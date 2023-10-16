@@ -152,6 +152,12 @@ local plugins = {
 
   -- CoffeeScript.. not supported by TS
   { "kchmck/vim-coffee-script" },
+
+  -- Better marks experience
+  {
+    "chentoast/marks.nvim",
+    config = get_setup("marks"),
+  },
 }
 
 local opts = {}

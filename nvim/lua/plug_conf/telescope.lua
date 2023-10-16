@@ -10,6 +10,7 @@ telescope.setup({
     }
   },
   pickers = {
+    lsp_references = { fname_width = 200 },
     buffers = {
       sort_lastused = true,
       mappings = {
