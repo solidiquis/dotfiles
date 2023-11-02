@@ -1,6 +1,7 @@
 # Go
-export GOPATH=$HOME/go
-export GOBIN="$GOPATH/bin:$PATH"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
 
 # Deno
 export DENO_INSTALL="$HOME/.deno"
