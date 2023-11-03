@@ -15,10 +15,15 @@ lspconfig["lua_ls"].setup({})
 lspconfig["marksman"].setup({})
 lspconfig["pyright"].setup({})
 lspconfig["solargraph"].setup({})
-lspconfig["sqlls"].setup({})
 lspconfig["tailwindcss"].setup({})
 lspconfig["tsserver"].setup({})
 lspconfig["yamlls"].setup({})
+
+lspconfig["sqlls"].setup({
+  root_dir = function(fname)
+    return lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
+  end,
+})
 
 lspconfig["rust_analyzer"].setup({
   settings = {
