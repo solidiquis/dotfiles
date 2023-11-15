@@ -124,6 +124,9 @@ local plugins = {
     config = get_setup("colorscheme"),
   },
 
+  -- The colorscheme of all time
+  { "tckmn/hotdog.vim" },
+
   -- Extends '%' behavior and matching text highlight
   { "andymass/vim-matchup" },
 

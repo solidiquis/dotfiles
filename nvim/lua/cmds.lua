@@ -1,5 +1,6 @@
 local utils = require("utils")
 local alias = utils.alias
+local error_log = utils.error
 
 -- Toggles NERDTree.
 function nt_find()
@@ -136,9 +137,24 @@ function alphabetize_lines()
   vim.api.nvim_buf_set_lines(0, data.start_ln, data.end_ln, true, data.lines)
 end
 
-function ts()
-  local cursor = vim.api.nvim_win_get_cursor(0)
-  local cursor_row = cursor[1]
-  local cursor_col = cursor[2]
-  vim.api.nvim_buf_set_text(0, cursor_row - 1, cursor_col, cursor_row - 1, cursor_col, { utils.my_time() })
+function jump_to_symbol_definition(symbol_name, bufnr)
+  local params = { textDocument = vim.lsp.util.make_text_document_params() }
+
+  vim.lsp.buf_request_all(bufnr, "textDocument/definition", params, function(err, result)
+    if err or not result then
+      --error_log(err)
+      return
+    end
+
+    -- Search for the symbol in the result
+    for _, symbol in pairs(result) do
+      if symbol.name == symbol_name then
+        local start_pos = symbol.location.range.start
+        vim.api.nvim_win_set_cursor(0, {start_pos.line + 1, start_pos.character})
+        return
+      end
+    end
+
+    --error_log("Symbol not found.")
+  end)
 end

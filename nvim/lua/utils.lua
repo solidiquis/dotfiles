@@ -60,16 +60,16 @@ function M.check_back_space()
   end
 end
 
-function M.warn(msg, name)
-  vim.notify(msg, vim.log.levels.WARN, { title = name })
+function M.warn(msg)
+  vim.notify(msg, vim.log.levels.WARN)
 end
 
-function M.error(msg, name)
-  vim.notify(msg, vim.log.levels.ERROR, { title = name })
+function M.error(msg)
+  vim.notify(msg, vim.log.levels.ERROR)
 end
 
-function M.info(msg, name)
-  vim.notify(msg, vim.log.levels.INFO, { title = name })
+function M.info(msg)
+  vim.notify(msg, vim.log.levels.INFO)
 end
 
 function M.winsize()

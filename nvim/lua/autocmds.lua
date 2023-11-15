@@ -41,12 +41,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(_)
-    info_log("LSP client successfully attached.")
-  end,
-})
-
+-- Funky go file behavior.
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
@@ -55,3 +50,19 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.expandtab = false
   end,
 })
+
+-- Restart LSP when dependencies change.
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = { "cargo.toml" },
+    callback = function()
+        info_log("Restarting LSP.")
+        vim.cmd("LspRestart")
+    end,
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(_)
+    info_log("LSP client successfully attached.")
+  end,
+})
+
