@@ -1,16 +1,26 @@
-local lualine = require("lualine")
-
-require("nightfox").setup({
-  options = {
-    transparent = true,
-    terminal_colors = false,
-  }
+require("tokyonight").setup({
+  style = "night",
+  light_style = "day",
+  transparent = true,
+  terminal_colors = true,
+  styles = {
+    comments = { italic = false },
+    keywords = { italic = false },
+    functions = {},
+    variables = {},
+    sidebars = "dark",
+    floats = "dark",
+  },
+  sidebars = { "qf", "help" },
+  hide_inactive_statusline = false,
+  dim_inactive = false,
+  lualine_bold = false,
 })
 
-lualine.setup {
+require("lualine").setup {
   options = {
-    theme = "carbonfox"
+    theme = 'tokyonight'
   }
 }
 
-vim.cmd[[colorscheme carbonfox]]
+vim.cmd[[colorscheme tokyonight]]
