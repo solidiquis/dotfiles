@@ -19,13 +19,10 @@ echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing native dependencies..."
-brew install --cask alacritty
-brew install tmux
+brew install --cask wezterm
 brew install neovim
 brew install ripgrep
 brew install fd
 brew install exa
 brew install gitui
-
-brew tap solidiquis/tap
 brew install erdtree

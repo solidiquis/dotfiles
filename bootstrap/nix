@@ -17,9 +17,7 @@ ln -s "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -s "$DOTFILES/alacritty/alacritty.yml" "$HOME/.alacritty.yml"
 ln -s "$DOTFILES/alacritty/alacritty_color_schemes.yml" "$HOME/.alacritty_color_schemes.yml"
 ln -s "$DOTFILES/ruby/.irbrc" "$HOME/.irbrc"
-
-# Init Packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ln -s "$DOTFILES/wezterm" "$HOME/.config/wezterm"
 
 # Init system dependencies
 if [[ "$OSTYPE" =~ "darwin" ]]; then
