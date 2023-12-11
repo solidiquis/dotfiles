@@ -130,7 +130,7 @@ git_info() {
 
   git diff-index --quiet HEAD -- 2> /dev/null || uncommitted_changes=true
 
-  local styled_branch_name="::\e[1;32m$current_branch\e[0m"
+  local styled_branch_name="::\e[1;33m$current_branch\e[0m"
 
   if [[ ! $uncommitted_changes ]]; then 
     printf $styled_branch_name 
