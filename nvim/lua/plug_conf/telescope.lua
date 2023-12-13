@@ -32,7 +32,7 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 
-vim.keymap.set(mode.normal, "<leader>p", ":Telescope find_files hidden=true<CR>", { noremap = true })
+vim.keymap.set(mode.normal, "<leader>p", ":Telescope find_files hidden=true no_ignore=true<CR>", { noremap = true })
 vim.keymap.set(mode.normal, "<leader>f", ":Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set(mode.normal, "<leader>s", ":Telescope grep_string<CR>", { noremap = true })
 vim.keymap.set(mode.normal, "<leader>b", ":Telescope buffers<CR>", { noremap = true })
