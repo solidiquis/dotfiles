@@ -14,5 +14,6 @@ opt.completeopt = "menu,menuone,noselect"
 opt.sw = 2
 opt.ts = 2
 opt.sts = 2
+opt.fillchars = {eob = " "}
 
 vim.o.signcolumn = "yes:1"
