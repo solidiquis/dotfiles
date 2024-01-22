@@ -8,7 +8,6 @@ lspconfig["cssls"].setup({})
 lspconfig["docker_compose_language_service"].setup({})
 lspconfig["dockerls"].setup({})
 lspconfig["eslint"].setup({})
-lspconfig["gopls"].setup({})
 lspconfig["html"].setup({})
 lspconfig["lemminx"].setup({})
 lspconfig["lua_ls"].setup({})
@@ -18,6 +17,16 @@ lspconfig["solargraph"].setup({})
 lspconfig["tailwindcss"].setup({})
 lspconfig["tsserver"].setup({})
 lspconfig["yamlls"].setup({})
+
+lspconfig["gopls"].setup({
+  settings = {
+    gopls = {
+      env = {
+          GOFLAGS = "-tags=windows,linux,unittest,integration,unit"
+      }
+    }
+  }
+})
 
 lspconfig["sqlls"].setup({
   root_dir = function(fname)

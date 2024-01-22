@@ -1,6 +1,7 @@
 local utils = require("utils")
 local alias = utils.alias
 local error_log = utils.error
+local textcase = require("textcase")
 
 -- Toggles NERDTree.
 function nt_find()
@@ -36,6 +37,21 @@ function cc_rfp()
   print(rfp)
 end
 alias("cc_rfp", "CCP")
+
+function to_snake()
+  textcase.current_word('to_snake_case')
+end
+alias("to_snake", "ToSnake")
+
+function to_camel()
+  textcase.current_word('to_camel_case')
+end
+alias("to_camel", "ToCamel")
+
+function to_pascal()
+  textcase.current_word('to_pascal_case')
+end
+alias("to_pascal", "ToPascal")
 
 function inspect(...)
   local objects = {}

@@ -161,6 +161,12 @@ local plugins = {
     "chentoast/marks.nvim",
     config = get_setup("marks"),
   },
+
+  -- Case conversion
+  {
+    "johmsalas/text-case.nvim",
+    config = get_setup("text_case"),
+  }
 }
 
 local opts = {}
