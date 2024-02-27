@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "sainnhe/gruvbox-material",
+    "marko-cerovac/material.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
