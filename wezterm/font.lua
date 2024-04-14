@@ -3,13 +3,12 @@ local wezterm = require("wezterm")
 local M = {}
 
 function M.update_config(config)
-  config.line_height = 1.3
-  config.cell_width = 0.95
+  config.line_height = 1.5
+  config.cell_width = 1.0
   config.font = wezterm.font_with_fallback {
-    { family = "SauceCodePro NF", weight = "Medium" },
-    { family = "JetBrains Mono", weight = "Medium" },
+    { family = "JetBrains Mono", weight = "Regular" },
   }
-  config.font_size = 13.0
+  config.font_size = 11.0
 end
 
 return M

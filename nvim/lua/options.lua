@@ -15,5 +15,6 @@ opt.sw = 2
 opt.ts = 2
 opt.sts = 2
 opt.fillchars = {eob = " "}
+opt.cmdheight = 0
 
 vim.o.signcolumn = "yes:1"
