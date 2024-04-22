@@ -1,7 +1,5 @@
-#preexec() {
-  #print_divider
-#}
-
 precmd() {
-  i_beam_cursor
+  if [[ $CURSOR_TYPE == "ibeam" ]]; then
+    ibeam_cursor
+  fi 
 }
