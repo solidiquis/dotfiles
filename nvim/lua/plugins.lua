@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "folke/tokyonight.nvim",
+    "EdenEast/nightfox.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -153,13 +153,15 @@ local plugins = {
     config = get_setup("vim_illuminate")
   },
 
-  -- CoffeeScript.. not supported by TS
-  { "kchmck/vim-coffee-script" },
-
   -- Better marks experience
   {
     "chentoast/marks.nvim",
     config = get_setup("marks"),
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = get_setup("nvim_treesitter_context"),
   },
 
   -- Case conversion

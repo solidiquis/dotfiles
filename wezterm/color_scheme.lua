@@ -1,7 +1,7 @@
 local M = {}
 
 function M.update_config(config)
-  config.color_scheme = "Tokyo Night"
+  config.color_scheme = "carbonfox"
 end
 
 return M

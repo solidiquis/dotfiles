@@ -4,7 +4,6 @@ export ZSH="$HOME/.oh-my-zsh"
 source $DOTFILES/zsh/vars.zsh --source_only
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh/cmd.zsh --source_only
-source $DOTFILES/zsh/aliases.zsh --source_only
 source $DOTFILES/zsh/key_bindings.zsh --source_only
 source $DOTFILES/zsh/prompt.zsh --source_only
 source $DOTFILES/zsh/hooks.zsh --source_only
@@ -24,3 +23,5 @@ fi
 if [[ -f "$DOTFILES/zsh/custom.zsh" ]]; then
   source $DOTFILES/zsh/custom.zsh --source_only
 fi
+
+source $DOTFILES/zsh/aliases.zsh --source_only
