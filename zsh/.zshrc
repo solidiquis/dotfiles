@@ -23,5 +23,3 @@ fi
 if [[ -f "$DOTFILES/zsh/custom.zsh" ]]; then
   source $DOTFILES/zsh/custom.zsh --source_only
 fi
-
-source $DOTFILES/zsh/aliases.zsh --source_only
