@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "EdenEast/nightfox.nvim",
+    "scottmckendry/cyberdream.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -157,11 +157,6 @@ local plugins = {
   {
     "chentoast/marks.nvim",
     config = get_setup("marks"),
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    config = get_setup("nvim_treesitter_context"),
   },
 
   -- Case conversion

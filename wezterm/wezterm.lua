@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local color_scheme = require("color_scheme")
+local color_scheme = require("colorscheme")
 local font = require("font")
 local mappings = require("mappings")
 local window = require("window")

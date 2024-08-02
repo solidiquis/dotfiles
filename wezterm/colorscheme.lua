@@ -1,7 +1,8 @@
+
 local M = {}
 
 function M.update_config(config)
-  config.color_scheme = "carbonfox"
+  config.colors = require("colors.cyberdream")
 end
 
 return M
