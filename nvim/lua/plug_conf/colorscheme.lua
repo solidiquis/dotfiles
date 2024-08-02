@@ -1,21 +1,26 @@
-require("cyberdream").setup({
+require("tokyonight").setup {
+  style = "night",
+  light_style = "day",
   transparent = false,
-  italic_comments = false,
-  hide_fillchars = false,
-  borderless_telescope = false,
   terminal_colors = true,
-  theme = {
-    variant = "auto",
+  styles = {
+    sidebars = "dark",
+    floats = "dark",
   },
+  day_brightness = 0.3,
+  dim_inactive = false,
+  lualine_bold = false,
 
-  extensions = {
-    telescope = true,
+  on_colors = function(colors) end,
+  plugins = {
+    all = package.loaded.lazy == nil,
+    auto = true,
   },
-})
+}
 
-require('lualine').setup({
+require('lualine').setup {
   options = {
-    theme = "auto",
-  },
-})
-vim.cmd("colorscheme cyberdream")
+    theme = 'tokyonight'
+  }
+}
+vim.cmd("colorscheme tokyonight")

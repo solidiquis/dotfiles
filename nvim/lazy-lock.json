@@ -6,7 +6,6 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "cyberdream.nvim": { "branch": "main", "commit": "85507898765a00339aaf2ce7c77b0c3dfb3f7380" },
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "friendly-snippets": { "branch": "main", "commit": "ea068f1becd91bcd4591fceb6420d4335e2e14d3" },
   "gitsigns.nvim": { "branch": "main", "commit": "035da036e68e509ed158414416c827d022d914bd" },
@@ -29,6 +28,7 @@
   "telescope.nvim": { "branch": "master", "commit": "7d1698f3d88b448e0639974248cc17f49b7b8acf" },
   "text-case.nvim": { "branch": "main", "commit": "d62c63a4e9a996c7321885937ab89920fca2c1c8" },
   "toggleterm.nvim": { "branch": "main", "commit": "dca1c80fb8ec41c97e7c3ef308719d8143fbbb05" },
+  "tokyonight.nvim": { "branch": "main", "commit": "b0e7c7382a7e8f6456f2a95655983993ffda745e" },
   "vim-fugitive": { "branch": "master", "commit": "dac8e5c2d85926df92672bf2afb4fc48656d96c7" },
   "vim-illuminate": { "branch": "master", "commit": "e522e0dd742a83506db0a72e1ced68c9c130f185" },
   "vim-matchup": { "branch": "master", "commit": "2d660e4aa7c566014c667af2cda0458043527902" }

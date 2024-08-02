@@ -1,8 +1,7 @@
-
 local M = {}
 
 function M.update_config(config)
-  config.colors = require("colors.cyberdream")
+  config.color_scheme = "Tokyo Night"
 end
 
 return M
