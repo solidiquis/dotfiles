@@ -66,3 +66,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+
+vim.api.nvim_create_autocmd("RecordingEnter", {
+  callback = function(ctx)
+    vim.opt.cmdheight = 1
+  end
+})
+
+vim.api.nvim_create_autocmd("RecordingLeave", {
+  callback = function()
+    vim.opt.cmdheight = 0
+  end
+})
