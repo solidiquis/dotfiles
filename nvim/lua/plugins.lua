@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "folke/tokyonight.nvim",
+    "marko-cerovac/material.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -163,6 +163,10 @@ local plugins = {
   {
     "johmsalas/text-case.nvim",
     config = get_setup("text_case"),
+  },
+
+  {
+    "almo7aya/openingh.nvim"
   }
 }
 
