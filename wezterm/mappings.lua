@@ -48,6 +48,14 @@ function M.update_config(config)
     -----------------------------
     { key = ".", mods = "CMD", action = action.EmitEvent(events.IncreaseOpacity) },
     { key = ",", mods = "CMD", action = action.EmitEvent(events.DecreaseOpacity) },
+    {
+      key = "/",
+      mods = "CMD",
+      action = action.Multiple({
+        action.EmitEvent(events.ToggleLightMode),
+        action.SendKey { key = "h", mods = "CTRL" },
+      }),
+    },
   }
 
   config.key_tables = {

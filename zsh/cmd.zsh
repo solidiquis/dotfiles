@@ -18,16 +18,6 @@ s() {
   fi
 }
 
-gitexclude() {
-  if [[ ! -f ".git/info/exclude" ]]; then
-    printf "Couldn't find a .git directory with an exclude file in working directory.\n"
-    exit 1
-  fi
-
-  echo "$1" >> .git/info/exclude
-  printf "'$1' added to .git/info/exclude\n"
-}
-
 16col() {
   for i in {30..37}; do
     printf "$i \u2B62  \e[${i}m\u25C6\e[0m\n"

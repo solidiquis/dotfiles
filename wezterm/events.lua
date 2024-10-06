@@ -8,8 +8,19 @@ local function register_event(event_name, fn)
   return event_name
 end
 
+register_event("ToggleLightMode", function(win, _pane)
+  local overrides = win:get_config_overrides() or {}
+
+  if overrides.color_scheme == "dayfox" then
+    overrides.color_scheme = "carbonfox"
+  else
+    overrides.color_scheme = "dayfox"
+  end
+  win:set_config_overrides(overrides)
+end)
+
 register_event("IncreaseOpacity", function(win, _pane)
-  local overrides = win:get_config_overrides()
+  local overrides = win:get_config_overrides() or {}
 
   if not overrides.window_background_opacity then
     overrides.window_background_opacity = 0.8
