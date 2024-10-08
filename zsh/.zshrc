@@ -7,6 +7,7 @@ source $DOTFILES/zsh/cmd.zsh --source_only
 source $DOTFILES/zsh/key_bindings.zsh --source_only
 source $DOTFILES/zsh/prompt.zsh --source_only
 source $DOTFILES/zsh/hooks.zsh --source_only
+source $DOTFILES/zsh/light_mode.zsh --source_only
 
 setopt extended_glob
 setopt BASH_REMATCH

@@ -1,6 +1,5 @@
 export CURSOR_TYPE="ibeam"
 export CUSTOM_ZSH_CONFIG="$DOTFILES/zsh/custom.zsh"
-export LIGHT_MODE=
 
 # FZF 
 export FZF_DEFAULT_COMMAND='fd --type file'
