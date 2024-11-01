@@ -19,4 +19,3 @@ opt.cmdheight = 0
 
 
 vim.o.signcolumn = "yes:1"
-vim.o.background = "dark"

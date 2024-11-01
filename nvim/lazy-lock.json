@@ -9,7 +9,7 @@
   "diffview.nvim": { "branch": "main", "commit": "3dc498c9777fe79156f3d32dddd483b8b3dbd95f" },
   "friendly-snippets": { "branch": "main", "commit": "ea068f1becd91bcd4591fceb6420d4335e2e14d3" },
   "gitsigns.nvim": { "branch": "main", "commit": "035da036e68e509ed158414416c827d022d914bd" },
-  "gruvbox-material": { "branch": "master", "commit": "b16dcd787db5ba9302b54ebeac186784c2aed29a" },
+  "gruvbox.nvim": { "branch": "main", "commit": "49d9c0b150ba70efcd831ec7b3cb8ee740067045" },
   "hotdog.vim": { "branch": "master", "commit": "3b3b271e27a138a9f6d4130ee55e429ccaf78f35" },
   "lazy.nvim": { "branch": "main", "commit": "b02c9eae6a250f98908c146d1dc1a891f5019f0a" },
   "lsp_signature.nvim": { "branch": "master", "commit": "c6aeb2f1d2538bbdfdaab1664d9d4c3c75aa9db8" },
