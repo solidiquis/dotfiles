@@ -1,5 +1,7 @@
 local mode = require("consts").modes
 local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
 telescope.setup({
   defaults = {
@@ -41,3 +43,9 @@ vim.keymap.set(mode.normal, "<leader>h", ":Telescope help_tags<CR>", { noremap =
 vim.keymap.set(mode.normal, "gr", ":Telescope lsp_references<CR>", { noremap = true })
 vim.keymap.set(mode.normal, "<leader>;", ":Telescope diagnostics<CR>", { noremap = true })
 vim.keymap.set(mode.normal, "<leader>g", ":Telescope git_status<CR>", { noremap = true })
+vim.keymap.set(mode.normal, "<leader>l", function()
+  builtin.lsp_document_symbols({ symbol_width = 200 })
+end, { noremap = true })
+vim.keymap.set(mode.normal, "/", function()
+  builtin.current_buffer_fuzzy_find()
+end, { noremap = true })

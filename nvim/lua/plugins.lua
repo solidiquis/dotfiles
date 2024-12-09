@@ -167,7 +167,15 @@ local plugins = {
 
   {
     "almo7aya/openingh.nvim"
-  }
+  },
+
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "rcarriga/nvim-notify",
+    },
+    config = get_setup("noice"),
+  },
 }
 
 local opts = {}
