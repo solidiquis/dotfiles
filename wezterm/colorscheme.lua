@@ -1,8 +1,8 @@
 local M = {}
 
 M.ColorMode = {
-  Light = "Gruvbox (Gogh)",
-  Dark = "Gruvbox dark, hard (base16)",
+  Light = "Tokyo Night Day",
+  Dark = "Tokyo Night",
 }
 
 function M.update_config(config)

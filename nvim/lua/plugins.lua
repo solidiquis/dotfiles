@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "sainnhe/gruvbox-material",
+    "folke/tokyonight.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
