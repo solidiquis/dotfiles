@@ -17,7 +17,6 @@ lspconfig["clangd"].setup({})
 -- web-frontend
 lspconfig["tailwindcss"].setup({})
 lspconfig["vtsls"].setup({})
-lspconfig["eslint_d"].setup({})
 lspconfig["cssls"].setup({})
 lspconfig["html"].setup({})
 
@@ -45,12 +44,6 @@ lspconfig["rust_analyzer"].setup({
       }
     },
   },
-})
-
-lspconfig["tsserver"].setup({
-  on_attach = on_attach,
-  root_dir = lspconfig.util.root_pattern("package.json"),
-  single_file_support = false
 })
 
 -- lsp_signature UI tweaks

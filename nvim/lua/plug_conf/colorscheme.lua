@@ -23,14 +23,20 @@ local mode = os.getenv("LIGHT_MODE")
 if mode and string.len(mode) > 0 then
   vim.o.background = "light"
   vim.cmd("colorscheme tokyonight-day")
+
+  require('lualine').setup {
+    options = {
+      theme = 'tokyonight-day'
+    }
+  }
 else
   vim.o.background = "dark"
   vim.cmd("colorscheme tokyonight")
-end
 
-require('lualine').setup {
-  options = {
-    theme = 'tokyonight'
+  require('lualine').setup {
+    options = {
+      theme = 'tokyonight'
+    }
   }
-}
+end
 

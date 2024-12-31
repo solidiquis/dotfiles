@@ -1,17 +1,6 @@
 local packer_user_config = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 local info_log = require("utils").info
 
--- Turn off syntax highlighting for large files
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = syntax_group,
-  pattern = "*",
-  callback = function()
-    if vim.api.nvim_buf_line_count(0) > 10000 then
-      vim.cmd [[ syntax off ]]
-    end
-  end
-})
-
 -- Make NvimTree bufferline align tabs
 vim.api.nvim_create_autocmd('BufWinLeave', {
   pattern = '*',

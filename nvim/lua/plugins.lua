@@ -165,13 +165,21 @@ local plugins = {
     config = get_setup("text_case"),
   },
 
+  -- Open in Github
   {
     "almo7aya/openingh.nvim"
   },
 
+  -- Pretty command line. Turn off LSP features for this.
   {
     "folke/noice.nvim",
     config = get_setup("noice"),
+  },
+
+  -- Run lints
+  {
+    "mfussenegger/nvim-lint",
+    config = get_setup("lint"),
   },
 }
 
