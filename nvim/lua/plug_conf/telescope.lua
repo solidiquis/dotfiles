@@ -46,6 +46,6 @@ vim.keymap.set(mode.normal, "<leader>g", ":Telescope git_status<CR>", { noremap 
 vim.keymap.set(mode.normal, "<leader>l", function()
   builtin.lsp_document_symbols({ symbol_width = 200 })
 end, { noremap = true })
-vim.keymap.set(mode.normal, "/", function()
+vim.keymap.set(mode.normal, "<leader>/", function()
   builtin.current_buffer_fuzzy_find()
 end, { noremap = true })

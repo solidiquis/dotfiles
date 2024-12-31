@@ -171,9 +171,6 @@ local plugins = {
 
   {
     "folke/noice.nvim",
-    dependencies = {
-      "rcarriga/nvim-notify",
-    },
     config = get_setup("noice"),
   },
 }

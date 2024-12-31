@@ -30,7 +30,7 @@ cmp.setup({
   mapping = {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_next_item(select_opts)
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       elseif utils.check_back_space() then
         fallback()
       else
@@ -40,7 +40,7 @@ cmp.setup({
 
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_prev_item(select_opts)
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
       else
         fallback()
       end
