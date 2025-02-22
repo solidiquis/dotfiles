@@ -1,41 +1,45 @@
-require("tokyonight").setup {
-  style = "night",
-  light_style = "day",
-  transparent = false,
-  terminal_colors = true,
-  styles = {
-    sidebars = "dark",
-    floats = "dark",
+require("nightfox").setup({
+  options = {
+    transparent = false,
+    styles = {
+      comments = "NONE",
+      conditionals = "NONE",
+      constants = "NONE",
+      functions = "NONE",
+      keywords = "NONE",
+      numbers = "NONE",
+      operators = "NONE",
+      strings = "NONE",
+      types = "NONE",
+      variables = "NONE",
+    },
+    inverse = {
+      match_paren = false,
+      visual = false,
+      search = false,
+    },
   },
-  day_brightness = 0.3,
-  dim_inactive = false,
-  lualine_bold = false,
+})
 
-  on_colors = function(colors) end,
-  plugins = {
-    all = package.loaded.lazy == nil,
-    auto = true,
-  },
-}
 
 local mode = os.getenv("LIGHT_MODE")
 
 if mode and string.len(mode) > 0 then
   vim.o.background = "light"
-  vim.cmd("colorscheme tokyonight-day")
+  vim.cmd("colorscheme dayfox")
 
-  require('lualine').setup {
+  require("lualine").setup {
     options = {
-      theme = 'tokyonight-day'
+      theme = "dayfox"
     }
   }
 else
   vim.o.background = "dark"
-  vim.cmd("colorscheme tokyonight")
+  vim.cmd("colorscheme terafox")
 
-  require('lualine').setup {
+  require("lualine").setup {
     options = {
-      theme = 'tokyonight'
+      theme = 'terafox'
     }
   }
 end

@@ -91,3 +91,19 @@ EOT
       ;;
   esac
 }
+
+gs-files() {
+  local working_files=()
+  for file in $(git status --porcelain); do
+    if [[ ! -f  "$file" ]]; then
+      continue;
+    fi
+
+    if [[ -n "$1" && "$file" =~ "${1}$" ]]; then
+      working_files+="$file"
+    elif [[ -z "$1" ]]; then
+      working_files+="$file"
+    fi
+  done
+  echo "$working_files"
+}

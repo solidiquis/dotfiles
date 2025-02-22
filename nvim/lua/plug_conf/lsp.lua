@@ -46,22 +46,15 @@ lspconfig["rust_analyzer"].setup({
   },
 })
 
+-- This is actually very annoying
 -- lsp_signature UI tweaks
-require("lsp_signature").setup({
-  bind = true,
-  timer_interval = 350,
-  handler_opts = {
-    border = "rounded",
-  },
-})
-
--- LSP hover window UI tweaks
--- This actually gets overridden by 'noice' to see the 'noice' config.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    border = "single"
-  }
-)
+--require("lsp_signature").setup({
+  --bind = true,
+  --timer_interval = 350,
+  --handler_opts = {
+    --border = "rounded",
+  --},
+--})
 
 -- LSP diagnostics
 vim.diagnostic.config {

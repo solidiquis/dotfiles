@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "folke/tokyonight.nvim",
+    "EdenEast/nightfox.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -170,17 +170,21 @@ local plugins = {
     "almo7aya/openingh.nvim"
   },
 
-  -- Pretty command line. Turn off LSP features for this.
-  {
-    "folke/noice.nvim",
-    config = get_setup("noice"),
-  },
-
   -- Run lints
   {
     "mfussenegger/nvim-lint",
     config = get_setup("lint"),
   },
+
+  -- code block lines
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    main = "ibl",
+    config = get_setup("blankline"),
+  }
 }
 
 local opts = {}

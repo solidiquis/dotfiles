@@ -1,8 +1,8 @@
 local M = {}
 
 M.ColorMode = {
-  Light = "Tokyo Night Day",
-  Dark = "Tokyo Night",
+  Light = "dayfox",
+  Dark = "terafox",
 }
 
 function M.update_config(config)
