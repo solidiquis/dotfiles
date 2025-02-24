@@ -107,3 +107,19 @@ gs-files() {
   done
   echo "$working_files"
 }
+
+ez-encrypt() {
+  if [ ! -x $(which gpg) ]; then
+    echo "gpg not installed"
+    return
+  fi
+  gpg --symmetric --cipher-algo AES256 "$1"
+}
+
+ez-decrypt() {
+  if [ ! -x $(which gpg) ]; then
+    echo "gpg not installed"
+    return
+  fi
+  gpg --output "$2" --decrypt "$1" 
+}
