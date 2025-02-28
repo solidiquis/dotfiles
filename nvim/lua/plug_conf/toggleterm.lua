@@ -22,7 +22,7 @@ require("toggleterm").setup {
   insert_mappings = true,
   terminal_mappings = true,
   persist_size = true,
-  persist_mode = true,
+  persist_mode = false,
   close_on_exit = true,
   shell = vim.o.shell,
   float_opts = {
