@@ -2,7 +2,6 @@ local lint = require("lint")
 local info_log = require("utils").info
 
 function run_eslint()
-  info_log("Running eslint_d")
   lint.try_lint()
 end
 

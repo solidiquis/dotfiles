@@ -1,6 +1,7 @@
 require("mason").setup()
 
 local lspconfig = require("lspconfig")
+local cmp_nvim_lsp require("cmp_nvim_lsp")
 
 lspconfig["bashls"].setup({})
 lspconfig["clangd"].setup({})
@@ -13,12 +14,6 @@ lspconfig["pyright"].setup({})
 lspconfig["solargraph"].setup({})
 lspconfig["yamlls"].setup({})
 lspconfig["clangd"].setup({})
-
--- web-frontend
-lspconfig["tailwindcss"].setup({})
-lspconfig["vtsls"].setup({})
-lspconfig["cssls"].setup({})
-lspconfig["html"].setup({})
 
 lspconfig["gopls"].setup({
   settings = {
@@ -45,6 +40,14 @@ lspconfig["rust_analyzer"].setup({
     },
   },
 })
+
+-- web-frontend
+lspconfig["tailwindcss"].setup({})
+lspconfig["vtsls"].setup({})
+lspconfig["cssls"].setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+})
+lspconfig["html"].setup({})
 
 -- This is actually very annoying
 -- lsp_signature UI tweaks

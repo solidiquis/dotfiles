@@ -123,3 +123,7 @@ ez-decrypt() {
   fi
   gpg --output "$2" --decrypt "$1" 
 }
+
+now() {
+  date +%Y-%m-%dT%H:%M:%S
+}
