@@ -1,7 +1,7 @@
 require("mason").setup()
 
 local lspconfig = require("lspconfig")
-local cmp_nvim_lsp require("cmp_nvim_lsp")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 lspconfig["bashls"].setup({})
 lspconfig["clangd"].setup({})
