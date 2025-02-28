@@ -47,7 +47,11 @@ lspconfig["vtsls"].setup({})
 lspconfig["cssls"].setup({
   capabilities = cmp_nvim_lsp.default_capabilities(),
 })
-lspconfig["html"].setup({})
+-- Need the following: npm i -g vscode-langservers-extracted
+lspconfig["html"].setup({
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  filetypes = { "html", "htmldjango" },
+})
 
 -- This is actually very annoying
 -- lsp_signature UI tweaks

@@ -13,6 +13,7 @@ luasnip.snippets = {
 
 luasnip.filetype_extend("javascriptreact", { "html" })
 luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.filetype_extend("htmldjango", { "html" })
 luasnip.snippets.javascript = luasnip.snippets.html
 luasnip.snippets.javascriptreact = luasnip.snippets.html
 luasnip.snippets.typescriptreact = luasnip.snippets.html
