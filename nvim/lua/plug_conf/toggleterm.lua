@@ -9,7 +9,7 @@ local Direction = {
 
 require("toggleterm").setup {
   open_mapping = [[<c-\>]],
-  direction = Direction.horizontal,
+  direction = Direction.float,
   size = function(term)
     if term.direction == "horizontal" then
       return math.floor(vim.api.nvim_win_get_height(0) * 0.5)
@@ -37,4 +37,4 @@ require("toggleterm").setup {
   }
 }
 
-vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualLines<CR>", { noremap = true })
+vim.keymap.set(mode.visual_select, "<C-s>", ":ToggleTermSendVisualLines<CR>:ToggleTerm<CR>", { noremap = true })

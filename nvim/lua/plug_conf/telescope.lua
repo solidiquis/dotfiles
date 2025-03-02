@@ -9,6 +9,7 @@ telescope.setup({
     layout_config = { preview_cutoff = 0 },
     file_ignore_patterns = {
       "%.git/",
+      "target/",
     }
   },
   pickers = {
