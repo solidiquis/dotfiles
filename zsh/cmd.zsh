@@ -125,5 +125,5 @@ ez-decrypt() {
 }
 
 now() {
-  date +%Y-%m-%dT%H:%M:%S
+  date +%Y-%m-%dT%H:%M:%SZ
 }

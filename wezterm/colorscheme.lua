@@ -1,8 +1,8 @@
 local M = {}
 
 M.ColorMode = {
-  Light = "Everforest Light Medium (Gogh)",
-  Dark = "Everforest Dark Hard (Gogh)",
+  Light = "Github",
+  Dark = "Github Dark (Gogh)",
 }
 
 function M.update_config(config)

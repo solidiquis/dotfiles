@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "sainnhe/everforest",
+    "projekt0n/github-nvim-theme",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -177,14 +177,14 @@ local plugins = {
   },
 
   -- code block lines
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    main = "ibl",
-    config = get_setup("blankline"),
-  }
+  --{
+    --"lukas-reineke/indent-blankline.nvim",
+    --dependencies = {
+      --"MunifTanjim/nui.nvim",
+    --},
+    --main = "ibl",
+    --config = get_setup("blankline"),
+  --}
 }
 
 local opts = {}
