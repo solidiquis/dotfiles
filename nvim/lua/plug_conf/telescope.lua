@@ -10,6 +10,7 @@ telescope.setup({
     file_ignore_patterns = {
       "%.git/",
       "target/",
+      "venv/",
     }
   },
   pickers = {
