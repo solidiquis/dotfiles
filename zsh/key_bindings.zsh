@@ -9,6 +9,7 @@ light_mode() {
     echo "Dark mode"
   fi
   zle accept-line
+  s
 }
 zle -N light_mode
 bindkey '^H' light_mode
