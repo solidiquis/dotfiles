@@ -125,5 +125,9 @@ ez-decrypt() {
 }
 
 now() {
-  date +%Y-%m-%dT%H:%M:%SZ
+  if [[ -n "${@}" ]]; then
+    date -v ${@} -u +%Y-%m-%dT%H:%M:%SZ
+  else
+    date -u +%Y-%m-%dT%H:%M:%SZ
+  fi
 }
