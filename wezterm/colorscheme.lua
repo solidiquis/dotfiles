@@ -1,12 +1,18 @@
 local M = {}
 
 M.ColorMode = {
-  Light = "Github",
-  Dark = "Github Dark (Gogh)",
+  Light = "zenbones",
+  Dark = "zenbones_dark",
 }
 
 function M.update_config(config)
-  config.color_scheme = M.ColorMode.Dark
+  local light_mode = os.getenv("LIGHT_MODE")
+
+  if light_mode and light_mode ~= "" then
+    config.color_scheme = M.ColorMode.Light
+  else
+    config.color_scheme = M.ColorMode.Dark
+  end
 end
 
 return M
