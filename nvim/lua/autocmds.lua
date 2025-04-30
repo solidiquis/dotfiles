@@ -27,6 +27,15 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     error_float.ctermbg = nil
 
     vim.api.nvim_set_hl(0, "ErrorFloat", error_float)
+
+    -- Clear italic from all highlight groups.. i hate italics
+    for _, group in ipairs(vim.fn.getcompletion("", "highlight")) do
+      local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+      if hl.italic then
+        hl.italic = false
+        vim.api.nvim_set_hl(0, group, hl)
+      end
+    end
   end,
 })
 
