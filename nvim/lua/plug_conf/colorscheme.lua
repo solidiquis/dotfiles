@@ -8,12 +8,18 @@ if mode and string.len(mode) > 0 then
     italic_comments = false,
   }
   vim.o.background = "light"
-else
-  vim.g.zenwritten = {
-    darkness = 'stark',
-    italic_comments = false,
-  }
-  vim.o.background = "dark"
-end
 
-vim.cmd("colorscheme zenwritten")
+  vim.cmd("colorscheme zenwritten")
+else
+  vim.o.background = "dark"
+
+  require("noirbuddy").setup {
+    preset = "minimal",
+    styles = {
+      italic = false,
+      bold = false,
+      underline = false,
+      undercurl = false,
+    },
+  }
+end

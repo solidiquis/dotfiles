@@ -119,8 +119,10 @@ local plugins = {
   {
     "zenbones-theme/zenbones.nvim",
     dependencies = {
-      "nvim-lualine/lualine.nvim",
       "rktjmp/lush.nvim",
+      "tjdevries/colorbuddy.nvim",
+      "nvim-lualine/lualine.nvim",
+      "jesseleite/nvim-noirbuddy",
     },
     config = get_setup("colorscheme"),
   },

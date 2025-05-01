@@ -1,15 +1,15 @@
 local M = {}
 
 M.ColorMode = {
-  Light = "zenwritten_light",
-  Dark = "zenwritten_dark",
+  Light = "light",
+  Dark = "dark",
 }
 
 function M.update_config(config)
   config.color_schemes = config.color_schemes or {}
 
   -- Custom Light Theme
-  config.color_schemes["zenwritten_light"] = {
+  config.color_schemes["light"] = {
     foreground = "#353535",
     background = "#f7f6f6",
     cursor_fg = "#EEEEEE",
@@ -28,9 +28,9 @@ function M.update_config(config)
   }
 
   -- Custom Dark Theme
-  config.color_schemes["zenwritten_dark"] = {
+  config.color_schemes["dark"] = {
     foreground = "#BBBBBB",
-    background = "#171213",
+    background = "#121212",
     cursor_fg = "#191919",
     cursor_bg = "#C9C9C9",
     cursor_border = "#191919",
