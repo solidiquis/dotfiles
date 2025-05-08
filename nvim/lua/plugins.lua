@@ -120,7 +120,7 @@ local plugins = {
     "zenbones-theme/zenbones.nvim",
     dependencies = {
       "rktjmp/lush.nvim",
-      "tjdevries/colorbuddy.nvim",
+      "wnkz/monoglow.nvim",
       "nvim-lualine/lualine.nvim",
       "jesseleite/nvim-noirbuddy",
     },

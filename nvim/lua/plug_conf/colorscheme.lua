@@ -12,14 +12,5 @@ if mode and string.len(mode) > 0 then
   vim.cmd("colorscheme zenwritten")
 else
   vim.o.background = "dark"
-
-  require("noirbuddy").setup {
-    preset = "minimal",
-    styles = {
-      italic = false,
-      bold = false,
-      underline = false,
-      undercurl = false,
-    },
-  }
+  vim.cmd("colorscheme monoglow")
 end

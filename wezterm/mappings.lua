@@ -14,6 +14,12 @@ local M = {}
 
 function M.update_config(config)
   config.keys = {
+    {
+      key = "r",
+      mods = "CMD|SHIFT",
+      action = action.ReloadConfiguration,
+    },
+
     -----------------------------
     -- Pane and tab management --
     -----------------------------
@@ -54,6 +60,7 @@ function M.update_config(config)
       action = action.Multiple({
         action.EmitEvent(events.ToggleLightMode),
         action.SendKey { key = "h", mods = "CTRL" },
+        action.ReloadConfiguration,
       }),
     },
   }

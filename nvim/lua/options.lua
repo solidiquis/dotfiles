@@ -17,5 +17,5 @@ opt.sts = 2
 opt.fillchars = {eob = " "}
 opt.cmdheight = 0
 
-
+vim.o.laststatus = 0
 vim.o.signcolumn = "yes:1"
