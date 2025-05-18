@@ -179,6 +179,19 @@ local plugins = {
     config = get_setup("lint"),
   },
 
+  -- tailwind
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = get_setup("tailwind_tools"),
+  },
+
   -- code block lines
   --{
     --"lukas-reineke/indent-blankline.nvim",

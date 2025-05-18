@@ -14,6 +14,9 @@ lspconfig["pyright"].setup({})
 lspconfig["solargraph"].setup({})
 lspconfig["yamlls"].setup({})
 lspconfig["clangd"].setup({})
+lspconfig["tailwindcss"].setup({
+  filetypes = { "rust" },
+})
 
 lspconfig["gopls"].setup({
   settings = {
