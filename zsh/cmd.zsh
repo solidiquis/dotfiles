@@ -10,6 +10,10 @@ kk() {
   printf "\e[2J\e[H"
 }
 
+rgb() {
+  echo "\e[1;38;2;${1};${2};${3}m foobar \e[0m"
+}
+
 s() {
   if [[ "$SHELL" =~ "zsh" ]]; then
     source $HOME/.zshrc

@@ -11,7 +11,7 @@ function M.update_config(config)
     { family = "RobotoMono Nerd Font Mono", weight = "Bold", italic = false },
     { family = "JetBrains Mono", weight = "Bold", italic = false },
   }
-  config.font_size = 12.0
+  config.font_size = 14.0
 end
 
 return M

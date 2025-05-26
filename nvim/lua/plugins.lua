@@ -117,12 +117,10 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "zenbones-theme/zenbones.nvim",
+    "scottmckendry/cyberdream.nvim",
     dependencies = {
-      "rktjmp/lush.nvim",
-      "wnkz/monoglow.nvim",
+      "projekt0n/github-nvim-theme",
       "nvim-lualine/lualine.nvim",
-      "jesseleite/nvim-noirbuddy",
     },
     config = get_setup("colorscheme"),
   },
