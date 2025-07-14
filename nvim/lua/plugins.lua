@@ -117,9 +117,8 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "scottmckendry/cyberdream.nvim",
+    "miikanissi/modus-themes.nvim",
     dependencies = {
-      "projekt0n/github-nvim-theme",
       "nvim-lualine/lualine.nvim",
     },
     config = get_setup("colorscheme"),
