@@ -135,3 +135,7 @@ now() {
     date -u +%Y-%m-%dT%H:%M:%SZ
   fi
 }
+
+now_ts() {
+  date +%s
+}

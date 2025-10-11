@@ -18,3 +18,6 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export CURSOR_TYPE="ibeam"
 export PACKPATH="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
+# Completions
+fpath=($HOME/.zsh-complete $fpath)
