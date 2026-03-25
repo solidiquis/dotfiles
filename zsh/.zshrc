@@ -24,3 +24,5 @@ fi
 if [[ -f "$DOTFILES/zsh/custom.zsh" ]]; then
   source $DOTFILES/zsh/custom.zsh --source_only
 fi
+
+. "$HOME/.local/bin/env"

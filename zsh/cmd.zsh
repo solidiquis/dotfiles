@@ -136,6 +136,10 @@ now() {
   fi
 }
 
-now_ts() {
+now_s() {
   date +%s
+}
+
+now_ms() {
+  date +%s%3
 }

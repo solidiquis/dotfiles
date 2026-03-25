@@ -1,8 +1,14 @@
 local M = {}
 
+--M.ColorMode = {
+  --Light = "Modus Vivendi",
+  --Dark = "Modus Operandi",
+--}
+--
+
 M.ColorMode = {
-  Light = "Modus Vivendi",
-  Dark = "Modus Operandi",
+  Light = "Gruvbox light, hard (base16)",
+  Dark = "Gruvbox dark, hard (base16)",
 }
 
 function M.update_config(config)

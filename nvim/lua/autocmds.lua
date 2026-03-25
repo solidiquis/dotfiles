@@ -76,3 +76,13 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
     vim.opt.cmdheight = 0
   end
 })
+
+-- Auto-reload buffers changed outside of nvim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+})

@@ -117,7 +117,7 @@ local plugins = {
 
   -- Colorscheme and Lualine
   {
-    "miikanissi/modus-themes.nvim",
+    "ellisonleao/gruvbox.nvim",
     dependencies = {
       "nvim-lualine/lualine.nvim",
     },
@@ -188,6 +188,12 @@ local plugins = {
     },
     config = get_setup("tailwind_tools"),
   },
+
+  {
+    "coder/claudecode.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+  }
 
   -- code block lines
   --{
