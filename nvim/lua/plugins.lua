@@ -193,6 +193,11 @@ local plugins = {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
     config = true,
+    keys = {
+      { "<leader>c", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+      { "<leader>a", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept Diff" },
+      { "<leader>s", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny Diff" },
+    }
   }
 
   -- code block lines

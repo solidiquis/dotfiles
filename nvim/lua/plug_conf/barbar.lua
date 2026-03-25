@@ -28,4 +28,3 @@ require("barbar").setup({
 vim.keymap.set(Mode.normal, "<leader>n", ":BufferNext<CR>", { noremap = true })
 vim.keymap.set(Mode.normal, "<leader>N", ":BufferPrevious<CR>", { noremap = true })
 vim.keymap.set(Mode.normal, "<leader>q", ":BufferClose<CR>", { noremap = true })
-vim.keymap.set(Mode.normal, "<C-s>", ":BufferMoveNext<CR>", { noremap = true })
