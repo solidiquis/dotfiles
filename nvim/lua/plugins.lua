@@ -84,13 +84,8 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    branch = "main",
     config = get_setup("treesitter"),
-  },
-
-  -- Treesitter playground
-  {
-    "nvim-treesitter/playground",
-    build = ":TSInstall query",
   },
 
   -- Extended glyphs
@@ -176,19 +171,6 @@ local plugins = {
     config = get_setup("lint"),
   },
 
-  -- tailwind
-  --{
-    --"luckasRanarison/tailwind-tools.nvim",
-    --name = "tailwind-tools",
-    --build = ":UpdateRemotePlugins",
-    --dependencies = {
-      --"nvim-treesitter/nvim-treesitter",
-      --"nvim-telescope/telescope.nvim",
-      --"neovim/nvim-lspconfig",
-    --},
-    --config = get_setup("tailwind_tools"),
-  --},
-
   {
     "coder/claudecode.nvim",
     dependencies = { "folke/snacks.nvim" },
@@ -199,16 +181,6 @@ local plugins = {
       { "<leader>s", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny Diff" },
     }
   }
-
-  -- code block lines
-  --{
-    --"lukas-reineke/indent-blankline.nvim",
-    --dependencies = {
-      --"MunifTanjim/nui.nvim",
-    --},
-    --main = "ibl",
-    --config = get_setup("blankline"),
-  --}
 }
 
 local opts = {}

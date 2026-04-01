@@ -25,4 +25,5 @@ brew install ripgrep
 brew install fd
 brew install exa
 brew install gitui
-brew install erdtree
+brew install tree-sitter-cli
+brew install tree-sitter
