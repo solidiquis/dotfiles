@@ -177,17 +177,17 @@ local plugins = {
   },
 
   -- tailwind
-  {
-    "luckasRanarison/tailwind-tools.nvim",
-    name = "tailwind-tools",
-    build = ":UpdateRemotePlugins",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope.nvim",
-      "neovim/nvim-lspconfig",
-    },
-    config = get_setup("tailwind_tools"),
-  },
+  --{
+    --"luckasRanarison/tailwind-tools.nvim",
+    --name = "tailwind-tools",
+    --build = ":UpdateRemotePlugins",
+    --dependencies = {
+      --"nvim-treesitter/nvim-treesitter",
+      --"nvim-telescope/telescope.nvim",
+      --"neovim/nvim-lspconfig",
+    --},
+    --config = get_setup("tailwind_tools"),
+  --},
 
   {
     "coder/claudecode.nvim",

@@ -1,24 +1,19 @@
 require("mason").setup()
 
-local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-lspconfig["bashls"].setup({})
-lspconfig["clangd"].setup({})
-lspconfig["docker_compose_language_service"].setup({})
-lspconfig["dockerls"].setup({})
-lspconfig["lemminx"].setup({})
-lspconfig["lua_ls"].setup({})
-lspconfig["marksman"].setup({})
-lspconfig["pyright"].setup({})
-lspconfig["solargraph"].setup({})
-lspconfig["yamlls"].setup({})
-lspconfig["clangd"].setup({})
-lspconfig["tailwindcss"].setup({
-  filetypes = { "rust" },
-})
+vim.lsp.config("bashls", {})
+vim.lsp.config("clangd", {})
+vim.lsp.config("docker_compose_language_service", {})
+vim.lsp.config("dockerls", {})
+vim.lsp.config("lemminx", {})
+vim.lsp.config("lua_ls", {})
+vim.lsp.config("marksman", {})
+vim.lsp.config("pyright", {})
+vim.lsp.config("solargraph", {})
+vim.lsp.config("yamlls", {})
 
-lspconfig["gopls"].setup({
+vim.lsp.config("gopls", {
   settings = {
     gopls = {
       env = {
@@ -28,13 +23,13 @@ lspconfig["gopls"].setup({
   }
 })
 
-lspconfig["sqlls"].setup({
+vim.lsp.config("sqlls", {
   root_dir = function(fname)
-    return lspconfig.util.find_git_ancestor(fname) or vim.fn.getcwd()
+    return vim.fs.root(fname, {".git"}) or vim.fn.getcwd()
   end,
 })
 
-lspconfig["rust_analyzer"].setup({
+vim.lsp.config("rust_analyzer", {
   settings = {
     ["rust-analyzer"] = {
       diagnostics = {
@@ -48,26 +43,24 @@ lspconfig["rust_analyzer"].setup({
 })
 
 -- web-frontend
-lspconfig["tailwindcss"].setup({})
-lspconfig["vtsls"].setup({})
-lspconfig["cssls"].setup({
+vim.lsp.config("tailwindcss", {
+  filetypes = { "rust" },
+})
+vim.lsp.config("vtsls", {})
+vim.lsp.config("cssls", {
   capabilities = cmp_nvim_lsp.default_capabilities(),
 })
 -- Need the following: npm i -g vscode-langservers-extracted
-lspconfig["html"].setup({
+vim.lsp.config("html", {
   capabilities = cmp_nvim_lsp.default_capabilities(),
   filetypes = { "html", "htmldjango" },
 })
 
--- This is actually very annoying
--- lsp_signature UI tweaks
---require("lsp_signature").setup({
-  --bind = true,
-  --timer_interval = 350,
-  --handler_opts = {
-    --border = "rounded",
-  --},
---})
+vim.lsp.enable({
+  "bashls", "clangd", "docker_compose_language_service", "dockerls",
+  "lemminx", "lua_ls", "marksman", "pyright", "solargraph", "yamlls",
+  "gopls", "sqlls", "rust_analyzer", "tailwindcss", "vtsls", "cssls", "html",
+})
 
 -- LSP diagnostics
 vim.diagnostic.config {
