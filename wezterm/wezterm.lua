@@ -7,7 +7,7 @@ local window = require("window")
 local config = {}
 
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 window.update_config(config)

@@ -1,188 +1,119 @@
---------------------
--- Bootstrap lazy --
---------------------
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-
-vim.opt.rtp:prepend(lazypath)
-
---------------------
------ Plugins ------
---------------------
-local function get_setup(conf_name)
-  return function(_plugin, _opts)
-    local mod = string.format("plug_conf.%s", conf_name)
-    require(mod)
-  end
-end
-
-local plugins = {
-  -- Language server installations and LSP client configs and relevant keymaps
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      { "williamboman/mason.nvim", build = ":MasonUpdate" },
-      { "williamboman/mason-lspconfig.nvim" },
-      { "ray-x/lsp_signature.nvim" },
+vim.pack.add({
+    -- Telescope
+    {
+	src = "https://github.com/nvim-lua/plenary.nvim",
+	version = "v0.1.4",
     },
-    config = get_setup("lsp"),
-  },
-
-  -- Autocomplete and snippets
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/nvim-cmp",
-      {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-          "rafamadriz/friendly-snippets",
-          "saadparwaiz1/cmp_luasnip",
-        },
-      },
+    {
+	src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+	rev = "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
     },
-    config = get_setup("cmp"),
-  },
-
-  -- Commenting utility
-  { "preservim/nerdcommenter" },
-
-  -- Vim terminal friendly interface
-  {
-    "akinsho/toggleterm.nvim",
-    config = get_setup("toggleterm"),
-  },
-
-  -- File/fuzzy finder and diagnostics
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = 'make'
-      }
+    {
+	src = "https://github.com/nvim-telescope/telescope.nvim",
+	version = "v0.2.1"
     },
-    config = get_setup("telescope"),
-  },
 
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    branch = "main",
-    config = get_setup("treesitter"),
-  },
-
-  -- Extended glyphs
-  { "kyazdani42/nvim-web-devicons" },
-
-  -- Buffer tabs
-  {
-    "romgrk/barbar.nvim",
-    dependencies = {
-      "kyazdani42/nvim-web-devicons",
+    -- Treesitter
+    {
+	src = "https://github.com/nvim-treesitter/nvim-treesitter",
+	rev = "539abf6da5ee8702e37b82cc953131dadd570da2",
     },
-    config = get_setup("barbar"),
-  },
 
-  -- Filetree
-  {
-    "kyazdani42/nvim-tree.lua",
-    dependencies = {
-      "kyazdani42/nvim-web-devicons",
-      "romgrk/barbar.nvim",
+    -- Git stuff
+    {
+        src = "https://github.com/sindrets/diffview.nvim",
+        rev = "4516612fe98ff56ae0415a259ff6361a89419b0a",
     },
-    config = get_setup("nvim_tree"),
-  },
-
-  -- Colorscheme and Lualine
-  {
-    "ellisonleao/gruvbox.nvim",
-    dependencies = {
-      "nvim-lualine/lualine.nvim",
+    {
+	src = "https://github.com/lewis6991/gitsigns.nvim",
+	version = "v2.1.0",
     },
-    config = get_setup("colorscheme"),
-  },
-
-  -- The colorscheme of all time
-  { "tckmn/hotdog.vim" },
-
-  -- Extends '%' behavior and matching text highlight
-  { "andymass/vim-matchup" },
-
-  -- Git decorations
-  {
-    "lewis6991/gitsigns.nvim",
-    config = get_setup("gitsigns")
-  },
-
-  -- Wrapper around `git` command
-  { "tpope/vim-fugitive" },
-
-  -- Interactive git diff and staging tool
-  {
-    "sindrets/diffview.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim"
+    {
+        src = "https://github.com/tpope/vim-fugitive",
+        rev = "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
     },
-    config = get_setup("diffview"),
-  },
+    {
+        src = "https://github.com/Almo7aya/openingh.nvim",
+        version = "v1.0.14",
+    },
 
-  {
-    "RRethy/vim-illuminate",
-    config = get_setup("vim_illuminate")
-  },
+    -- Icons
+    {
+	src = "https://github.com/nvim-tree/nvim-web-devicons",
+	rev = "40e9d5a6cc3db11b309e39593fc7ac03bb844e38",
+    },
 
-  -- Better marks experience
-  {
-    "chentoast/marks.nvim",
-    config = get_setup("marks"),
-  },
+    -- Barbar
+    {
+	src = "https://github.com/romgrk/barbar.nvim",
+	rev = "539d73def39c9172b4d4d769f14090e08f37b29d",
+    },
 
-  -- Case conversion
-  {
-    "johmsalas/text-case.nvim",
-    config = get_setup("text_case"),
-  },
+    -- File tree
+    {
+	src = "https://github.com/nvim-tree/nvim-tree.lua",
+	version = "v1.16.0"
+    },
 
-  -- Open in Github
-  {
-    "almo7aya/openingh.nvim"
-  },
+    -- Toggle term
+    {
+	src = "https://github.com/akinsho/toggleterm.nvim",
+	rev = "9a88eae817ef395952e08650b3283726786fb5fb",
+    },
 
-  -- Run lints
-  {
-    "mfussenegger/nvim-lint",
-    config = get_setup("lint"),
-  },
+    -- LSP
+    {
+	src = "https://github.com/mason-org/mason.nvim",
+	version = "v2.2.1",
+    },
+    {
+	src = "https://github.com/mason-org/mason-lspconfig.nvim",
+	version = "v2.1.0"
+    },
 
-  {
-    "coder/claudecode.nvim",
-    dependencies = { "folke/snacks.nvim" },
-    config = true,
-    keys = {
-      { "<leader>c", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-      { "<leader>a", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept Diff" },
-      { "<leader>s", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny Diff" },
-    }
-  }
-}
+    -- Autocompletion
+    {
+        src = "https://github.com/rafamadriz/friendly-snippets",
+        rev = "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+    },
+    {
+        src = "https://github.com/saghen/blink.cmp",
+        version = "v1.10.2",
+    },
 
-local opts = {}
+    -- Claude
+    {
+        src = "https://github.com/coder/claudecode.nvim",
+        rev = "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f",
+    },
 
-require("lazy").setup(plugins, opts)
+    -- Lualine
+    {
+        src = "https://github.com/nvim-lualine/lualine.nvim",
+        rev = "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
+    },
+
+    -- Misc.
+    {
+	src = "https://github.com/johmsalas/text-case.nvim",
+	rev = "e898cfd46fa6cde0e83abb624a16e67d2ffc6457",
+    },
+    {
+	src = "https://github.com/preservim/nerdcommenter",
+	rev = "a462bbda1e26f44fb3d3eb9d9d1c6a07aa98e665",
+    },
+    {
+        src = "https://github.com/rcarriga/nvim-notify",
+        version = "v3.15.0",
+    },
+})
+
+require("plugin_confs.telescope")
+require("plugin_confs.barbar")
+require("plugin_confs.nvim_treesitter")
+require("plugin_confs.nvim_tree")
+require("plugin_confs.toggleterm")
+require("plugin_confs.lsp.setup")
+require("plugin_confs.claude")
+require("plugin_confs.diffview")
+require("plugin_confs.colorscheme")

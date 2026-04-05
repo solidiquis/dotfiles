@@ -1,22 +1,20 @@
-local opt = vim.opt
-opt.encoding = "utf-8"
-opt.expandtab = true
-opt.nu = true
-opt.errorbells = false
-opt.wrap = false
-opt.smartcase = true
-opt.swapfile = false
-opt.backup = false
-opt.incsearch = true
-opt.autoindent = true
-opt.hlsearch = false
-opt.completeopt = "menu,menuone,noselect"
-opt.sw = 2
-opt.ts = 2
-opt.sts = 2
-opt.fillchars = {eob = " "}
-opt.cmdheight = 0
-vim.o.winborder = "rounded"
+vim.opt.shiftwidth = 4
+vim.opt.termguicolors = true
+vim.opt.encoding = "utf-8"
+vim.opt.expandtab = true
+vim.opt.nu = true
+vim.opt.errorbells = false
+vim.opt.wrap = false
+vim.opt.smartcase = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.incsearch = true
+vim.opt.autoindent = true
+vim.opt.hlsearch = false
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.fillchars = {eob = " "}
+vim.opt.cmdheight = 1
+vim.opt.autoread = true
 
-vim.o.laststatus = 0
+vim.o.winborder = "rounded"
 vim.o.signcolumn = "yes:1"

@@ -1,5 +1,4 @@
-require("autocmds")
-require("options")
-require("mappings")
+require("keymappings")
+require("cmd")
 require("plugins")
-require("cmds")
+require("options")
