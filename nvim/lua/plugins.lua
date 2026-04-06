@@ -93,6 +93,12 @@ vim.pack.add({
         rev = "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
     },
 
+    -- Colorschemes
+    {
+        src = "https://github.com/miikanissi/modus-themes.nvim",
+        rev = "17a64464c27c1be605adca13dbe48f2f402fe107"
+    },
+
     -- Misc.
     {
 	src = "https://github.com/johmsalas/text-case.nvim",

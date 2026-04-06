@@ -44,6 +44,10 @@
       "src": "https://github.com/mason-org/mason.nvim",
       "version": "'v2.2.1'"
     },
+    "modus-themes.nvim": {
+      "rev": "17a64464c27c1be605adca13dbe48f2f402fe107",
+      "src": "https://github.com/miikanissi/modus-themes.nvim"
+    },
     "nerdcommenter": {
       "rev": "a462bbda1e26f44fb3d3eb9d9d1c6a07aa98e665",
       "src": "https://github.com/preservim/nerdcommenter"
