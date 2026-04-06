@@ -30,6 +30,10 @@
       "rev": "334d5fd49fc8033f26408425366c66c6390c57bb",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
+    "hotdog.vim": {
+      "rev": "3b3b271e27a138a9f6d4130ee55e429ccaf78f35",
+      "src": "https://github.com/tckmn/hotdog.vim"
+    },
     "lualine.nvim": {
       "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
       "src": "https://github.com/nvim-lualine/lualine.nvim"

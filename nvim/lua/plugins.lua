@@ -98,6 +98,10 @@ vim.pack.add({
         src = "https://github.com/miikanissi/modus-themes.nvim",
         rev = "17a64464c27c1be605adca13dbe48f2f402fe107"
     },
+    {
+        src = "https://github.com/tckmn/hotdog.vim",
+        rev = "3b3b271e27a138a9f6d4130ee55e429ccaf78f35",
+    },
 
     -- Misc.
     {

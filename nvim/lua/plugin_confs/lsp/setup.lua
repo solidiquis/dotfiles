@@ -33,6 +33,13 @@ for server, config in pairs(configs) do
     end
 end
 
+vim.diagnostic.config({
+    float = { border = "single" },
+    underline = true,
+    virtual_text = false,
+    virtual_lines = false
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = auto_cmd_group_lsp,
     callback = function(ev)

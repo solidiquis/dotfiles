@@ -33,6 +33,13 @@ M.configs = {
         cmd = { "gopls" },
         filetypes = { "go", "gomod", "gowork", "gotmpl" },
         root_markers = { "go.work", "go.mod", ".git" },
+        settings = {
+            gopls = {
+                env = {
+                    GOFLAGS = "-tags=windows,linux,unittest,integration,unit",
+                },
+            },
+        },
     },
 
     -- python
