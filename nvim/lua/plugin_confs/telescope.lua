@@ -28,6 +28,9 @@ require("telescope").setup{
 	layout_config = {
 	    preview_cutoff = 0,
 	},
+        file_ignore_patterns = {
+            "%.git$",
+        },
 	mappings = {
 	    i = {
 		["<C-d>"] = "delete_buffer",
@@ -62,7 +65,7 @@ require("telescope").setup{
 
 require("telescope").load_extension("fzf")
 
-vim.keymap.set("n", "<leader>p", ":Telescope find_files hidden=true<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>p", ":Telescope find_files<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>P", ":Telescope find_files no_ignore=true no_ignore_parent=true hidden=true<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>f", ":Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })

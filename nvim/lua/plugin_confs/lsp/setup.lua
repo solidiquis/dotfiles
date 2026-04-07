@@ -58,6 +58,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+local attached_clients = {}
+
 vim.api.nvim_create_autocmd("LspProgress", {
     callback = function(ev)
         local value = ev.data.params.value
@@ -66,22 +68,20 @@ vim.api.nvim_create_autocmd("LspProgress", {
             return
         end
 
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        if client == nil then
+            return
+        end
+
+        if attached_clients[client.name] ~= nil and attached_clients[client.name] then
+            return
+        end
+
         if value.kind == "begin" then
-            local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-            if client == nil then
-                return
-            end
-
             logging.info(string.format("Initializing %s...", client.name), "Lsp Initialization")
-
         elseif value.kind == "end" then
-            local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-            if client == nil then
-                return
-            end
-
+            attached_clients[client.name] = true
             logging.info(string.format("%s initialization complete", client.name), "Lsp Initialization")
         end
     end,
