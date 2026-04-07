@@ -2,32 +2,32 @@ local configs = require("plugin_confs.lsp.servers").configs
 local logging = require("utils.logging")
 
 local M = {
-    enabled_servers = {},
+	enabled_servers = {},
 }
 
 function M.must_install_list()
-    local servers = {}
-    for name, _ in pairs(configs) do
-        table.insert(servers, name)
-    end
-    return servers
+	local servers = {}
+	for name, _ in pairs(configs) do
+		table.insert(servers, name)
+	end
+	return servers
 end
 
 function M.enable_lsp(name)
-    local config = configs[name]
+	local config = configs[name]
 
-    if config == nil then
-        logging.error(string.format("%s is not a registered server", name))
-        return
-    end
+	if config == nil then
+		logging.error(string.format("%s is not a registered server", name))
+		return
+	end
 
-    if M.enabled_servers[name] then
-        return
-    end
+	if M.enabled_servers[name] then
+		return
+	end
 
-    vim.lsp.config[name] = config
-    vim.lsp.enable(name)
-    M.enabled_servers[name] = true
+	vim.lsp.config[name] = config
+	vim.lsp.enable(name)
+	M.enabled_servers[name] = true
 end
 
 return M

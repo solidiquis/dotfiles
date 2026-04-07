@@ -4,56 +4,56 @@ local ColorMode = require("colorscheme").ColorMode
 local M = {}
 
 local function register_event(event_name, fn)
-    wezterm.on(event_name, fn)
-    M[event_name] = event_name
-    return event_name
+	wezterm.on(event_name, fn)
+	M[event_name] = event_name
+	return event_name
 end
 
 register_event("ToggleLightMode", function(win, _)
-    local overrides = win:get_config_overrides() or {}
+	local overrides = win:get_config_overrides() or {}
 
-    if overrides.color_scheme == ColorMode.Light then
-        overrides.color_scheme = ColorMode.Dark
-    else
-        overrides.color_scheme = ColorMode.Light
-    end
-    win:set_config_overrides(overrides)
+	if overrides.color_scheme == ColorMode.Light then
+		overrides.color_scheme = ColorMode.Dark
+	else
+		overrides.color_scheme = ColorMode.Light
+	end
+	win:set_config_overrides(overrides)
 end)
 
 register_event("IncreaseOpacity", function(win, _)
-    local overrides = win:get_config_overrides() or {}
+	local overrides = win:get_config_overrides() or {}
 
-    if not overrides.window_background_opacity then
-        overrides.window_background_opacity = 0.8
-    end
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 0.8
+	end
 
-    local opacity = overrides.window_background_opacity
+	local opacity = overrides.window_background_opacity
 
-    if opacity >= 1.0 then
-        return
-    end
+	if opacity >= 1.0 then
+		return
+	end
 
-    overrides.window_background_opacity = opacity + 0.05
+	overrides.window_background_opacity = opacity + 0.05
 
-    win:set_config_overrides(overrides)
+	win:set_config_overrides(overrides)
 end)
 
 register_event("DecreaseOpacity", function(win, _)
-    local overrides = win:get_config_overrides() or {}
+	local overrides = win:get_config_overrides() or {}
 
-    if not overrides.window_background_opacity then
-        overrides.window_background_opacity = 0.8
-    end
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 0.8
+	end
 
-    local opacity = overrides.window_background_opacity
+	local opacity = overrides.window_background_opacity
 
-    if opacity and opacity <= 0.0 then
-        return
-    end
+	if opacity and opacity <= 0.0 then
+		return
+	end
 
-    overrides.window_background_opacity = opacity - 0.05
+	overrides.window_background_opacity = opacity - 0.05
 
-    win:set_config_overrides(overrides)
+	win:set_config_overrides(overrides)
 end)
 
 return M

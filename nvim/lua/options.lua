@@ -1,4 +1,7 @@
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
@@ -12,7 +15,7 @@ vim.opt.incsearch = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = false
 vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.fillchars = {eob = " "}
+vim.opt.fillchars = { eob = " " }
 vim.opt.cmdheight = 1
 vim.opt.autoread = true
 

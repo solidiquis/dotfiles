@@ -10,9 +10,9 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { noremap = true })
 vim.keymap.set("n", "<leader>=", "<C-W><C-=>", { noremap = true })
 
 -- copy/paste
-vim.keymap.set("v", '<leader>c', '"*yy<CR>', { noremap = true })
-vim.keymap.set("v", '<leader>v', '"+p<CR>', { noremap = true })
-vim.keymap.set("n", '<leader>v', '"+p<CR>', { noremap = true })
+vim.keymap.set("v", "<leader>c", '"*yy<CR>', { noremap = true })
+vim.keymap.set("v", "<leader>v", '"+p<CR>', { noremap = true })
+vim.keymap.set("n", "<leader>v", '"+p<CR>', { noremap = true })
 
 -- Treesitter
 vim.keymap.set("x", "+", "an", { remap = true, desc = "Increment selection (outer node)" })
