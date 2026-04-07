@@ -6,7 +6,7 @@ vim.pack.add({
     },
     {
 	src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
-	rev = "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
+	version = "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
     },
     {
 	src = "https://github.com/nvim-telescope/telescope.nvim",
@@ -16,13 +16,13 @@ vim.pack.add({
     -- Treesitter
     {
 	src = "https://github.com/nvim-treesitter/nvim-treesitter",
-	rev = "539abf6da5ee8702e37b82cc953131dadd570da2",
+	version = "539abf6da5ee8702e37b82cc953131dadd570da2",
     },
 
     -- Git stuff
     {
         src = "https://github.com/sindrets/diffview.nvim",
-        rev = "4516612fe98ff56ae0415a259ff6361a89419b0a",
+        version = "4516612fe98ff56ae0415a259ff6361a89419b0a",
     },
     {
 	src = "https://github.com/lewis6991/gitsigns.nvim",
@@ -30,7 +30,7 @@ vim.pack.add({
     },
     {
         src = "https://github.com/tpope/vim-fugitive",
-        rev = "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+        version = "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
     },
     {
         src = "https://github.com/Almo7aya/openingh.nvim",
@@ -40,13 +40,13 @@ vim.pack.add({
     -- Icons
     {
 	src = "https://github.com/nvim-tree/nvim-web-devicons",
-	rev = "40e9d5a6cc3db11b309e39593fc7ac03bb844e38",
+	version = "40e9d5a6cc3db11b309e39593fc7ac03bb844e38",
     },
 
     -- Barbar
     {
 	src = "https://github.com/romgrk/barbar.nvim",
-	rev = "539d73def39c9172b4d4d769f14090e08f37b29d",
+	version = "539d73def39c9172b4d4d769f14090e08f37b29d",
     },
 
     -- File tree
@@ -58,7 +58,7 @@ vim.pack.add({
     -- Toggle term
     {
 	src = "https://github.com/akinsho/toggleterm.nvim",
-	rev = "9a88eae817ef395952e08650b3283726786fb5fb",
+	version = "9a88eae817ef395952e08650b3283726786fb5fb",
     },
 
     -- LSP
@@ -74,7 +74,7 @@ vim.pack.add({
     -- Autocompletion
     {
         src = "https://github.com/rafamadriz/friendly-snippets",
-        rev = "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+        version = "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
     },
     {
         src = "https://github.com/saghen/blink.cmp",
@@ -84,33 +84,33 @@ vim.pack.add({
     -- Claude
     {
         src = "https://github.com/coder/claudecode.nvim",
-        rev = "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f",
+        version = "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f",
     },
 
     -- Lualine
     {
         src = "https://github.com/nvim-lualine/lualine.nvim",
-        rev = "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
+        version = "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
     },
 
     -- Colorschemes
     {
         src = "https://github.com/miikanissi/modus-themes.nvim",
-        rev = "17a64464c27c1be605adca13dbe48f2f402fe107"
+        version = "17a64464c27c1be605adca13dbe48f2f402fe107"
     },
     {
         src = "https://github.com/tckmn/hotdog.vim",
-        rev = "3b3b271e27a138a9f6d4130ee55e429ccaf78f35",
+        version = "3b3b271e27a138a9f6d4130ee55e429ccaf78f35",
     },
 
     -- Misc.
     {
 	src = "https://github.com/johmsalas/text-case.nvim",
-	rev = "e898cfd46fa6cde0e83abb624a16e67d2ffc6457",
+	version = "e898cfd46fa6cde0e83abb624a16e67d2ffc6457",
     },
     {
 	src = "https://github.com/preservim/nerdcommenter",
-	rev = "a462bbda1e26f44fb3d3eb9d9d1c6a07aa98e665",
+	version = "a462bbda1e26f44fb3d3eb9d9d1c6a07aa98e665",
     },
     {
         src = "https://github.com/rcarriga/nvim-notify",
