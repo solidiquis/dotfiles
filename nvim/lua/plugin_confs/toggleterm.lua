@@ -30,14 +30,14 @@ require("toggleterm").setup {
 
 vim.api.nvim_create_autocmd("TermOpen", {
     pattern = "term://*",
-    callback = function()
+    callback = function(ev)
+        require("notify").notify(ev.match, vim.log.levels.INFO)
         vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true })
-        vim.api.nvim_buf_set_keymap(0, "t", "<C-c>", [[i]], { noremap = true })
-        vim.api.nvim_buf_set_keymap(0, "t", "q", [[i]], { noremap = true })
-        vim.api.nvim_buf_set_keymap(0, "t", "p", [[pi]], { noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", "q", [[i]], { noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", "p", [[pi]], { noremap = true })
     end
 })
