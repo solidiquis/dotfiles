@@ -1,3 +1,5 @@
+local utils = require("utils.window")
+
 local Direction = {
     horizontal = "horizontal",
     vertical = "vertical",
@@ -30,8 +32,7 @@ require("toggleterm").setup {
 
 vim.api.nvim_create_autocmd("TermOpen", {
     pattern = "term://*",
-    callback = function(ev)
-        require("notify").notify(ev.match, vim.log.levels.INFO)
+    callback = function()
         vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true })
@@ -39,5 +40,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "n", "q", [[i]], { noremap = true })
         vim.api.nvim_buf_set_keymap(0, "n", "p", [[pi]], { noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", "<", ":lua update_buf_width(2)<CR>", { noremap = true })
+        vim.api.nvim_buf_set_keymap(0, "n", ">", ":lua update_buf_width(-2)<CR>", { noremap = true })
     end
 })

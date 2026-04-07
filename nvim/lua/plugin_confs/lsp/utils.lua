@@ -1,7 +1,9 @@
 local configs = require("plugin_confs.lsp.servers").configs
 local logging = require("utils.logging")
 
-local M = {}
+local M = {
+    enabled_servers = {},
+}
 
 function M.must_install_list()
     local servers = {}
@@ -19,8 +21,13 @@ function M.enable_lsp(name)
         return
     end
 
+    if M.enabled_servers[name] then
+        return
+    end
+
     vim.lsp.config[name] = config
     vim.lsp.enable(name)
+    M.enabled_servers[name] = true
 end
 
 return M
