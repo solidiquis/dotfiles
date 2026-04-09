@@ -6,6 +6,12 @@ M.configs = {
 		cmd = { "rust-analyzer" },
 		filetypes = { "rust" },
 		root_markers = { "Cargo.toml", "rust-project.json" },
+		settings = {
+			cargo = {
+				features = "all",
+				allTargets = "true",
+			},
+		},
 	},
 
 	-- lua
