@@ -72,7 +72,6 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>f", ":Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>h", ":Telescope help_tags<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>s", ":Telescope grep_string<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>s", ":Telescope grep_string<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>b", ":Telescope buffers sort_lastused=true<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>;", ":Telescope diagnostics<CR>", { noremap = true })
 vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>", { noremap = true })

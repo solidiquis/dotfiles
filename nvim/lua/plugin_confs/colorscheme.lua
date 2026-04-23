@@ -36,4 +36,20 @@ end
 
 vim.cmd("highlight! link SignColumn Normal")
 
-require("lualine").setup({})
+require("lualine").setup({
+	sections = {
+		lualine_b = {
+			{
+				"macro-recording",
+				fmt = function()
+					local recording_register = vim.fn.reg_recording()
+					if recording_register == "" then
+						return ""
+					else
+						return "Recording @" .. recording_register
+					end
+				end,
+			},
+		},
+	},
+})

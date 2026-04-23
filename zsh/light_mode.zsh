@@ -1,1 +1,1 @@
-export LIGHT_MODE=
+export LIGHT_MODE=1

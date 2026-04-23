@@ -44,3 +44,8 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.api.nvim_buf_set_keymap(0, "n", ">", ":lua update_buf_width(-2)<CR>", { noremap = true })
 	end,
 })
+
+--vim.keymap.set("n", "<C-t>", function()
+--vim.cmd("ToggleTerm")
+--vim.api.nvim_feedkeys("lol\r", "t", false)
+--end, { noremap = true })
