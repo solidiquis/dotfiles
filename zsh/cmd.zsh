@@ -136,10 +136,49 @@ now() {
   fi
 }
 
-now_s() {
+now-s() {
   date +%s
 }
 
-now_ms() {
+now-ms() {
   date +%s%3
+}
+
+reminders() {
+    local rem="$HOME/.reminders"
+
+    if [[ ! -f "$rem" ]]; then
+        touch "$rem"
+    fi
+
+    if [[ "$1" == "add" && "$2" != "" ]]; then
+        index=$(wc -l "$rem" | awk '{ print $1 }')
+        echo "$index: $2" >> "$rem"
+        echo "Added reminder."
+    elif [[ "$1" == "remove" && "$2" =~ [[:digit:]]+$ ]]; then
+        local out=""
+        local index=0
+        while IFS= read -r line; do
+            if [[ "$2" == "$index" || -z "$line" ]]; then
+                continue
+            fi
+            out+="$index: $line"$'\n'
+            index=$(( index + 1 ))
+        done < <(awk '{ print $2 }' "$HOME/.reminders")
+        out=${out%$'\n'}
+        echo "$out" > "$rem"
+    elif [[ "$1" == "list" ]]; then
+        cat "$rem"
+    else
+        cat<<EOF
+List reminders:
+    reminders list
+
+Adding reminder:
+    reminders add TEXT
+
+Removing reminder:
+    reminders remove INDEX
+EOF
+    fi
 }

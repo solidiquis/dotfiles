@@ -1,5 +1,6 @@
 local alias = require("utils.cmd").alias
 local window = require("utils.window")
+local logging = require("utils.logging")
 
 -- Moves cursor to selected file's position in file tree.
 function nt_find()
@@ -76,6 +77,36 @@ end
 function update_buf_height(amnt)
 	local current_height = vim.api.nvim_win_get_height(0)
 	vim.api.nvim_win_set_height(0, current_height + amnt)
+end
+
+function pbcopy_file_visual_line_range()
+	local file_name = vim.api.nvim_buf_get_name(0)
+
+	if string.len(file_name) == 0 then
+		logging.warn("buffer is not a file", "utils")
+		return
+	end
+
+	local start_ln = vim.api.nvim_buf_get_mark(0, "<")[1]
+	local end_ln = vim.api.nvim_buf_get_mark(0, ">")[1]
+
+	local selection = string.format("%s", file_name)
+
+	if start_ln == 0 and start_ln == end_ln then
+		-- No selection
+		local cmd = string.format("echo '%s' | pbcopy", selection)
+		os.execute(cmd)
+	elseif start_ln > 0 and start_ln == end_ln then
+		-- Single line selection
+		selection = string.format("%s:%d", file_name, start_ln)
+		local cmd = string.format("echo '%s' | pbcopy", selection)
+		os.execute(cmd)
+	else
+		selection = string.format("%s:%d-%d", file_name, start_ln, end_ln)
+		local cmd = string.format("echo '%s' | pbcopy", selection)
+		os.execute(cmd)
+	end
+	logging.info(string.format("Copied '%s' to clipboard", selection), "utils")
 end
 
 -- Alphabetizes visual selection lines

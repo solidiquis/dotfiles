@@ -1,4 +1,8 @@
-require("claudecode").setup({})
+require("claudecode").setup({
+	diff_opts = {
+		layout = "horizontal",
+	},
+})
 
 vim.keymap.set("n", "<leader>c", "<cmd>ClaudeCode<cr>", { desc = "Toggle Claude" })
 vim.keymap.set("n", "<C-c>", "<cmd>ClaudeCodeFocus<cr>", { desc = "Toggle Claude" })

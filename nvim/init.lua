@@ -1,4 +1,4 @@
 require("keymappings")
-require("cmd")
 require("plugins")
+require("cmd")
 require("options")

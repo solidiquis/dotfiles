@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>=", "<C-W><C-=>", { noremap = true })
 vim.keymap.set("v", "<leader>c", '"*yy<CR>', { noremap = true })
 vim.keymap.set("v", "<leader>v", '"+p<CR>', { noremap = true })
 vim.keymap.set("n", "<leader>v", '"+p<CR>', { noremap = true })
+vim.keymap.set("n", "Y", ":lua pbcopy_file_visual_line_range()<CR>", { noremap = true })
+vim.keymap.set("v", "Y", ":lua pbcopy_file_visual_line_range()<CR>", { noremap = true })
 
 -- Treesitter
 vim.keymap.set("x", "+", "an", { remap = true, desc = "Increment selection (outer node)" })
