@@ -84,7 +84,7 @@ vim.pack.add({
 	-- Claude
 	{
 		src = "https://github.com/coder/claudecode.nvim",
-		version = "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f",
+		version = "2390c6e45c4789072c293ac69de051d169668b29",
 	},
 
 	-- Lualine

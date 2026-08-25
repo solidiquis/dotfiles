@@ -94,16 +94,16 @@ function pbcopy_file_visual_line_range()
 
 	if start_ln == 0 and start_ln == end_ln then
 		-- No selection
-		local cmd = string.format("echo '%s' | pbcopy", selection)
+		local cmd = string.format("printf '%s' | pbcopy", selection)
 		os.execute(cmd)
 	elseif start_ln > 0 and start_ln == end_ln then
 		-- Single line selection
 		selection = string.format("%s:%d", file_name, start_ln)
-		local cmd = string.format("echo '%s' | pbcopy", selection)
+		local cmd = string.format("printf '%s' | pbcopy", selection)
 		os.execute(cmd)
 	else
 		selection = string.format("%s:%d-%d", file_name, start_ln, end_ln)
-		local cmd = string.format("echo '%s' | pbcopy", selection)
+		local cmd = string.format("printf '%s' | pbcopy", selection)
 		os.execute(cmd)
 	end
 	logging.info(string.format("Copied '%s' to clipboard", selection), "utils")

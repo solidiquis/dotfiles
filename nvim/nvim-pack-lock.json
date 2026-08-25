@@ -13,7 +13,7 @@
     "claudecode.nvim": {
       "rev": "432121f0f5b9bda041030d1e9e83b7ba3a93dd8f",
       "src": "https://github.com/coder/claudecode.nvim",
-      "version": "'432121f0f5b9bda041030d1e9e83b7ba3a93dd8f'"
+      "version": "'2390c6e45c4789072c293ac69de051d169668b29'"
     },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
